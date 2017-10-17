@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.citrusframework.org/schema/testcase 
+                        http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+	<testcase name="TaskWolfsbergQuestTest">
+		<meta-info>
+			<author>Ankita Gupta</author>
+			<creationdate>2016-01-22</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Ankita Gupta</last-updated-by>
+			<last-updated-on>2016-01-21T00:00:00</last-updated-on>
+		</meta-info>
+
+        <description>Create Wolfsberg Questionnaire task</description>
+
+
+		<actions>
+
+            <!-- Extract entity id -->
+			<sql datasource="dataSource">
+				<statement>select entity_id 
+				           from v_company
+				           where legalname = '${legalName}' and  mei is null
+				</statement>
+				<extract column="ENTITY_ID" variable="${entityId}"/>
+			</sql>
+
+            <!-- Extract case id -->
+			<sql datasource="dataSource">
+				<statement>select case_id
+				           from case
+                           where entity_id = ${entityId}
+				</statement>
+				<extract column="CASE_ID" variable="${caseId}"/>
+			</sql>
+
+            <!-- Extract Client Id -->
+		<sql datasource="dataSource">
+				<statement>select CLIENT_ID 
+				           from CLIENT 
+				           where name like '${KycComp}%'
+				</statement>
+
+				<extract column="CLIENT_ID" variable="${clientId}"/>
+			</sql>
+            <!-- Set dependent variables -->			
+			<create-variables>
+		
+				<variable name="createWolfReq" value="/pega-api/cases/${caseId}/tasks/wolfsberg-amls"></variable>
+				<variable name="createWolfReqMsg" value="entityId=${entityId}&amp;clientId=${clientId}"></variable>
+			</create-variables>
+			   			
+		  <send endpoint="createAMLRequestTask">
+			<message>
+					<data>${createWolfReqMsg}</data>
+			</message>
+		   <header>
+			   <element name="citrus_endpoint_uri"	value="${kycHost}${createWolfReq}" />
+			</header>
+ 			</send>	
+ 				
+			 <sql datasource="dataSource">
+				<statement>select count(*) as task_count from task
+				           where entity_id=${entityId}
+				           and task_type_id=${wolfTaskId}
+				</statement>
+
+				<validate column="TASK_COUNT" value="1"/>
+			</sql>
+			
+				 <sql datasource="dataSource">
+				<statement>select * from task 
+				           where entity_id=${entityId} 
+				           and task_type_id=${wolfTaskId}
+				</statement>
+
+				<validate column="TASK_TYPE_ID" value="${wolfTaskId}"/>
+				<validate column="ENTITY_ID" value="${entityId}"/>
+				<validate column="CLIENT_ID" value="${clientId}"/>
+				<validate column="CASE_ID" value="${caseId}"/>
+			</sql>
+				       
+		</actions>
+	</testcase>
+
+</spring:beans>

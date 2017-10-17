@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test name="Surefire test(failed)">
+    <classes>
+      <class name="com.markit.kyc.citrus.BatchMatchEntityTest">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="batchMatchEntityTest"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.BatchMatchEntityTest -->
+      <class name="com.markit.kyc.citrus.BatchUploadTest">
+        <methods>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="batchUploadTest"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.BatchUploadTest -->
+      <class name="com.markit.kyc.citrus.SubscriberSubscribeTest">
+        <methods>
+          <include name="subscriberServiceTest"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.SubscriberSubscribeTest -->
+      <class name="com.markit.kyc.citrus.RaasCreateIndividualIdTest">
+        <methods>
+          <include name="raasCreateIndividualIdTest"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.RaasCreateIndividualIdTest -->
+      <class name="com.markit.kyc.citrus.RaasCompletedCaseTest">
+        <methods>
+          <include name="raasCompletedCaseTest"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.RaasCompletedCaseTest -->
+      <class name="com.markit.kyc.citrus.RaasSearchMeiTest">
+        <methods>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="raasSearchMeiTest"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.RaasSearchMeiTest -->
+      <class name="com.markit.kyc.citrus.McpmOnboardingTest">
+        <methods>
+          <include name="mcpmOnboardingTest"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.McpmOnboardingTest -->
+      <class name="com.markit.kyc.citrus.RaasCreateMeiTest">
+        <methods>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="raasCreateMeiTest"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.RaasCreateMeiTest -->
+      <class name="com.markit.kyc.citrus.CleanupTest">
+        <methods>
+          <include name="cleanupTest"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.CleanupTest -->
+      <class name="com.markit.kyc.citrus.RaasCaseAcknowledgeTest">
+        <methods>
+          <include name="raasCaseAcknowledgeTest"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.RaasCaseAcknowledgeTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<assembly>
+	<id></id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>target</directory>
+			<outputDirectory>/lib</outputDirectory>
+			<includes>
+				<include>*.jar</include>
+			</includes>
+		</fileSet>
+
+		<fileSet>
+			<directory>target/bin</directory>
+			<outputDirectory>/bin</outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+			<lineEnding>unix</lineEnding>
+		</fileSet>
+	
+		<fileSet>
+			<directory>src/citrus/tests/com/markit/kyc/citrus</directory>
+			<outputDirectory>/citrus/tests/com/markit/kyc/citrus</outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>
+		
+		<fileSet>
+			<directory>src/citrus/resources</directory>
+			<outputDirectory>/citrus/resources</outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>
+		
+		<fileSet>
+			<directory>src/test</directory>
+			<outputDirectory>/test</outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>	
+		<fileSet>
+			<directory>src/data</directory>
+			<outputDirectory>/src/data</outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>	
+	
+		<fileSet>
+			<directory>src/main/config</directory>
+			<outputDirectory>/config</outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>	
+		
+	</fileSets>
+	
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/lib</outputDirectory>
+			<unpack>false</unpack>
+			<scope>runtime</scope>
+		</dependencySet>
+	</dependencySets>
+</assembly>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+	<testcase name="McpmOnboardingTest">
+		<meta-info>
+			<author>Michael Smolyak</author>
+			<creationdate>2015-02-03</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Michael Smolyak</last-updated-by>
+			<last-updated-on>2015-02-03T00:00:00</last-updated-on>
+		</meta-info>
+
+		<variables>
+		
+			<!-- KYC State validation -->
+			<variable name="entityCount" value="1"/>
+			<variable name="entitySnapCount" value="1"/>
+			<variable name="caseCount" value="0"/>
+			<variable name="onboardStateName" value="None"/>
+			<variable name="profileStateName" value="None"/>
+			<variable name="caseTypeName" value="Full Review"/>
+		    <variable name="caseStateName" value="KYC - created"/>
+			<variable name="relationCount" value="5"/>
+			<variable name="subscriptionCount" value="2"/>
+			<variable name="subscriptionStatus" value="Subscribed"/>
+			<variable name="entityStatus" value="Active"/>
+			<variable name="annualReviewStatus" value="Pre Account Opening"/>
+			
+		</variables>
+
+		<actions>
+		
+            <!-- Extract entity id -->
+			<sql datasource="dataSource">
+				<statement>select entity_id 
+				           from v_company
+				           where legalname = '${legalName}'
+				</statement>
+				<extract column="ENTITY_ID" variable="${entityId}"/>
+			</sql>
+
+		    <send endpoint="mcpmClientPostEntity">
+				<message>
+					<data><![CDATA[
+						{
+							"legalName" : "${legalName}",
+							"country" : "${incorporationCountry}",
+							"cobsEntityId" : ${entityId},
+							"mcpmEntityId" : "${mcpmEntityId}",
+							"mei" : "AQ0S000002",
+							"lei" : "${lei}",
+							"entityType" : "${entityType}",
+							"onboardingKey": "${onboardingKey}",
+							"relationship" : [
+							{
+							   "bookingJurisdiction" : "${mcpmBookingJurisdiction}",
+							   "bank" : "${mcpmSubscriberName1}"
+							},
+							{
+							   "bookingJurisdiction" : "${mcpmBookingJurisdiction}",
+							   "bank" : "${mcpmSubscriberName2}"
+							} ]
+						}
+						]]></data>
+				</message>
+				<header/>
+			</send>
+			
+			<sleep seconds="60"/>
+
+			<call-template name="validateKycState" />
+
+			<sql datasource="dataSource">
+				<!-- new relationship is created -->
+			    <statement>select count(*) AS RELATION_COUNT_1
+						   from ENTITY_AUTHORIZE_SUBSCRIBER
+						   where SUBSCRIBER_ID = ${subscriberId1}
+						     and END_DT is null
+						     and ENTITY_ID = ${entityId}
+                </statement>
+                
+			    <statement>select count(*) AS RELATION_COUNT_2
+						   from ENTITY_AUTHORIZE_SUBSCRIBER
+						   where SUBSCRIBER_ID = ${subscriberId2}
+						     and END_DT is null
+						     and ENTITY_ID = ${entityId}
+                </statement>
+                
+		        <validate column="RELATION_COUNT_1" value="1"/>
+		        <validate column="RELATION_COUNT_2" value="1"/>
+	        </sql>
+
+		</actions>
+	</testcase>
+
+</spring:beans>

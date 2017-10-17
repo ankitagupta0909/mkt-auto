@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Task suite">
+  <listeners>
+ <!--    <listener class-name="com.markit.kyc.citrus.KycSuiteReporter" />
+    <listener class-name="com.markit.kyc.citrus.KycTestReporter" /> -->
+    <!--    <listener class-name="com.markit.kyc.citrus.ExtentReporter" /> -->
+       <listener class-name="com.markit.kyc.citrus.CopyOfExtentReporter" />
+  </listeners>
+  
+
+  
+ <test verbose="2" name="Batch Upload Fund test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskBatchUploadFundTest"/>
+    </classes>
+  </test>
+  
+    
+<!--  <test verbose="2" name="MCPM Create Entity Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.MCPMCreateEntityTest"/>
+    </classes>
+  </test> -->
+  
+
+    <!--  <test verbose="2" name="Match Entity Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskMatchEntityTest"/>
+    </classes>
+  </test>
+  
+     <test verbose="2" name="Create Case Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.CreateCaseTest"/>
+    </classes>
+  </test>
+  
+  <test verbose="2" name="Pega Case Acknowledge Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaCaseAcknowledgeTest"/>
+    </classes>
+  </test>
+
+   <test verbose="2" name="Pega Create Mei Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaCreateMeiTest"/>
+    </classes>
+  </test>
+ 
+     <test verbose="2" name="Pega Docuemnt Upload Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaDocUploadTest"/>
+    </classes>
+  </test>
+  
+  
+  <test verbose="2" name="Pega Docuemnt Edit Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaDocEditTest"/>
+    </classes>
+  </test>
+
+    <test verbose="2" name="Create Doc Request Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskCreateDocReqTest"/>
+    </classes> 
+      </test>
+
+  
+     <test verbose="2" name="Create Identity Detail Request Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskIdDetailReqTest"/>
+    </classes>
+  </test>
+  
+   <test verbose="2" name="Create Outreach Questionnaire Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskOutreachQuesTest"/>
+    </classes>
+  </test>
+  
+     <test verbose="2" name="Create Ownership Structure Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskOwnershipStrucTest"/>
+    </classes>
+  </test>
+  
+  <test verbose="2" name="Create Wolfsberg Questionnaire Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskWolfsbergQuestTest"/>
+    </classes>
+  </test>
+  
+    <test verbose="2" name="Country and Industrial Assessment Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskCandIAssessmentTest"/>
+    </classes>
+    </test>
+  
+    <test verbose="2" name="Create Authorized Sign Task Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskAuthorisedSignTest"/>
+    </classes>
+  </test>
+  
+  <test verbose="2" name="Withdraw Task Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskWithdrawTest"/>
+    </classes>
+  </test>
+  
+  <test verbose="2" name="PegaCompletedCaseTest">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaCompletedCaseTest"/>
+    </classes>
+  </test>
+  
+  <test verbose="2" name="SubscriberSubscribeTest">
+    <classes>
+      <class name="com.markit.kyc.citrus.SubscriberSubscribeTest"/>
+    </classes>
+  </test>   -->
+  
+</suite>
+

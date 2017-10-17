@@ -1,0 +1,35 @@
+<!-- context configuration for kyc-workflow_engine provided by puppetised module mkt_tomcat -->
+<Context unpackWAR="true">
+  <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+  <Manager pathname="" />
+
+  <Resource name="jdbc/PegaRULES"
+      auth="Container"
+      type="javax.sql.DataSource"
+      driverClassName="oracle.jdbc.OracleDriver"
+      url="jdbc:oracle:thin:@//nj4cobqascan01.markit.partners:1521/kycqa.markit.partners"
+      username="KYC_WORKFLOW"
+      password="ky(Flow99"
+      maxActive="100"
+      maxIdle="30"
+      maxWait="10000"
+  />
+
+  <Resource name="jdbc/KYC"
+      auth="Container"
+      type="javax.sql.DataSource"
+      driverClassName="oracle.jdbc.OracleDriver"
+      url="jdbc:oracle:thin:@//nj4cobqascan01.markit.partners:1521/kycqa.markit.partners"
+      username="kyc"
+      password="Kyc!rule$"
+      maxActive="100"
+      maxIdle="30"
+      maxWait="10000"
+  />
+
+  <Environment name="url/initialization/explicittempdir"
+    value="/var/cache/kyc-workflow/pega_temp"
+    type="java.lang.String"
+  />
+
+</Context>

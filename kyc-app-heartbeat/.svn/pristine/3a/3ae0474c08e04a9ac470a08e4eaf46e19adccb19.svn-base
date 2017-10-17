@@ -1,0 +1,246 @@
+<h2>Methods run, sorted chronologically</h2><h3>&gt;&gt; means before, &lt;&lt; means after</h3><p/><br/><em>Task suite</em><p/><small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table border="1">
+<tr><th>Time</th><th>Delta (ms)</th><th>Suite<br>configuration</th><th>Test<br>configuration</th><th>Class<br>configuration</th><th>Groups<br>configuration</th><th>Method<br>configuration</th><th>Test<br>method</th><th>Thread</th><th>Instances</th></tr>
+<tr bgcolor="d56173">  <td>16/05/11 12:58:24</td>   <td>0</td> <td title="&gt;&gt;AbstractTestNGCitrusTest.beforeSuite(org.testng.ITestContext)[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@63021689]">&gt;&gt;beforeSuite</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:58:32</td>   <td>7930</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@14ec4505]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:58:32</td>   <td>7930</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@14ec4505]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 12:58:32</td>   <td>7940</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@14ec4505]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:58:32</td>   <td>7940</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@14ec4505]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="997ed7">  <td>16/05/11 12:58:32</td>   <td>7940</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="TaskBatchUploadFundTest.batchUploadfundTest()[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@14ec4505]">batchUploadfundTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:59:14</td>   <td>49573</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@14ec4505]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:59:14</td>   <td>49573</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@14ec4505]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:59:14</td>   <td>49693</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskMatchEntityTest@fdefd3f]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:59:14</td>   <td>49693</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskMatchEntityTest@fdefd3f]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 12:59:14</td>   <td>49703</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskMatchEntityTest@fdefd3f]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:59:14</td>   <td>49703</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskMatchEntityTest@fdefd3f]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="ac80a1">  <td>16/05/11 12:59:14</td>   <td>49703</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="TaskMatchEntityTest.matchEntityTest()[pri:0, instance:com.markit.kyc.citrus.TaskMatchEntityTest@fdefd3f]">matchEntityTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:59:48</td>   <td>84202</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskMatchEntityTest@fdefd3f]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:59:48</td>   <td>84202</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskMatchEntityTest@fdefd3f]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:59:48</td>   <td>84202</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.CreateCaseTest@2cbb3d47]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:59:48</td>   <td>84202</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.CreateCaseTest@2cbb3d47]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 12:59:48</td>   <td>84202</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.CreateCaseTest@2cbb3d47]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 12:59:48</td>   <td>84212</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.CreateCaseTest@2cbb3d47]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="60a8c0">  <td>16/05/11 12:59:48</td>   <td>84212</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="CreateCaseTest.createCaseTest()[pri:0, instance:com.markit.kyc.citrus.CreateCaseTest@2cbb3d47]">createCaseTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:00:02</td>   <td>97956</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.CreateCaseTest@2cbb3d47]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:00:02</td>   <td>97956</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.CreateCaseTest@2cbb3d47]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:00:02</td>   <td>97956</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.PegaCaseAcknowledgeTest@6b4a4e18]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:00:02</td>   <td>97956</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.PegaCaseAcknowledgeTest@6b4a4e18]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:00:02</td>   <td>97966</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.PegaCaseAcknowledgeTest@6b4a4e18]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:00:02</td>   <td>97966</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.PegaCaseAcknowledgeTest@6b4a4e18]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="76aeea">  <td>16/05/11 13:00:02</td>   <td>97966</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="PegaCaseAcknowledgeTest.pegaCaseAcknowledgeTest()[pri:0, instance:com.markit.kyc.citrus.PegaCaseAcknowledgeTest@6b4a4e18]">pegaCaseAcknowledgeTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:00:39</td>   <td>135221</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.PegaCaseAcknowledgeTest@6b4a4e18]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:00:39</td>   <td>135221</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.PegaCaseAcknowledgeTest@6b4a4e18]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:00:39</td>   <td>135222</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.PegaCreateMeiTest@70be0a2b]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:00:39</td>   <td>135222</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.PegaCreateMeiTest@70be0a2b]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:00:39</td>   <td>135222</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.PegaCreateMeiTest@70be0a2b]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:00:39</td>   <td>135222</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.PegaCreateMeiTest@70be0a2b]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="95b565">  <td>16/05/11 13:00:39</td>   <td>135222</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="PegaCreateMeiTest.pegaCreateMeiTest()[pri:0, instance:com.markit.kyc.citrus.PegaCreateMeiTest@70be0a2b]">pegaCreateMeiTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:14</td>   <td>170460</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.PegaCreateMeiTest@70be0a2b]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:14</td>   <td>170460</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.PegaCreateMeiTest@70be0a2b]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:14</td>   <td>170470</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.PegaDocUploadTest@43ee72e6]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:14</td>   <td>170470</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.PegaDocUploadTest@43ee72e6]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:01:14</td>   <td>170470</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.PegaDocUploadTest@43ee72e6]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:14</td>   <td>170470</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.PegaDocUploadTest@43ee72e6]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="b19b79">  <td>16/05/11 13:01:14</td>   <td>170470</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="PegaDocUploadTest.pegaDocUploadTest()[pri:0, instance:com.markit.kyc.citrus.PegaDocUploadTest@43ee72e6]">pegaDocUploadTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:28</td>   <td>183934</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.PegaDocUploadTest@43ee72e6]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:28</td>   <td>183935</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.PegaDocUploadTest@43ee72e6]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:28</td>   <td>183940</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.PegaDocEditTest@ec756bd]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:28</td>   <td>183940</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.PegaDocEditTest@ec756bd]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:01:28</td>   <td>183942</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.PegaDocEditTest@ec756bd]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:28</td>   <td>183942</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.PegaDocEditTest@ec756bd]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="c5ccac">  <td>16/05/11 13:01:28</td>   <td>183943</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="PegaDocEditTest.pegaDocEditTest()[pri:0, instance:com.markit.kyc.citrus.PegaDocEditTest@ec756bd]">pegaDocEditTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:43</td>   <td>198685</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.PegaDocEditTest@ec756bd]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:43</td>   <td>198685</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.PegaDocEditTest@ec756bd]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:43</td>   <td>198690</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskCreateDocReqTest@4278a03f]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:43</td>   <td>198690</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskCreateDocReqTest@4278a03f]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:01:43</td>   <td>198693</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskCreateDocReqTest@4278a03f]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:43</td>   <td>198693</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskCreateDocReqTest@4278a03f]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d3bc82">  <td>16/05/11 13:01:43</td>   <td>198693</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="TaskCreateDocReqTest.taskCreateDocReqTest()[pri:0, instance:com.markit.kyc.citrus.TaskCreateDocReqTest@4278a03f]">taskCreateDocReqTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:51</td>   <td>206743</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskCreateDocReqTest@4278a03f]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:51</td>   <td>206743</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskCreateDocReqTest@4278a03f]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:51</td>   <td>206750</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskIdDetailReqTest@309e345f]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:51</td>   <td>206750</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskIdDetailReqTest@309e345f]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:01:51</td>   <td>206753</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskIdDetailReqTest@309e345f]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:51</td>   <td>206753</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskIdDetailReqTest@309e345f]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="dc8ecb">  <td>16/05/11 13:01:51</td>   <td>206753</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="TaskIdDetailReqTest.taskIdDetailReqTest()[pri:0, instance:com.markit.kyc.citrus.TaskIdDetailReqTest@309e345f]">taskIdDetailReqTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:59</td>   <td>215503</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskIdDetailReqTest@309e345f]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:59</td>   <td>215503</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskIdDetailReqTest@309e345f]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:59</td>   <td>215513</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskOutreachQuesTest@2f112965]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:59</td>   <td>215513</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskOutreachQuesTest@2f112965]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:01:59</td>   <td>215513</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskOutreachQuesTest@2f112965]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:01:59</td>   <td>215513</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskOutreachQuesTest@2f112965]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="c562f7">  <td>16/05/11 13:01:59</td>   <td>215513</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="TaskOutreachQuesTest.taskOutreachQuesTest()[pri:0, instance:com.markit.kyc.citrus.TaskOutreachQuesTest@2f112965]">taskOutreachQuesTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:09</td>   <td>224659</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskOutreachQuesTest@2f112965]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:09</td>   <td>224659</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskOutreachQuesTest@2f112965]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:09</td>   <td>224669</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskOwnershipStrucTest@159f197]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:09</td>   <td>224669</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskOwnershipStrucTest@159f197]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:02:09</td>   <td>224669</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskOwnershipStrucTest@159f197]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:09</td>   <td>224669</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskOwnershipStrucTest@159f197]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="9e7ee8">  <td>16/05/11 13:02:09</td>   <td>224669</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="TaskOwnershipStrucTest.taskOwnershipStrucTest()[pri:0, instance:com.markit.kyc.citrus.TaskOwnershipStrucTest@159f197]">taskOwnershipStrucTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:17</td>   <td>233338</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskOwnershipStrucTest@159f197]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:17</td>   <td>233338</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskOwnershipStrucTest@159f197]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:17</td>   <td>233348</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskWolfsbergQuestTest@161479c6]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:17</td>   <td>233348</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskWolfsbergQuestTest@161479c6]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:02:17</td>   <td>233348</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskWolfsbergQuestTest@161479c6]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:17</td>   <td>233348</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskWolfsbergQuestTest@161479c6]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="fa6fa7">  <td>16/05/11 13:02:17</td>   <td>233348</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="TaskWolfsbergQuestTest.taskWolfsbergQuestTest()[pri:0, instance:com.markit.kyc.citrus.TaskWolfsbergQuestTest@161479c6]">taskWolfsbergQuestTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:26</td>   <td>241751</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskWolfsbergQuestTest@161479c6]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:26</td>   <td>241751</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskWolfsbergQuestTest@161479c6]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:26</td>   <td>241752</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskCandIAssessmentTest@1f3f4916]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:26</td>   <td>241752</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskCandIAssessmentTest@1f3f4916]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:02:26</td>   <td>241752</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskCandIAssessmentTest@1f3f4916]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:26</td>   <td>241752</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskCandIAssessmentTest@1f3f4916]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="b28192">  <td>16/05/11 13:02:26</td>   <td>241752</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="TaskCandIAssessmentTest.taskCountryandIndustrialAssessment()[pri:0, instance:com.markit.kyc.citrus.TaskCandIAssessmentTest@1f3f4916]">taskCountryandIndustrialAssessment</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:34</td>   <td>250347</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskCandIAssessmentTest@1f3f4916]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:34</td>   <td>250347</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskCandIAssessmentTest@1f3f4916]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:34</td>   <td>250348</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskAuthorisedSignTest@4b14c583]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:34</td>   <td>250348</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskAuthorisedSignTest@4b14c583]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:02:34</td>   <td>250348</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskAuthorisedSignTest@4b14c583]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:34</td>   <td>250348</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskAuthorisedSignTest@4b14c583]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="6c77c7">  <td>16/05/11 13:02:34</td>   <td>250348</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="TaskAuthorisedSignTest.taskAuthorisedSignTest()[pri:0, instance:com.markit.kyc.citrus.TaskAuthorisedSignTest@4b14c583]">taskAuthorisedSignTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:43</td>   <td>258908</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskAuthorisedSignTest@4b14c583]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:43</td>   <td>258908</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskAuthorisedSignTest@4b14c583]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:43</td>   <td>258908</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskWithdrawTest@47d90b9e]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:43</td>   <td>258908</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskWithdrawTest@47d90b9e]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:02:43</td>   <td>258909</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskWithdrawTest@47d90b9e]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:43</td>   <td>258909</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskWithdrawTest@47d90b9e]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="b06cab">  <td>16/05/11 13:02:43</td>   <td>258909</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="TaskWithdrawTest.taskWithdrawTest()[pri:0, instance:com.markit.kyc.citrus.TaskWithdrawTest@47d90b9e]">taskWithdrawTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:51</td>   <td>267065</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskWithdrawTest@47d90b9e]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:51</td>   <td>267065</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskWithdrawTest@47d90b9e]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:51</td>   <td>267145</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.PegaCompletedCaseTest@6f96c77]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:51</td>   <td>267145</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.PegaCompletedCaseTest@6f96c77]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:02:51</td>   <td>267145</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.PegaCompletedCaseTest@6f96c77]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:02:51</td>   <td>267145</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.PegaCompletedCaseTest@6f96c77]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="80cdf3">  <td>16/05/11 13:02:51</td>   <td>267145</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="PegaCompletedCaseTest.pegaCompletedCaseTest()[pri:0, instance:com.markit.kyc.citrus.PegaCompletedCaseTest@6f96c77]">pegaCompletedCaseTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:04:54</td>   <td>389672</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.PegaCompletedCaseTest@6f96c77]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:04:54</td>   <td>389672</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.PegaCompletedCaseTest@6f96c77]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:04:54</td>   <td>389682</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@63021689]">&gt;&gt;springTestContextBeforeTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:04:54</td>   <td>389682</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@63021689]">&gt;&gt;springTestContextPrepareTestInstance</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:04:54</td>   <td>389682</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGCitrusTest.createTestRunners()[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@63021689]">&gt;&gt;createTestRunners</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:04:54</td>   <td>389682</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;AbstractTestNGSpringContextTests.springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@63021689]">&gt;&gt;springTestContextBeforeTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="836f6a">  <td>16/05/11 13:04:54</td>   <td>389682</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="SubscriberSubscribeTest.subscriberServiceTest()[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@63021689]">subscriberServiceTest</td> 
+  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:05:32</td>   <td>428437</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@63021689]">&lt;&lt;springTestContextAfterTestMethod</td> 
+<td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="a86dd7">  <td>16/05/11 13:05:32</td>   <td>428437</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;AbstractTestNGSpringContextTests.springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@63021689]">&lt;&lt;springTestContextAfterTestClass</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+<tr bgcolor="d56173">  <td>16/05/11 13:05:32</td>   <td>428437</td> <td title="&lt;&lt;AbstractTestNGCitrusTest.afterSuite(org.testng.ITestContext)[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@63021689]">&lt;&lt;afterSuite</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1691185247</td>   <td></td> </tr>
+</table>

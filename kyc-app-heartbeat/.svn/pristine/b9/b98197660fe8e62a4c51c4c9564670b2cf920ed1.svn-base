@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:citrus="http://www.citrusframework.org/schema/config"
+       xmlns:citrus-jms="http://www.citrusframework.org/schema/jms/config"
+       xmlns:citrus-ws="http://www.citrusframework.org/schema/ws/config"
+       xmlns:citrus-http="http://www.citrusframework.org/schema/http/config"
+       xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:si="http://www.springframework.org/schema/integration"
+       xmlns:file="http://www.springframework.org/schema/integration/file"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.citrusframework.org/schema/config http://www.citrusframework.org/schema/config/citrus-config.xsd
+       http://www.citrusframework.org/schema/jms/config http://www.citrusframework.org/schema/jms/config/citrus-jms-config.xsd
+       http://www.citrusframework.org/schema/ws/config http://www.citrusframework.org/schema/ws/config/citrus-ws-config.xsd
+       http://www.citrusframework.org/schema/http/config http://www.citrusframework.org/schema/http/config/citrus-http-config.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+       http://www.springframework.org/schema/integration
+       http://www.springframework.org/schema/integration/spring-integration.xsd
+       http://www.springframework.org/schema/integration/file
+       http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+       
+       <context:annotation-config/>
+       
+       <!-- Enable AspectJ style of Spring AOP -->
+		<aop:aspectj-autoproxy />
+
+    <!-- Common settings -->
+ <!--    <context:property-placeholder location="classpath:markit/m/webapp-mcpm/application.properties"
+    	ignore-unresolvable="true" /> -->
+<!--     <context:property-placeholder
+		location="classpath:markit/kyc/common/*.properties"
+		ignore-unresolvable="true" /> -->
+<!--     <context:property-placeholder
+		location="classpath:markit/kyc/app-heartbeat/*.properties"
+		ignore-unresolvable="true" /> -->
+		 <context:property-placeholder
+		location="classpath:markit/kyc/common/application.properties"
+		ignore-unresolvable="true" />
+		
+		  <context:property-placeholder
+		location="classpath:markit/kyc/app-heartbeat/*.properties"
+		ignore-unresolvable="true" />
+		
+	<context:property-placeholder location="classpath:citrus.properties"
+    	ignore-unresolvable="true" />
+
+	
+    	
+    <import resource="classpath:dataSource-context.xml" />
+    <import resource="classpath:kycStateValidation-context.xml" />
+        
+    <citrus:schema-repository id="schemaRepository"/>
+
+    <citrus:global-variables>
+        <citrus:variable name="project.name" value="Citrus Integration Tests"/>
+		
+		<citrus:variable name="kycHost" value="${api.application.url}" />
+		
+		<citrus:variable name="mcpmHost" value="${api.mcpmapplication.url}" />
+		
+		<citrus:variable name="kycHost1" value="${api.application.url.data}" />
+
+		<citrus:file path="classpath:heartbeatTest.properties"/>
+	</citrus:global-variables>
+    	
+	<util:list id="httpClientInterceptors">
+		<bean class="com.consol.citrus.http.interceptor.LoggingClientInterceptor" />
+	</util:list>
+
+	<!-- Endpoint definitions -->
+	<import resource="classpath:raasClient-context.xml" />
+	<import resource="classpath:mcpmClient-context.xml" />
+	<import resource="classpath:subscriberClient-context.xml" />
+	<import resource="classpath:adminBatchClient-context.xml" />
+        
+   	<!-- Customized rest template -->
+	<import resource="classpath:sslClientHttpRequestFactory-context.xml" />
+ 	<import resource="classpath:userXsClient-context.xml" />
+ 	<import resource="classpath:kycTestRecorder-context.xml" />
+ 	<import resource="classpath:kycSuiteRecorder-context.xml" />
+      
+      <!--  <import resource="classpath:mailTestListener-context.xml" /> --> 
+    <import resource="classpath:proxyRepositoryFactoryCreator-context.xml" />
+    <import resource="classpath:suiteResultRepository-context.xml" />
+    <import resource="classpath:testResultRepository-context.xml" />
+   <!--  <context:component-scan base-package="com." /> -->
+        <bean name="htmlWriterAspect" class="com.markit.kyc.aspects.HtmlWriterAspect" />
+	<bean name="customizedRestTemplate" class="org.springframework.web.client.RestTemplate">
+	  <property name="messageConverters">
+	    <util:list id="converter">
+	      <bean class="org.springframework.http.converter.FormHttpMessageConverter" />
+	      <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+	        <property name="supportedMediaTypes">
+	          <util:list id="types">
+	            <value>application/xml</value>
+	            <value>application/json</value>
+	            <value>text/html</value>
+	            <value>text/xml</value>
+	            <value>application/x-www-form-urlencoded</value>
+	          </util:list>
+	        </property>
+	      </bean>
+	    </util:list>
+	  </property>
+      <property name="errorHandler" ref="customErrorHandler" />
+	  <property name="requestFactory">
+	    <bean class="com.markit.kyc.citrus.utils.SslClientHttpRequestFactory" />
+	  </property>
+	</bean>
+	
+	<bean id="groovyJsonMessageValidator" class="com.consol.citrus.validation.script.GroovyJsonMessageValidator"/>
+	
+	<bean id="customErrorHandler" class="com.markit.kyc.citrus.CustomResponseErrorHandler"/>
+	
+	<bean id="uploadAction" class="com.markit.kyc.citrus.action.UploadAction"/>
+	
+	<bean id="uploadDoc" class="com.markit.kyc.citrus.action.UploadDoc"/>
+	
+	<bean id="mcpmUploadDoc" class="com.markit.kyc.citrus.action.MCPMUploadDoc"/>
+	
+	<bean id="removeEntityAction" class="com.markit.kyc.citrus.action.RemoveEntityAction"/>
+
+	<bean id="removeEntityReportsAction" class="com.markit.kyc.citrus.action.RemoveEntityReportsAction"/>
+	
+	<bean id="outreachTask" class="com.markit.kyc.citrus.action.OutreachTask"/>
+	<bean id="compareBukJur" class="com.markit.kyc.citrus.action.CompareBJ"/>
+	
+</beans>

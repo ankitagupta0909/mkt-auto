@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Surefire_suite">
+              <span class="suite-name border-skipped">Surefire suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Surefire_suite">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Surefire_suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Surefire_suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Surefire_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Surefire_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Surefire_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Surefire_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">10 methods,  10 skipped,  </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods skipped suite-Surefire_suite"> (hide)</a> <!-- hide-methods skipped suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods skipped suite-Surefire_suite"> (show)</a> <!-- show-methods skipped suite-Surefire_suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Surefire_suite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.markit.kyc.citrus.BatchMatchEntityTest" hash-for-method="batchMatchEntityTest">batchMatchEntityTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.markit.kyc.citrus.BatchUploadTest" hash-for-method="batchUploadTest">batchUploadTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.markit.kyc.citrus.CleanupTest" hash-for-method="cleanupTest">cleanupTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.markit.kyc.citrus.McpmOnboardingTest" hash-for-method="mcpmOnboardingTest">mcpmOnboardingTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.markit.kyc.citrus.RaasCaseAcknowledgeTest" hash-for-method="raasCaseAcknowledgeTest">raasCaseAcknowledgeTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.markit.kyc.citrus.RaasCompletedCaseTest" hash-for-method="raasCompletedCaseTest">raasCompletedCaseTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.markit.kyc.citrus.RaasCreateIndividualIdTest" hash-for-method="raasCreateIndividualIdTest">raasCreateIndividualIdTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.markit.kyc.citrus.RaasCreateMeiTest" hash-for-method="raasCreateMeiTest">raasCreateMeiTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.markit.kyc.citrus.RaasSearchMeiTest" hash-for-method="raasSearchMeiTest">raasSearchMeiTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.markit.kyc.citrus.SubscriberSubscribeTest" hash-for-method="subscriberServiceTest">subscriberServiceTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Surefire_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.markit.kyc.citrus.SubscriberSubscribeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="subscriberServiceTest">
+                  </a> <!-- subscriberServiceTest -->
+                  <span class="method-name">subscriberServiceTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.markit.kyc.citrus.BatchUploadTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="batchUploadTest">
+                  </a> <!-- batchUploadTest -->
+                  <span class="method-name">batchUploadTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.markit.kyc.citrus.BatchMatchEntityTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="batchMatchEntityTest">
+                  </a> <!-- batchMatchEntityTest -->
+                  <span class="method-name">batchMatchEntityTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.markit.kyc.citrus.RaasCreateIndividualIdTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="raasCreateIndividualIdTest">
+                  </a> <!-- raasCreateIndividualIdTest -->
+                  <span class="method-name">raasCreateIndividualIdTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.markit.kyc.citrus.RaasCompletedCaseTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="raasCompletedCaseTest">
+                  </a> <!-- raasCompletedCaseTest -->
+                  <span class="method-name">raasCompletedCaseTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.markit.kyc.citrus.RaasSearchMeiTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="raasSearchMeiTest">
+                  </a> <!-- raasSearchMeiTest -->
+                  <span class="method-name">raasSearchMeiTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.markit.kyc.citrus.McpmOnboardingTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="mcpmOnboardingTest">
+                  </a> <!-- mcpmOnboardingTest -->
+                  <span class="method-name">mcpmOnboardingTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.markit.kyc.citrus.RaasCreateMeiTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="raasCreateMeiTest">
+                  </a> <!-- raasCreateMeiTest -->
+                  <span class="method-name">raasCreateMeiTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.markit.kyc.citrus.CleanupTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="cleanupTest">
+                  </a> <!-- cleanupTest -->
+                  <span class="method-name">cleanupTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+          <div class="suite-Surefire_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.markit.kyc.citrus.RaasCaseAcknowledgeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="raasCaseAcknowledgeTest">
+                  </a> <!-- raasCaseAcknowledgeTest -->
+                  <span class="method-name">raasCaseAcknowledgeTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-skipped -->
+        </div> <!-- panel Surefire_suite -->
+        <div panel-name="test-xml-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;1&quot; verbose=&quot;0&quot; name=&quot;Surefire suite&quot;&gt;
+  &lt;test name=&quot;Surefire test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.markit.kyc.citrus.BatchMatchEntityTest&quot;/&gt;
+      &lt;class name=&quot;com.markit.kyc.citrus.BatchUploadTest&quot;/&gt;
+      &lt;class name=&quot;com.markit.kyc.citrus.CleanupTest&quot;/&gt;
+      &lt;class name=&quot;com.markit.kyc.citrus.McpmOnboardingTest&quot;/&gt;
+      &lt;class name=&quot;com.markit.kyc.citrus.RaasCaseAcknowledgeTest&quot;/&gt;
+      &lt;class name=&quot;com.markit.kyc.citrus.RaasCompletedCaseTest&quot;/&gt;
+      &lt;class name=&quot;com.markit.kyc.citrus.RaasCreateIndividualIdTest&quot;/&gt;
+      &lt;class name=&quot;com.markit.kyc.citrus.RaasCreateMeiTest&quot;/&gt;
+      &lt;class name=&quot;com.markit.kyc.citrus.RaasSearchMeiTest&quot;/&gt;
+      &lt;class name=&quot;com.markit.kyc.citrus.SubscriberSubscribeTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Surefire test --&gt;
+&lt;/suite&gt; &lt;!-- Surefire suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Surefire test (10 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Surefire_suite');
+function tableData_Surefire_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(10);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'subscriberServiceTest')
+data.setCell(0, 2, 'com.markit.kyc.citrus.SubscriberSubscribeTest')
+data.setCell(0, 3, 1);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'batchMatchEntityTest')
+data.setCell(1, 2, 'com.markit.kyc.citrus.BatchMatchEntityTest')
+data.setCell(1, 3, 1);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'cleanupTest')
+data.setCell(2, 2, 'com.markit.kyc.citrus.CleanupTest')
+data.setCell(2, 3, 0);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'mcpmOnboardingTest')
+data.setCell(3, 2, 'com.markit.kyc.citrus.McpmOnboardingTest')
+data.setCell(3, 3, 0);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'raasCompletedCaseTest')
+data.setCell(4, 2, 'com.markit.kyc.citrus.RaasCompletedCaseTest')
+data.setCell(4, 3, 0);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'raasSearchMeiTest')
+data.setCell(5, 2, 'com.markit.kyc.citrus.RaasSearchMeiTest')
+data.setCell(5, 3, 0);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'raasCreateMeiTest')
+data.setCell(6, 2, 'com.markit.kyc.citrus.RaasCreateMeiTest')
+data.setCell(6, 3, 0);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'raasCreateIndividualIdTest')
+data.setCell(7, 2, 'com.markit.kyc.citrus.RaasCreateIndividualIdTest')
+data.setCell(7, 3, 0);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'raasCaseAcknowledgeTest')
+data.setCell(8, 2, 'com.markit.kyc.citrus.RaasCaseAcknowledgeTest')
+data.setCell(8, 3, 0);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'batchUploadTest')
+data.setCell(9, 2, 'com.markit.kyc.citrus.BatchUploadTest')
+data.setCell(9, 3, 0);
+window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 2 ms</span>
+              <div id="times-div-Surefire_suite">
+              </div> <!-- times-div-Surefire_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Surefire suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">18 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.markit.kyc.citrus.BatchUploadTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+                <span class="ignored-method-name">beforeSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.markit.kyc.citrus.SubscriberSubscribeTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+                <span class="ignored-method-name">beforeSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.markit.kyc.citrus.RaasCreateIndividualIdTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+                <span class="ignored-method-name">beforeSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.markit.kyc.citrus.RaasCompletedCaseTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+                <span class="ignored-method-name">beforeSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.markit.kyc.citrus.RaasSearchMeiTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+                <span class="ignored-method-name">beforeSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.markit.kyc.citrus.McpmOnboardingTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+                <span class="ignored-method-name">beforeSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.markit.kyc.citrus.RaasCreateMeiTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+                <span class="ignored-method-name">beforeSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.markit.kyc.citrus.CleanupTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+                <span class="ignored-method-name">beforeSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.markit.kyc.citrus.RaasCaseAcknowledgeTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">afterSuite</span>
+                <br/>
+                <span class="ignored-method-name">beforeSuite</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Surefire_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.BatchMatchEntityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">beforeSuite(org.testng.TestRunner@4df5bcb4)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="test-method">
+                <span class="method-name">batchMatchEntityTest</span>
+                <span class="method-start">874 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void com.markit.kyc.citrus.BatchMatchEntityTest.batchMatchEntityTest())</span>
+                <span class="method-start">875 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">876 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.BatchUploadTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">batchUploadTest</span>
+                <span class="method-start">877 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">877 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void com.markit.kyc.citrus.BatchUploadTest.batchUploadTest())</span>
+                <span class="method-start">877 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.CleanupTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">cleanupTest</span>
+                <span class="method-start">878 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">878 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void com.markit.kyc.citrus.CleanupTest.cleanupTest())</span>
+                <span class="method-start">878 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.McpmOnboardingTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">mcpmOnboardingTest</span>
+                <span class="method-start">879 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void com.markit.kyc.citrus.McpmOnboardingTest.mcpmOnboardingTest())</span>
+                <span class="method-start">879 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasCaseAcknowledgeTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">raasCaseAcknowledgeTest</span>
+                <span class="method-start">880 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.McpmOnboardingTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">880 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasCaseAcknowledgeTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">880 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void com.markit.kyc.citrus.RaasCaseAcknowledgeTest.raasCaseAcknowledgeTest())</span>
+                <span class="method-start">880 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasCompletedCaseTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">raasCompletedCaseTest</span>
+                <span class="method-start">881 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasCreateIndividualIdTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">raasCreateIndividualIdTest</span>
+                <span class="method-start">881 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasCompletedCaseTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">881 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasCreateIndividualIdTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">881 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasCompletedCaseTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void com.markit.kyc.citrus.RaasCompletedCaseTest.raasCompletedCaseTest())</span>
+                <span class="method-start">881 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasCreateIndividualIdTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void com.markit.kyc.citrus.RaasCreateIndividualIdTest.raasCreateIndividualIdTest())</span>
+                <span class="method-start">881 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasCreateMeiTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">raasCreateMeiTest</span>
+                <span class="method-start">882 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void com.markit.kyc.citrus.RaasCreateMeiTest.raasCreateMeiTest())</span>
+                <span class="method-start">882 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasSearchMeiTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">raasSearchMeiTest</span>
+                <span class="method-start">883 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasCreateMeiTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">883 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.RaasSearchMeiTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void com.markit.kyc.citrus.RaasSearchMeiTest.raasSearchMeiTest())</span>
+                <span class="method-start">883 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">884 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.SubscriberSubscribeTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">subscriberServiceTest</span>
+                <span class="method-start">884 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">springTestContextAfterTestClass</span>
+                <span class="method-start">885 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-method after">
+                <span class="method-name">springTestContextAfterTestMethod(public void com.markit.kyc.citrus.SubscriberSubscribeTest.subscriberServiceTest())</span>
+                <span class="method-start">885 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.markit.kyc.citrus.BatchMatchEntityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">afterSuite(org.testng.TestRunner@4df5bcb4)</span>
+                <span class="method-start">927 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

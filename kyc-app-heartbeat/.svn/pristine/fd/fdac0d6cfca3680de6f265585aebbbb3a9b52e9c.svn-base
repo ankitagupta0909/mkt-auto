@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+	<testcase name="SearchEntityByMEITest">
+		<meta-info>
+			<author>Ankita Gupta</author>
+			<creationdate>2016-05-26</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Ankita Gupta</last-updated-by>
+			<last-updated-on>2016-05-26T00:00:00</last-updated-on>
+		</meta-info>
+
+	
+		<actions>
+        	<create-variables>
+			<variable name="param" value="client_credentials"></variable>
+		<variable name="companyRequest" value="/oauth/token"></variable>
+		<variable name="searchMeiMessage" value="grant_type=${param}"></variable>
+				
+			</create-variables>
+		   			
+		   	<send endpoint="oauthToken">
+			<message>
+					<data>${searchMeiMessage}</data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri"	value="${kycHost1}${companyRequest}" />
+				</header>
+			</send>
+		
+    <!-- Verify correct reply -->
+    
+			<receive endpoint="oauthToken">
+			    <message type="json" validator="groovyJsonMessageValidator">
+			        <validate>
+			            <script type="groovy">
+			                <![CDATA[
+            					context.setVariable("access_token", json.access_token)
+            					context.setVariable("token_type", json.token_type)
+            					assert json.scope=="data"
+ 			                ]]>
+			            </script>
+			        </validate>
+			    </message>
+			</receive>
+             <echo>
+				<message>${citrus.test.name}: Token ${access_token} ${token_type}</message>
+			</echo>
+		<create-variables>
+		<variable name="authTok" value="citrus:concat(${token_type} ,${access_token})"></variable>
+		<variable name="countryName" value="United States"></variable>
+		</create-variables>
+
+        <sql datasource="dataSource">
+				<statement>select * from v_entity_screener 
+				            where entity_name= '${legalName}' 
+                            and cntry_corp_formation = '${countryName}' 
+                            and subscriber_id=${subscriberId}
+				</statement>
+				<extract column="MEI" variable="${mei}"/>			
+			</sql>
+			
+			
+            <!-- Set dependent variables -->			
+		<create-variables>
+		<variable name="companyRequest" value="/data-api/entities/${mei}"></variable>
+		</create-variables>
+		   			
+		   	<send endpoint="pegaSearchMei">
+		  	<message><data></data>
+					<!-- <data>Authorization=Bearer a0cb21a8-be12-4ae1-87b4-d70048d7cc08</data> -->
+				</message> 
+			<header>
+					<element name="citrus_endpoint_uri"	value="${kycHost1}${companyRequest}" />
+					<!-- <element name="Authorization"	value="Bearer a0cb21a8-be12-4ae1-87b4-d70048d7cc08" /> -->
+					<element name="Authorization"	value="${authTok}" />
+			</header>
+			</send>
+		<sleep seconds="25"/>
+    <!-- Verify correct reply -->
+    
+			<receive endpoint="pegaSearchMei">
+			    <message type="json" validator="groovyJsonMessageValidator">
+			        <validate>
+			            <script type="groovy">
+			           <![CDATA[
+			             context.setVariable("totalRowCount",json.totalRowCount)
+			             context.setVariable("name", json.rows[0].legalName)
+			             context.setVariable("countryCode", json.rows[0].countryCode)
+			             context.setVariable("subscriptionLevel", json.rows[0].subscriptionLevel)
+			             context.setVariable("refreshCycle", json.rows[0].refreshCycle)
+			             context.setVariable("bookingJurisdiction", json.rows[0].bookingJurisdiction)
+			             context.setVariable("meiApi",json.rows[0].mei)
+			             context.setVariable("entTypeApi",json.rows[0].entityType)
+			             ]]>
+            		 </script>
+			        </validate>
+			    </message>
+			</receive>
+
+        
+			<sql datasource="dataSource">
+				<statement>select * from v_entity_screener 
+				            where mei= '${mei}' 
+                            and cntry_corp_formation = '${countryName}' 
+                            and subscriber_id=${subscriberId}
+				</statement>
+				<validate column="ENTITY_NAME" value="${name}"/>
+			<!-- 	<validate column="SERVICE_LEVEL" value="${subscriptionLevel}"/>	 -->
+				<validate column="MEI" value="${meiApi}"/>
+				<validate column="ENTITY_TYPE" value="${entTypeApi}"/>
+				<extract column="ENTITY_ID" variable="${entityId}"/>								
+			</sql>
+			
+			
+				<sql datasource="dataSource">
+				<statement>select subscription_term 
+				           from v_entity_subscription 
+				           where entity_id=${entityId} 
+				           and subscriber_id=${subscriberId}
+				</statement>
+				<validate column="SUBSCRIPTION_TERM" value="${refreshCycle}"/>
+				</sql>
+						
+			   <sql datasource="dataSource">
+				  <statement>select code from ref_country 
+				             where name = 
+				             (select cntry_corp_formation 
+				             from v_entity_screener 
+				             where entity_id=${entityId} 
+				             and subscriber_id=${subscriberId})
+				  </statement>
+				<validate column="CODE" value="${countryCode}"/>
+				</sql>
+	
+						
+               <sql datasource="dataSource">
+				  <statement>select subscription_bkjurname as BJ
+				             from v_entity_subscription 
+				             where entity_id=${entityId} 
+				             and subscriber_id=${subscriberId}
+				  </statement>
+				<extract column="BJ" variable="${databaseBJ}"/>
+				</sql>
+						
+			<action reference="compareBukJur"/>
+				</actions>
+	</testcase>
+
+</spring:beans>
+			
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

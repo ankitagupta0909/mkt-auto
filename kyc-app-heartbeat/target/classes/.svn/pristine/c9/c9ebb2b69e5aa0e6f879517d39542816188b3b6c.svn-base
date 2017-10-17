@@ -1,0 +1,21 @@
+<ApplicationDefinition>
+  <signOnURL>/mcs-login</signOnURL>
+  <signOffURL>/logout</signOffURL>
+  <keepAliveURL>/mcs</keepAliveURL>
+  <showSearch>true</showSearch>
+  <m_hideFooter>true</m_hideFooter>
+  <NavigationGroupList>
+    <NavigationGroup>
+      <label>Dashboard</label>
+      <value>Default</value>
+      <module>Dashboard</module>
+      <location>/</location>
+    </NavigationGroup>
+	<NavigationGroup>
+      <label>Counterparty Manager</label>
+      <value>mcpm</value>
+      <module>mcpm</module>
+      <location>https://ufeqa.markit.com/home/link/MDE.MDE.Welcome</location>
+    </NavigationGroup>
+  </NavigationGroupList>
+</ApplicationDefinition>

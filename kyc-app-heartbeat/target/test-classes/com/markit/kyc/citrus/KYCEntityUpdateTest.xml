@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:beans="http://www.springframework.org/schema/beans"
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+
+
+<!-- <bean id="plainTextMessageValidator" class="com.consol.citrus.validation.text.PlainTextMessageValidator"/> -->
+	<testcase name="KYCEntityUpdateTest">
+	<meta-info>
+			<author>Monika Maurya</author>
+			<creationdate>2015-12-17</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Monika Maurya</last-updated-by>
+			<last-updated-on>2015-12-17T00:00:00</last-updated-on>
+		</meta-info>
+
+		
+		<actions>
+            
+            <!-- Set dependent variables -->			
+		<create-variables>
+			<variable name="entityUpdate" value="/v1/companies/${mcpmCompanyId}/entities/${mcpmEntityId}"></variable>
+			<variable name="entityUpdateMsg" value="legalName=${mcpmLegalName}&amp;country=${mcpmCountry}&amp;deleted=${blankValue}&amp;mei=${mcpmMEI}&amp;lei=${mcpmLEI}&amp;entityType=${mcpmEntityType}&amp;entitySubType=${mcpmEntitySubType}&amp;entityStatus=${mcpmEntityStatus}&amp;clientIdentifier=${mcpmClientIdentifier}&amp;isInstitutional=${blankValue}&amp;usTin=${mcpmUSTin}&amp;usGiin=${mcpmUSGiin}&amp;foreignTin=${mcpmForeignTin}&amp;registeredAddressLine1=${mcpmRegisteredAddressLine1}&amp;registeredAddressLine2=${mcpmRegisteredAddressLine2}&amp;registeredAddressCity=${mcpmRegisteredAddressCity}&amp;registeredAddressCountry=${mcpmRegisteredAddressCountry}&amp;registeredAddressState=${mcpmRegisteredAddressState}&amp;registeredAddressZip=${mcpmRegisteredAddressZip}&amp;mailingAddressLine1=${mcpmMailingAddressLine1}&amp;mailingAddressLine2=${mcpmMailingAddressLine2}&amp;mailingAddressCity=${mcpmMailingAddressCity}&amp;mailingAddressCountry=${mcpmMailingAddressCountry}&amp;mailingAddressState=${mcpmMailingAddressState}&amp;mailingAddressZip=${mcpmMailingAddressZip}&amp;contactPhone=${mcpmContactPhone}"></variable>
+		</create-variables>
+		   			
+		   	<send endpoint="MCPMentityUpdate">
+				<message>
+					<data>${entityUpdateMsg}</data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri"	value="${mcpmHost}${entityUpdate}" />
+				</header>
+			</send>
+        
+            <sleep seconds="30"/>
+
+			  <sql datasource="dataSource">
+				<statement>select e.entity_name,e.entity_type,e.cntry_corp_formation,e.entity_sub_type from v_entity_screener_ops o inner join v_entity_screener e on(e.entity_id =o.entity_id)
+                 where o.entity_name='${mcpmLegalName}' and rownum=1</statement>
+			
+				<validate column="CNTRY_CORP_FORMATION" value="${domicile_country_fullname}"/>
+				<validate column="ENTITY_TYPE" value="${mcpmEntityType}"/>
+				<validate column="ENTITY_SUB_TYPE" value="${mcpmEntitySubType}"/>
+				<validate column="ENTITY_NAME" value="${mcpmLegalName}"/>
+				</sql>
+
+		</actions>
+	
+	</testcase>
+
+</spring:beans>

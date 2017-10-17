@@ -1,0 +1,10 @@
+com\markit\kyc\citrus\CleanupTest.class
+com\markit\kyc\citrus\RaasCompletedCaseTest.class
+com\markit\kyc\citrus\RaasCreateIndividualIdTest.class
+com\markit\kyc\citrus\McpmOnboardingTest.class
+com\markit\kyc\citrus\BatchUploadTest.class
+com\markit\kyc\citrus\RaasCreateMeiTest.class
+com\markit\kyc\citrus\RaasSearchMeiTest.class
+com\markit\kyc\citrus\SubscriberSubscribeTest.class
+com\markit\kyc\citrus\RaasCaseAcknowledgeTest.class
+com\markit\kyc\citrus\BatchMatchEntityTest.class

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Cleanup Suite]">
+  <listeners>
+    <listener class-name="com.markit.kyc.citrus.KycSuiteReporter"/>
+    <listener class-name="com.markit.kyc.citrus.KycTestReporter"/>
+  </listeners>
+  <test name="Cleanup Test(failed)">
+    <classes>
+      <class name="com.markit.kyc.citrus.CleanupTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="cleanupTest"/>
+          <include name="afterSuite"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.CleanupTest -->
+    </classes>
+  </test> <!-- Cleanup Test(failed) -->
+</suite> <!-- Failed suite [Cleanup Suite] -->

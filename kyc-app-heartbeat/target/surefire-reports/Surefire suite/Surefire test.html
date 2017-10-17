@@ -1,0 +1,431 @@
+<html>
+<head>
+<title>TestNG:  Surefire test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Surefire test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/10</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Aug 05 13:34:16 EDT 2015</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (17 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchMatchEntityTest.beforeSuite()'><b>beforeSuite</b><br>Test class: com.markit.kyc.citrus.BatchMatchEntityTest<br>Parameters: org.testng.TestRunner@4df5bcb4</td>
+<td><div><pre>java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance(AbstractTestNGSpringContextTests.java:145)
+	at com.consol.citrus.testng.AbstractTestNGCitrusTest.beforeSuite(AbstractTestNGCitrusTest.java:182)
+Caused by: org.springframework.beans.factory.BeanInitializationException: Could not load properties; nested exception is java.io.FileNotFoundException: class path resource [markit/kyc/app-heartbeat/security.properties] cannot be opened because it does not exist
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:151)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:265)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	... 28 more
+Caused by: java.io.FileNotFoundException: class path resource [markit/kyc/app-heartbeat/security.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:143)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:98)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:175)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.mergeProperties(PropertiesLoaderSupport.java:156)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:142)
+	... 38 more
+... Removed 22 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace692743054", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace692743054'><pre>java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance(AbstractTestNGSpringContextTests.java:145)
+	at com.consol.citrus.testng.AbstractTestNGCitrusTest.beforeSuite(AbstractTestNGCitrusTest.java:182)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.springframework.beans.factory.BeanInitializationException: Could not load properties; nested exception is java.io.FileNotFoundException: class path resource [markit/kyc/app-heartbeat/security.properties] cannot be opened because it does not exist
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:151)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:265)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	... 28 more
+Caused by: java.io.FileNotFoundException: class path resource [markit/kyc/app-heartbeat/security.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:143)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:98)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:175)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.mergeProperties(PropertiesLoaderSupport.java:156)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:142)
+	... 38 more
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchMatchEntityTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: com.markit.kyc.citrus.BatchMatchEntityTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.BatchMatchEntityTest@1e730495</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchMatchEntityTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: com.markit.kyc.citrus.BatchMatchEntityTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.BatchMatchEntityTest@1e730495</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchMatchEntityTest.createTestRunners()'><b>createTestRunners</b><br>Test class: com.markit.kyc.citrus.BatchMatchEntityTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.BatchMatchEntityTest@1e730495</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchUploadTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: com.markit.kyc.citrus.BatchUploadTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.BatchUploadTest@5bfa9431</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchUploadTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: com.markit.kyc.citrus.BatchUploadTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.BatchUploadTest@5bfa9431</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchUploadTest.createTestRunners()'><b>createTestRunners</b><br>Test class: com.markit.kyc.citrus.BatchUploadTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.BatchUploadTest@5bfa9431</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.CleanupTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: com.markit.kyc.citrus.CleanupTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.CleanupTest@45018215</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.CleanupTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: com.markit.kyc.citrus.CleanupTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.CleanupTest@45018215</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.CleanupTest.createTestRunners()'><b>createTestRunners</b><br>Test class: com.markit.kyc.citrus.CleanupTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.CleanupTest@45018215</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.McpmOnboardingTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: com.markit.kyc.citrus.McpmOnboardingTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.McpmOnboardingTest@3901d134</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.McpmOnboardingTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: com.markit.kyc.citrus.McpmOnboardingTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.McpmOnboardingTest@3901d134</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.McpmOnboardingTest.createTestRunners()'><b>createTestRunners</b><br>Test class: com.markit.kyc.citrus.McpmOnboardingTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.McpmOnboardingTest@3901d134</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCaseAcknowledgeTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: com.markit.kyc.citrus.RaasCaseAcknowledgeTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCaseAcknowledgeTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: com.markit.kyc.citrus.RaasCaseAcknowledgeTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCaseAcknowledgeTest.createTestRunners()'><b>createTestRunners</b><br>Test class: com.markit.kyc.citrus.RaasCaseAcknowledgeTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCompletedCaseTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: com.markit.kyc.citrus.RaasCompletedCaseTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCompletedCaseTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: com.markit.kyc.citrus.RaasCompletedCaseTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCompletedCaseTest.createTestRunners()'><b>createTestRunners</b><br>Test class: com.markit.kyc.citrus.RaasCompletedCaseTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCreateIndividualIdTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: com.markit.kyc.citrus.RaasCreateIndividualIdTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCreateIndividualIdTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: com.markit.kyc.citrus.RaasCreateIndividualIdTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCreateIndividualIdTest.createTestRunners()'><b>createTestRunners</b><br>Test class: com.markit.kyc.citrus.RaasCreateIndividualIdTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCreateMeiTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: com.markit.kyc.citrus.RaasCreateMeiTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCreateMeiTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: com.markit.kyc.citrus.RaasCreateMeiTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCreateMeiTest.createTestRunners()'><b>createTestRunners</b><br>Test class: com.markit.kyc.citrus.RaasCreateMeiTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasSearchMeiTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: com.markit.kyc.citrus.RaasSearchMeiTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasSearchMeiTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: com.markit.kyc.citrus.RaasSearchMeiTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasSearchMeiTest.createTestRunners()'><b>createTestRunners</b><br>Test class: com.markit.kyc.citrus.RaasSearchMeiTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.SubscriberSubscribeTest.springTestContextBeforeTestClass()'><b>springTestContextBeforeTestClass</b><br>Test class: com.markit.kyc.citrus.SubscriberSubscribeTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.SubscriberSubscribeTest.springTestContextPrepareTestInstance()'><b>springTestContextPrepareTestInstance</b><br>Test class: com.markit.kyc.citrus.SubscriberSubscribeTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.SubscriberSubscribeTest.createTestRunners()'><b>createTestRunners</b><br>Test class: com.markit.kyc.citrus.SubscriberSubscribeTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchMatchEntityTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: com.markit.kyc.citrus.BatchMatchEntityTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.BatchMatchEntityTest@1e730495</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchUploadTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: com.markit.kyc.citrus.BatchUploadTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.BatchUploadTest@5bfa9431</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.CleanupTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: com.markit.kyc.citrus.CleanupTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.CleanupTest@45018215</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.McpmOnboardingTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: com.markit.kyc.citrus.McpmOnboardingTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.McpmOnboardingTest@3901d134</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCaseAcknowledgeTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: com.markit.kyc.citrus.RaasCaseAcknowledgeTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCompletedCaseTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: com.markit.kyc.citrus.RaasCompletedCaseTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCreateIndividualIdTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: com.markit.kyc.citrus.RaasCreateIndividualIdTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCreateMeiTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: com.markit.kyc.citrus.RaasCreateMeiTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasSearchMeiTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: com.markit.kyc.citrus.RaasSearchMeiTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.SubscriberSubscribeTest.springTestContextBeforeTestMethod()'><b>springTestContextBeforeTestMethod</b><br>Test class: com.markit.kyc.citrus.SubscriberSubscribeTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchMatchEntityTest.batchMatchEntityTest()'><b>batchMatchEntityTest</b><br>Test class: com.markit.kyc.citrus.BatchMatchEntityTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.BatchMatchEntityTest@1e730495</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.BatchUploadTest.batchUploadTest()'><b>batchUploadTest</b><br>Test class: com.markit.kyc.citrus.BatchUploadTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.BatchUploadTest@5bfa9431</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.CleanupTest.cleanupTest()'><b>cleanupTest</b><br>Test class: com.markit.kyc.citrus.CleanupTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.CleanupTest@45018215</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.McpmOnboardingTest.mcpmOnboardingTest()'><b>mcpmOnboardingTest</b><br>Test class: com.markit.kyc.citrus.McpmOnboardingTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.McpmOnboardingTest@3901d134</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCaseAcknowledgeTest.raasCaseAcknowledgeTest()'><b>raasCaseAcknowledgeTest</b><br>Test class: com.markit.kyc.citrus.RaasCaseAcknowledgeTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCompletedCaseTest.raasCompletedCaseTest()'><b>raasCompletedCaseTest</b><br>Test class: com.markit.kyc.citrus.RaasCompletedCaseTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCreateIndividualIdTest.raasCreateIndividualIdTest()'><b>raasCreateIndividualIdTest</b><br>Test class: com.markit.kyc.citrus.RaasCreateIndividualIdTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasCreateMeiTest.raasCreateMeiTest()'><b>raasCreateMeiTest</b><br>Test class: com.markit.kyc.citrus.RaasCreateMeiTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.RaasSearchMeiTest.raasSearchMeiTest()'><b>raasSearchMeiTest</b><br>Test class: com.markit.kyc.citrus.RaasSearchMeiTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3</td></tr>
+<tr>
+<td title='com.markit.kyc.citrus.SubscriberSubscribeTest.subscriberServiceTest()'><b>subscriberServiceTest</b><br>Test class: com.markit.kyc.citrus.SubscriberSubscribeTest</td>
+<td></td>
+<td>0</td>
+<td>com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c</td></tr>
+</table><p>
+</body>
+</html>

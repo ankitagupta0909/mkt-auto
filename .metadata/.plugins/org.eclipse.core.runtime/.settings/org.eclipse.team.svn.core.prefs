@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+externalMigrateFromAuthorizationDatabase/isMigrated=true
+migrateFromAuthorizationDatabase/isMigrated=true
+repositories/006f1ceb513100161d71d6f787516a47=006f1ceb513100161d71d6f787516a47;https\://svn.markit.partners/svn/Managed-Services_QA/MS Projects/MCPM/kyc-heartbeat_v5/kyc-app-heartbeat;https\://svn.markit.partners/svn/Managed-Services_QA/MS Projects/MCPM/kyc-heartbeat_v5/kyc-app-heartbeat;branches;tags;trunk;true;8e2cd34a-0922-40f8-8832-e11e90fd4395;https\://svn.markit.partners/svn/Managed-Services_QA;;false;;;0
+repositories/20aacfe9242e00161d71d6f787516a47=20aacfe9242e00161d71d6f787516a47;https\://svn.markit.partners/svn/Managed-Services_QA/MS Projects/MCPM/kyc-heartbeat_v5;https\://svn.markit.partners/svn/Managed-Services_QA/MS Projects/MCPM/kyc-heartbeat_v5;branches;tags;trunk;true;8e2cd34a-0922-40f8-8832-e11e90fd4395;https\://svn.markit.partners/svn/Managed-Services_QA;;false;;;0

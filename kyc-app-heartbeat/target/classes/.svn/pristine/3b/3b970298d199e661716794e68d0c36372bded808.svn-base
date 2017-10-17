@@ -1,0 +1,10 @@
+uxs.userSoftwareComponentId=KYC-reporting-server
+
+uxs.serviceAccount1=reports.account-1@kyc.com
+uxs.servicePassword1=Welcome1!
+
+uxs.serviceAccount2=reports.account-2@kyc.com
+uxs.servicePassword2=Welcome1!
+
+kyc.repository.root.folder=/Reports
+uxs.requestPasswordResetUrl=

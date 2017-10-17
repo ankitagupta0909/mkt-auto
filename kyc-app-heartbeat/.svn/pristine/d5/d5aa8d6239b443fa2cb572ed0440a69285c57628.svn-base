@@ -1,0 +1,92 @@
+#legalName = KYC Monitoring Entity
+project=mcpm
+
+batchUploadEntityUrl=src/data/uploadEntities-UAT.csv
+#UAT variables for Batch upload(PEGA and TASK APIs)
+#legalName = API fund_74
+#internalId = FD_ID_74
+       
+mcpmSubscriberName1 = HSBC Group
+documentId=358310211992566
+#Task creation Test
+#taskMcpmLegalName=17juneAuto_16
+#mcpmCompanyId=30000000015323
+#mcpmEntityId=65000000550008
+
+#KycComp=KYC Services
+#Thunderhead_BS1
+#MCPM_KYC dashboard Test 1
+#KycComp=Thunderhead_SS1
+KycComp=Test_2sep
+
+# MCPM Onboarding Test
+mcpmcountry = USA
+#mcpmEntityId = 65000000020091
+entityType =  Investment Management Company 
+mcpmBookingJurisdiction = United States/United Kingdom
+mcpmSubscriberName2 = KYCTESTPROD1
+incorporationCountry = AQ
+lei = 549300VRIGCZEQOFFK83
+subscriberId=500     
+subscriberId1 = 5974
+subscriberId2 = 99997
+onboardingKey = 1099nn23       
+governmentIDType = 1
+governmentIDValue = 67309516564686500000
+
+
+#####################################################################################################
+# Fuzzy Search Test
+BFCompanylegalName = KYC Search Entity
+BFIndividualFirstName = Kycsearch
+BFIndividualLastName = Individual
+
+# Subscriber Test
+serviceLevel = CORE
+subscriptionLevel = B
+jurisdictions = 201
+refreshCycle = 1
+reportCount = 6
+
+
+
+##########Task APIs#############
+outreachQuesTaskId=4
+docReqTaskId=5
+amlTaskId=8
+wolfTaskId=9
+ownStruTaskId=11
+authSigTaskId=13
+idDetailTaskId=7
+withdrawTaskStateId=4
+countIndAsTaskId=15
+
+#Upload Document TEst
+documentType=Passport
+documentSource=Client
+documentSourceName=abcd
+documentOriginalName=Hydrangeas.jpg
+certifiedTrueCopy=Yes
+certifiedTrueCopyID=1
+internallyConfirmed=Yes
+internallyConfirmedID=1
+documentURL=url
+comments=comments
+
+#Edit doc metadata
+documentType1=Other
+documentSource1=Exchange
+documentSourceName1=abcd_edit
+documentOriginalName1=Hydrangeas.jpg_edit
+certifiedTrueCopy1=No
+certifiedTrueCopyID1=0
+internallyConfirmed1=No
+internallyConfirmedID1=0
+documentURL1=url_edit
+comments1=comments_edit
+
+
+
+
+
+

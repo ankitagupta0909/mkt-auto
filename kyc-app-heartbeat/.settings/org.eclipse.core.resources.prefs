@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/bin=UTF-8
+encoding//src/citrus/java=UTF-8
+encoding//src/citrus/resources=UTF-8
+encoding//src/citrus/resources/qa-config=UTF-8
+encoding//src/citrus/resources/uat-config=UTF-8
+encoding//src/citrus/tests=UTF-8
+encoding//src/data=UTF-8
+encoding//src/main/java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/kyc-config-qa=UTF-8
+encoding//src/main/resources/kyc-config-uat=UTF-8
+encoding/<project>=UTF-8

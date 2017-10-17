@@ -1,0 +1,121 @@
+{
+  "accountNumber" : "482632246646195",
+  "clientID" : "482632246646195",
+  "accountType" : 1,
+  "numberofAccountHolders" : null,
+  "activeStatus" : "1",
+  "withHoldingAgentRole" : null,
+  "accountLocationCountry" : null,
+  "businessUnit" : null,
+  "businessSubunit" : null,
+  "tin" : "",
+  "tinType" : null,
+  "ftin" : null,
+  "finCountry" : null,
+  "dateOfBirth" : null,
+
+
+  "entityName" : "",
+
+
+
+
+
+  "name" : "",
+  "printedNameOfSigner" : "",
+  "businessName" : null,
+  "organizationCountryCode" : "GB",
+  "taxAdress" : "",
+  "taxAdress2" : "",
+  "taxCity" : "",
+  "taxState" : "",
+  "taxPostalCode" : "",
+  "taxCountryCode" : "GB",
+  "mailAdress" : "",
+  "mailAdress2" : "",
+  "mailCity" : "",
+  "mailState" : "",
+  "mailPostalCode" : "",
+  "mailCountryCode" : "",
+  "formType" : "W-8BEN-E 2014 - Onshore",
+  "entityType" : 2,
+  "claimedFatcastatus" : "Reporting Model 1 FFI",
+  "treatyCountryCode" : "GB",
+
+
+  "dateSigned" : "23-Nov-2015 05:00:00",
+
+
+  "documentID" : "79200",
+  "formValidationResultCode" : "45",
+  "formValidationResult" : "Valid",
+  "fatcaStatus" : "FC007",
+  "igaStatus" : 0,
+  "isInQueue" : 0,
+  "queuecode" : "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+
+
+  "formExpirationDate" : "31-Dec-2018 05:00:00",
+
+
+
+  "validationSource" : "MD3",
+  "beneficialOwnerID" : "0",
+
+
+  "dateValidated" : "23-Nov-2015 07:23:37",
+
+
+  "validationComments" : null,
+  "exemptPayeeCode" : null,
+  "exemptionFATCAWithholdingCode" : null,
+  "eciIncomeStatement" : null,
+  "foreignGovernmentcountry" : null,
+  "giin" : "NXUTG8.00382.ME.826",
+  "giinStatus" : "Verified",
+
+
+  "giinStatusDate" : "23-Nov-2016 05:00:00",
+
+
+  "sponsoringEntityName" : "",
+  "formationDate" : null,
+  "liquidationOrBankruptcyDate" : null,
+  "irsDeterminationLetterDate" : null,
+  "exchangeName" : null,
+  "affiliateName" : "",
+  "nonreportingIGACountry" : null,
+  "nonreportingIGAEntityType" : null,
+  "reportingModel2GIIN" : null,
+  
+
+"branchName" : "",
+  "branchAddressLine1" : "",
+  "branchAddressLine2" : "",
+  "branchAddressCity" : "",
+  "branchAddressPostalCode" : "",
+  "branchAddressState" : "",
+  "branchAddressCountry" : null,
+  "branchGiin" : "",
+
+
+  "vpqDocumentType" : null,
+  "vpqDocumentId" : null,
+  "vpqDocumentExpirationDate" : null,
+  "vpqDocumentReviewDate" : null,
+  "vpqDocumentReceiptDate" : null,
+  "vpqQueueComments" : null,
+  "spArticle" : "",
+
+
+  "spRate" : 0.0,
+
+
+  "spIncomeType" : "",
+  "spExplanation" : "",
+  "whDocumentStatusCode" : "DST01",
+  "whPayeeStatusCode" : "PST03",
+  "whPayeeTypeCode" : "PTT02",
+  "whTreatyEligibleCode" : "TET01",
+  "cicCode" : null
+}

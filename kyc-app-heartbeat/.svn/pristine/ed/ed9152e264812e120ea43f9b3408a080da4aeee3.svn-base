@@ -1,0 +1,27 @@
+# Internal MCPM API
+kyc.api.mcpm.user.info.method=GET
+kyc.api.mcpm.user.info.uri=/users/{loginName}
+
+kyc.api.mcpm.user.add.method=POST
+kyc.api.mcpm.user.add.uri=/users
+
+# Training Video URLs
+kyc.mcpm.dashboard.training.video.url.0=https://markit.webex.com/markit/lsr.php?RCID=717f564443842f92ea5d6276c3493de5
+kyc.mcpm.dashboard.training.video.url.1=https://markit.webex.com/markit/lsr.php?RCID=045ad85326e529fd337c87e7c2658d6c
+kyc.mcpm.dashboard.training.video.url.2=https://markit.webex.com/markit/lsr.php?RCID=490a0a1fd796a164daf736f28d6fdf03
+kyc.mcpm.dashboard.training.video.url.3=https://markit.webex.com/markit/lsr.php?RCID=9be27db4eaff28d81c16d82255b07664
+kyc.mcpm.dashboard.training.video.url.4=https://markit.webex.com/markit/lsr.php?RCID=c9b54c5fa5c395822af063c2e8f6b77b
+kyc.mcpm.dashboard.training.video.url.5=https://markit.webex.com/markit/lsr.php?RCID=28184b2d51f2c5015525907c639aef97
+
+# Swagger
+swagger.api.info.title=KYC-MCPM Dashboard API
+swagger.api.info.description=REST API for the KYC-MCPM Dashboard
+swagger.api.info.termsOfServiceUrl=
+swagger.api.info.contact=
+swagger.api.info.license=
+swagger.api.info.licenseUrl=
+
+
+#api.mcpmapplication.url=https://mc.stage.markit.com/mc-web/mcpm
+
+api.mcpmapplication.url=https://mc.uat.markit.com/mc-web/mcpm

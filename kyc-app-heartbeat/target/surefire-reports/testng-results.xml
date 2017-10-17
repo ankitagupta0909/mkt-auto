@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[setKycTestLogger]]>
+    </line>
+    <line>
+      <![CDATA[setMailClient]]>
+    </line>
+    <line>
+      <![CDATA[Suit Logs]]>
+    </line>
+  </reporter-output>
+  <suite name="Suite" duration-ms="27513" started-at="2016-06-14T14:00:51Z" finished-at="2016-06-14T14:01:19Z">
+    <groups>
+    </groups>
+    <test name="Batch Upload Fund test" duration-ms="27513" started-at="2016-06-14T14:00:51Z" finished-at="2016-06-14T14:01:19Z">
+      <class name="com.markit.kyc.citrus.TaskBatchUploadFundTest">
+        <test-method status="PASS" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@1df82230]" name="beforeSuite" is-config="true" duration-ms="7332" started-at="2016-06-14T19:30:44Z" finished-at="2016-06-14T19:30:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@39c96e48]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[setKycTestLogger]]>
+            </line>
+            <line>
+              <![CDATA[setMailClient]]>
+            </line>
+            <line>
+              <![CDATA[Suit Logs]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@1df82230]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="1" started-at="2016-06-14T19:30:51Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2016-06-14T19:30:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@1df82230]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2016-06-14T19:30:51Z" finished-at="2016-06-14T19:30:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@1df82230]" name="createTestRunners" is-config="true" duration-ms="2" started-at="2016-06-14T19:30:51Z" finished-at="2016-06-14T19:30:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@1df82230]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2016-06-14T19:30:51Z" finished-at="2016-06-14T19:30:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.TaskBatchUploadFundTest.batchUploadfundTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="batchUploadfundTest()[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@1df82230]" name="batchUploadfundTest" duration-ms="27498" started-at="2016-06-14T19:30:51Z" finished-at="2016-06-14T19:31:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- batchUploadfundTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@1df82230]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2016-06-14T19:31:19Z" finished-at="2016-06-14T19:31:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.TaskBatchUploadFundTest.batchUploadfundTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@1df82230]" name="springTestContextAfterTestClass" is-config="true" duration-ms="1" started-at="2016-06-14T19:31:19Z" finished-at="2016-06-14T19:31:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+        <test-method status="PASS" signature="afterSuite(org.testng.ITestContext)[pri:0, instance:com.markit.kyc.citrus.TaskBatchUploadFundTest@1df82230]" name="afterSuite" is-config="true" duration-ms="17" started-at="2016-06-14T19:31:19Z" finished-at="2016-06-14T19:31:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@39c96e48]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.markit.kyc.citrus.TaskBatchUploadFundTest -->
+    </test> <!-- Batch Upload Fund test -->
+  </suite> <!-- Suite -->
+</testng-results>

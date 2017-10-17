@@ -1,0 +1,17 @@
+uxs.userSoftwareComponentId=Ops-Portal
+uxs.termsOfUseProduct=COBS
+
+uxs.passwordResetUrl=url
+
+#uxs.user = kyc_heartbeat_test@markit.com
+#uxs.password = Qwerty_2016
+
+uxs.user = monika.maurya@markit.com
+uxs.password = Welcome22#
+#uxs.user = vamshi.kher@markit.com
+#uxs.password = Welcome@30
+#uxs.user = garima.bedi@markit.com
+#uxs.password = Welcome@201
+
+
+uxs.useToken=true

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+	<testcase name="Ky3pAuthTokenGeneration">
+		<meta-info>
+			<author>Ankita Gupta</author>
+			<creationdate>2017-02-16</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Ankita Gupta</last-updated-by>
+			<last-updated-on>2017-02-16T00:00:00</last-updated-on>
+		</meta-info>
+
+
+		<actions>
+
+
+			<!-- Set dependent variables -->
+			<create-variables>
+				<variable name="param" value="client_credentials"></variable>
+				<variable name="companyRequest" value="/oauth/token"></variable>
+				<variable name="genTokenMessage" value="grant_type=${param}"></variable>
+
+			</create-variables>
+
+			<send endpoint="ky3PAuthToken">
+				<message>
+					<data>${genTokenMessage}</data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri" value="https://qa.ky3p.markit.com/data/oauth/token" />
+				</header>
+			</send>
+
+			<!-- Verify correct reply -->
+
+			<receive endpoint="ky3PAuthToken">
+				<message type="json" validator="groovyJsonMessageValidator">
+					<validate>
+						<script type="groovy">
+			                <![CDATA[
+            					context.setVariable("access_token", json.access_token)
+            					context.setVariable("token_type", json.token_type)
+ 			                ]]>
+			            </script>
+					</validate>
+				</message>
+			</receive>
+			<echo>
+				<message>${citrus.test.name}: Token ${access_token} ${token_type}</message>
+			</echo>
+			<create-variables>
+				<variable name="authTok"
+					value="citrus:concat(${token_type} ,${access_token})"></variable>
+			</create-variables>
+
+
+			<send endpoint="ky3PGetUser">
+				<message>
+					<data></data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri" value="https://qa.ky3p.markit.com/data/service/v1/company/user" />
+					<element name="Authorization"	value="${authTok}" />
+				</header>
+			</send>
+			
+			<receive endpoint="ky3PGetUser">
+				<message type="json" validator="groovyJsonMessageValidator">
+					<validate>
+						<script type="groovy">
+			                <![CDATA[
+            					context.setVariable("rows",json.rows)
+            					context.setVariable("totalRowCount",json.totalRowCount)
+            					context.setVariable("response_payload", receivedMessage.getPayload(String.class))
+ 			                ]]>
+			            </script>
+					</validate>
+				</message>
+			</receive>
+			
+			<echo>
+				<message>${citrus.test.name}: ${rows}</message>
+			</echo>
+			
+			<action reference="writeResponse"></action>
+		</actions>
+	</testcase>
+
+</spring:beans>

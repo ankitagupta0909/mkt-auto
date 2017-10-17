@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+
+	<include resource="markit/kyc/common/logback-console.xml"/>
+	<include resource="markit/kyc/common/logback-instrumentation.xml"/>
+	<include resource="markit/kyc/common/logback-web.xml"/>
+
+	<!-- Application Loggers -->
+	<logger name="com.markit" level="INFO" />
+
+	<!-- 3rdparty Loggers -->
+	<logger name="org.springframework" level="INFO" />
+	
+	<!-- 3rdparty Loggers -->
+	<logger name="com.marketxs.userxs" level="INFO" />
+	
+	<logger name="org.thymeleaf" level="WARN" />
+	
+	<!-- Root Logger -->
+	<root level="INFO">
+		<!-- CONSOLE appender should only be used on developers' machines -->
+		<!-- <appender-ref ref="CONSOLE" /> -->
+		<appender-ref ref="SERVER_LOG_FILE" />
+	</root>
+
+</included>

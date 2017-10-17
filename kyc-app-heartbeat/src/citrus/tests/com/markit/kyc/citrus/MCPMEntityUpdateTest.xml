@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:beans="http://www.springframework.org/schema/beans"
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+
+
+<!-- <bean id="plainTextMessageValidator" class="com.consol.citrus.validation.text.PlainTextMessageValidator"/> -->
+	<testcase name="MCPMEntityUpdateTest">
+	<meta-info>
+			<author>Ankita Gupta</author>
+			<creationdate>2015-12-09</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Ankita Gupta</last-updated-by>
+			<last-updated-on>2015-12-09T00:00:00</last-updated-on>
+		</meta-info>
+
+		<actions>
+		
+<!-- 		  <sql datasource="dataSource">
+				<statement>select * 
+				           from mc_entities 
+				           where name='${mcpmLegalName}'
+				</statement>
+				<validate column="name" value="${mcpmLegalName}"/>
+				<extract column="entityid" variable="${mcpmentityId}"/>
+	      </sql> -->
+  
+            <!-- Set dependent variables -->			
+		<create-variables>
+			<variable name="entityUpdate" value="/v1/companies/${mcpmCompanyId}/entities/${mcpmEntityId}"></variable>
+			<variable name="entityUpdateMsg" value="legalName=${mcpmLegalName}&amp;country=${mcpmCountry}&amp;deleted=${blankValue}&amp;mei=${mcpmMEI}&amp;lei=${mcpmLEI}&amp;entityType=${mcpmEntityType}&amp;entitySubType=${mcpmEntitySubType}&amp;entityStatus=${mcpmEntityStatus}&amp;clientIdentifier=${mcpmClientIdentifier}&amp;isInstitutional=${blankValue}&amp;usTin=${mcpmUSTin}&amp;usGiin=${mcpmUSGiin}&amp;foreignTin=${mcpmForeignTin}&amp;registeredAddressLine1=${mcpmRegisteredAddressLine1}&amp;registeredAddressLine2=${mcpmRegisteredAddressLine2}&amp;registeredAddressCity=${mcpmRegisteredAddressCity}&amp;registeredAddressCountry=${mcpmRegisteredAddressCountry}&amp;registeredAddressState=${mcpmRegisteredAddressState}&amp;registeredAddressZip=${mcpmRegisteredAddressZip}&amp;mailingAddressLine1=${mcpmMailingAddressLine1}&amp;mailingAddressLine2=${mcpmMailingAddressLine2}&amp;mailingAddressCity=${mcpmMailingAddressCity}&amp;mailingAddressCountry=${mcpmMailingAddressCountry}&amp;mailingAddressState=${mcpmMailingAddressState}&amp;mailingAddressZip=${mcpmMailingAddressZip}&amp;contactPhone=${mcpmContactPhone}"></variable>
+		</create-variables>
+		   			
+		   	<send endpoint="MCPMentityUpdate">
+				<message>
+					<data>${entityUpdateMsg}</data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri"	value="${mcpmHost}${entityUpdate}" />
+				</header>
+			</send>
+        
+            <sleep seconds="30"/>
+
+			  <sql datasource="dataSource">
+				<statement>select e.name,t.name,* 
+				           from mc_addresses a inner join mc_lu_address_type t 
+				           on (a.addr_type=t.id) 
+						   inner join mc_entities e 
+						   on (e.entityid=a.entityid) 
+						   where e.entityid=${mcpmEntityId}
+				</statement>
+				
+				<!-- <validate column="lei_name" value="${mcpmLEI}"/> -->
+				
+				<validate column="giin" value="${mcpmUSGiin}"/>
+				<validate column="domicile_country_cd" value="${domicile_country_fullname}"/>
+				<!-- registered address -->
+				<validate column="details_addr1" value="${mcpmRegisteredAddressLine1}"/>
+				<validate column="details_addr2" value="${mcpmRegisteredAddressLine2}"/>
+				<validate column="details_city" value="${mcpmRegisteredAddressCity}"/>
+				<validate column="details_state" value="${mcpmRegisteredAddressState}"/>
+				<validate column="details_postcode_zip" value="${mcpmRegisteredAddressZip}"/>
+				<validate column="details_country" value="${domicile_country_fullname}"/>
+				
+				<validate column="tin" value="${mcpmUSTin}"/>
+				<validate column="tin_foreign" value="${mcpmForeignTin}"/>
+				<validate column="deleted" value="${blankValue}"/>
+				<validate column="is_inst" value="${blankValue}"/>
+
+				<!-- mailing address -->
+                <validate column="addr1" value="${mcpmMailingAddressLine1}"/>
+				<validate column="addr2" value="${mcpmMailingAddressLine2}"/>
+				<validate column="city" value="${mcpmMailingAddressCity}"/>
+				<validate column="country" value="${domicile_country_fullname}"/>
+				<validate column="state" value="${mcpmMailingAddressState}"/>
+				<validate column="zip" value="${mcpmMailingAddressZip}"/>
+				                
+				<!-- <validate column="mei" value="${mcpmMEI}"/>
+				<validate column="moniker_name" value="${mcpmClientIdentifier}"/> -->
+				
+			</sql>
+
+			  <sql datasource="dataSource">
+				<statement>select e.name,l.name as legaltype,s.name as subtype 
+				           from mc_entities e inner join mc_lu_legal_type l 
+				           on (e.legal_typeid=l.id) 
+						   inner join mc_lu_entity_subtype s 
+						   on  (e.entity_subtype_id=s.entity_subtype_id)
+						   where e.entityid=${mcpmEntityId}
+				</statement>
+				
+				<validate column="legaltype" value="${mcpmEntityType}"/>
+				<validate column="subtype" value="${mcpmEntitySubType}"/>
+						
+			</sql>
+
+		</actions>
+	
+	</testcase>
+
+</spring:beans>

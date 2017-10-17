@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+        
+	<bean id="testResultRepository" class="com.markit.kyc.commons.repository.GenericRepositoryProxyFactory">
+    	<property name="repositoryInterface" value="com.markit.kyc.citrus.repository.TestResultRepository" />
+    </bean>
+
+	<bean id="testResultRowMapper" class="com.markit.kyc.citrus.repository.mapper.TestResultRowMapper">
+    </bean>
+
+	<bean id="testResultParameterMapper" class="com.markit.kyc.citrus.repository.mapper.TestResultParameterMapper">
+<!-- 		<property name="idGenerator" ref="uniqueIdGenerator"/> -->
+	</bean>    
+	
+	<bean id="TestResultRepository#create" class="java.lang.String">
+		<constructor-arg><value>
+INSERT INTO integration_test 
+(
+    integration_test_id
+   ,integration_test_suite_id
+   ,name
+   ,start_dt
+   ,execution_time
+   ,status
+) VALUES (
+    :testId
+   ,:suiteId
+   ,:name
+   ,:startDt
+   ,:executionTime
+   ,:status
+)		
+		</value></constructor-arg>
+	</bean>
+
+	<bean id="TestResultRepository#read" class="java.lang.String">
+		<constructor-arg><value>
+SELECT 
+    integration_test_id
+   ,integration_test_suite_id
+   ,name
+   ,start_dt
+   ,execution_time
+   ,status
+FROM 
+	integration_test
+WHERE testId = :testId
+		</value></constructor-arg>
+	</bean>
+
+	<bean id="TestResultRepository#findBySuite" class="java.lang.String">
+		<constructor-arg><value>
+SELECT 
+    integration_test_id
+   ,integration_test_suite_id
+   ,name
+   ,start_dt
+   ,execution_time
+   ,status
+FROM 
+	integration_test
+WHERE suiteId = :suiteId
+		</value></constructor-arg>
+	</bean>
+
+	<bean id="TestResultRepository#findByDate" class="java.lang.String">
+		<constructor-arg><value>
+SELECT 
+    integration_test_id
+   ,integration_test_suite_id
+   ,name
+   ,start_dt
+   ,execution_time
+   ,status
+FROM 
+	integration_test
+WHERE TO_DATE(startDt) = TO_DATE(:date)
+		</value></constructor-arg>
+	</bean>
+</beans>

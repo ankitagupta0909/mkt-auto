@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+
+	<property name="CONSOLE_PATTERN" value="%d %-5level [%8.8thread] [%logger{14}] %marker:%msg%n" />
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+		<encoder>
+			<pattern>${CONSOLE_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+</included>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:citrus="http://www.citrusframework.org/schema/config"
+    xmlns:citrus-http="http://www.citrusframework.org/schema/http/config"
+    xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.citrusframework.org/schema/config http://www.citrusframework.org/schema/config/citrus-config.xsd
+		http://www.citrusframework.org/schema/http/config http://www.citrusframework.org/schema/http/config/citrus-http-config.xsd">
+       
+       
+       	<citrus-http:client id="pegaClientAcknowledgeRequest"
+		request-url="${api.application.url}/pega-api"
+        request-method="PUT"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+        
+       <citrus-http:client id="pegaClientCreateMei" 
+		request-url="${api.application.url}/pega-api/cases"
+        request-method="POST"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+      
+       <citrus-http:client id="pegaUploadDocument" 
+		request-url="${api.application.url}/pega-api/cases"
+        request-method="POST"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+        
+         <citrus-http:client id="pegaEditDocument" 
+		request-url="${api.application.url}/pega-api/cases"
+        request-method="PUT"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+        
+        
+       <citrus-http:client id="pegaClientCompletedCase"
+		request-url="${api.application.url}/pega-api/cases"
+        request-method="POST"
+        content-type="application/json"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+        
+        <citrus-http:client id="pegaClientRejectedCase"
+		request-url="${api.application.url}/pega-api/cases"
+        request-method="POST"
+        content-type="application/json"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+        
+        
+<!-- Task Creation -->
+     <citrus-http:client id="createAMLRequestTask"
+		request-url="${api.application.url}/pega-api/cases"
+        request-method="POST"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+  
+  
+  
+        <citrus-http:client id="withdrawTask"
+		request-url="${api.application.url}/pega-api/cases"
+        request-method="PUT"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+        
+        
+        <citrus-http:client id="pegaSearchMei"
+		request-url="${api.application.url.data}/data-api"
+        request-method="GET"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+        
+       <citrus-http:client id="oauthToken"
+		request-url="${api.application.url.data}/oauth/token"
+        request-method="POST"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+        
+        
+       <citrus-http:client id="raasClientAcknowledgeRequest"
+		request-url="${api.application.url}/raas-api"
+        request-method="PUT"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+	
+	<citrus-http:client id="raasClientCreateMei"
+		request-url="${api.application.url}/raas-api/cases"
+        request-method="POST"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+
+	<citrus-http:client id="raasClientSearchCompany"
+		request-url="${api.application.url}/raas-api/cases"
+        request-method="GET"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+
+	<citrus-http:client id="raasClientSearchIndividual"
+		request-url="${api.application.url}/raas-api/cases"
+        request-method="GET"
+        content-type="application/x-www-form-urlencoded"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+
+	<citrus-http:client id="raasClientCompletedCase"
+		request-url="${api.application.url}/raas-api/cases"
+        request-method="POST"
+        content-type="text/xml"
+        rest-template="customizedRestTemplate"
+        timeout="60000"
+        interceptors="httpClientInterceptors" />
+
+</beans>

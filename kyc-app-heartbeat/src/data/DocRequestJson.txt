@@ -1,0 +1,5 @@
+docRequestJson={      "root":[         
+{            "ATTR_NAME":"Task.documentRequest.documentType",          "ATTR_INDEX":"0",          "ATTR_VALUE":"32"       },       
+{            "ATTR_NAME":"Task.documentRequest.isCertifiedTrueCopy",          "ATTR_INDEX":"0",          "ATTR_VALUE":"1"       },    
+   {            "ATTR_NAME":"Task.documentRequest.documentType",          "ATTR_INDEX":"1",          "ATTR_VALUE":"4"       },      
+ {            "ATTR_NAME":"Task.documentRequest.isCertifiedTrueCopy",          "ATTR_INDEX":"1",          "ATTR_VALUE":"0"       }    ] }

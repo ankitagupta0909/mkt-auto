@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+	<testcase name="SearchByLegalNameCCTest">
+		<meta-info>
+			<author>Ankita Gupta</author>
+			<creationdate>2015-11-16</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Ankita Gupta</last-updated-by>
+			<last-updated-on>2015-11-16T00:00:00</last-updated-on>
+		</meta-info>
+
+	
+		<actions>
+        	<create-variables>
+			<variable name="param" value="client_credentials"></variable>
+		<variable name="companyRequest" value="/oauth/token"></variable>
+		<variable name="searchMeiMessage" value="grant_type=${param}"></variable>
+				
+			</create-variables>
+		   			
+		   	<send endpoint="oauthToken">
+			<message>
+					<data>${searchMeiMessage}</data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri"	value="${kycHost1}${companyRequest}" />
+				</header>
+			</send>
+		
+    <!-- Verify correct reply -->
+    
+			<receive endpoint="oauthToken">
+			    <message type="json" validator="groovyJsonMessageValidator">
+			        <validate>
+			            <script type="groovy">
+			                <![CDATA[
+            					context.setVariable("access_token", json.access_token)
+            					context.setVariable("token_type", json.token_type)
+            					assert json.scope=="data"
+ 			                ]]>
+			            </script>
+			        </validate>
+			    </message>
+			</receive>
+             <echo>
+				<message>${citrus.test.name}: Token ${access_token} ${token_type}</message>
+			</echo>
+		<create-variables>
+		<variable name="authTok" value="citrus:concat(${token_type} ,${access_token})"></variable>
+		<variable name="entNameSearch" value="AutoEntDontUse"></variable>
+		<variable name="countryCode" value="US"></variable>
+		<variable name="countryName" value="United States"></variable>
+		<!-- value="TestEntity 1" -->
+		</create-variables>
+
+            <!-- Set dependent variables -->			
+		<create-variables>
+		<variable name="companyRequest" value="/data-api/entities?legalName=${entNameSearch}&amp;countryCode=${countryCode}"></variable>
+		</create-variables>
+		   			
+		   	<send endpoint="pegaSearchMei">
+		  	<message><data></data>
+					<!-- <data>Authorization=Bearer a0cb21a8-be12-4ae1-87b4-d70048d7cc08</data> -->
+				</message> 
+			<header>
+					<element name="citrus_endpoint_uri"	value="${kycHost1}${companyRequest}" />
+					<!-- <element name="Authorization"	value="Bearer a0cb21a8-be12-4ae1-87b4-d70048d7cc08" /> -->
+					<element name="Authorization"	value="${authTok}" />
+			</header>
+			</send>
+		<sleep seconds="25"/>
+    <!-- Verify correct reply -->
+    
+			<receive endpoint="pegaSearchMei">
+			    <message type="json" validator="groovyJsonMessageValidator">
+			        <validate>
+			            <script type="groovy">
+			           <![CDATA[
+			             context.setVariable("totalRowCount",json.totalRowCount)
+			             context.setVariable("name", json.rows[0].legalName)
+			             context.setVariable("countryCode", json.rows[0].countryCode)
+			             context.setVariable("subscriptionLevel", json.rows[0].subscriptionLevel)
+			             context.setVariable("refreshCycle", json.rows[0].refreshCycle)
+			             context.setVariable("bookingJurisdiction", json.rows[0].bookingJurisdiction)
+			             context.setVariable("reqProfileDelDate",json.rows[0].requestedProfileDeliveryDate)
+			             ]]>
+            		 </script>
+			        </validate>
+			    </message>
+			</receive>
+
+<!--         <conditional expression="${mei} = null">
+          	<sql datasource="dataSource">
+				<statement>select * from v_entity_screener 
+				            where entity_name= '${name}' 
+                            and cntry_corp_formation = 'United States' 
+                            and subscriber_id=${subscriberId}
+				</statement>
+				<validate column="ENTITY_NAME" value="${name}"/>
+				<extract column="ENTITY_ID" variable="${entityId}"/>
+				<validate column="SERVICE_LEVEL" value="${subscriptionLevel}"/>
+			</sql>
+        </conditional> -->
+        
+			<sql datasource="dataSource">
+				<statement>select * from v_entity_screener 
+				            where entity_name= '${name}' 
+                            and cntry_corp_formation = '${countryName}' 
+                            and subscriber_id=${subscriberId}
+				</statement>
+				<validate column="ENTITY_NAME" value="${name}"/>
+				<validate column="SERVICE_LEVEL" value="${subscriptionLevel}"/>
+				<extract column="ENTITY_ID" variable="${entityId}"/>				
+			</sql>
+			
+			
+				<sql datasource="dataSource">
+				<statement>select subscription_term 
+				           from v_entity_subscription 
+				           where entity_id=${entityId} 
+				           and subscriber_id=${subscriberId}
+				</statement>
+				<validate column="SUBSCRIPTION_TERM" value="${refreshCycle}"/>
+				</sql>
+						
+			   <sql datasource="dataSource">
+				  <statement>select code from ref_country 
+				             where name = 
+				             (select cntry_corp_formation 
+				             from v_entity_screener 
+				             where entity_id=${entityId} 
+				             and subscriber_id=${subscriberId})
+				  </statement>
+				<validate column="CODE" value="${countryCode}"/>
+				</sql>
+	
+			   <sql datasource="dataSource">
+				 <statement>select to_char((select REQ_PROFILE_DELIVERY_DT from v_entity_screener 
+                 where entity_id=${entityId} 
+                 and cntry_corp_formation = '${countryName}' 
+                 and subscriber_id=${subscriberId}) ,'yyyy-mm-dd')
+                 ReqProfDelDate from dual 
+				 </statement>
+				<validate column="REQPROFDELDATE" value="${reqProfileDelDate}"/>
+				</sql>
+						
+               <sql datasource="dataSource">
+				  <statement>select subscription_bkjurname as BJ
+				             from v_entity_subscription 
+				             where entity_id=${entityId} 
+				             and subscriber_id=${subscriberId}
+				  </statement>
+				<extract column="BJ" variable="${databaseBJ}"/>
+				</sql>
+						
+			<action reference="compareBukJur"/>
+				</actions>
+	</testcase>
+
+</spring:beans>
+			
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+			
+			
+		<!--  <  		susbcription level, refresh cycle, booking jurisdiction,legal name,countrycode
+		<receive endpoint="pegaSearchMei">
+			    <message type="json">
+			        <validate>
+			         <json-path expression="$.rows[0].legalName" value="@startsWith('Test')"/>   
+			        </validate>
+			    </message>
+			</receive> -->
+<!-- 			context.setVariable("rows", json.rows)
+		
+            					context.setVariable("totalRowCount",json.totalRowCount)
+            					         assert json.emailAddress=='${emailId}'
+            					         assert json.rows[0].legalName=='Test Entity_Ganesh'
+			         <element path="$.rows[0].legalName" value="@contains(Test)@"/>  
+			         context.setVariable("totalRowCount",json.totalRowCount)
+			             context.setVariable("name", json.rows[0].legalName)
+			             context.setVariable("subscriberInternalId", json.rows[0].subscriberInternalId)
+			             context.setVariable("subscriberBillingEntity", json.rows[0].subscriberBillingEntity)
+			             context.setVariable("countryCode", json.rows[0].countryCode)
+			             context.setVariable("mei", json.rows[0].mei)
+			             context.setVariable("lei", json.rows[0].lei)
+			             context.setVariable("requestedProfileDeliveryDate", json.rows[0].requestedProfileDeliveryDate)
+			             context.setVariable("entityType", json.rows[0].entityType)
+			             context.setVariable("subscriptionStatus", json.rows[0].subscriptionStatus)
+			             context.setVariable("subscriberInternalName", json.rows[0].subscriberInternalName)
+			             context.setVariable("eventType", json.rows[0].eventType)
+			             context.setVariable("eventStatus", json.rows[0].eventStatus)
+			             context.setVariable("refreshCycle", json.rows[0].refreshCycle)
+			             context.setVariable("bookingJurisdiction", json.rows[0].bookingJurisdiction)
+			             context.setVariable("clientNotified", json.rows[0].clientNotified)
+			             context.setVariable("clientOutreachStartDate", json.rows[0].clientOutreachStartDate)
+			             context.setVariable("contactFirstName", json.rows[0].contactFirstName)
+			             context.setVariable("contactMiddleName", json.rows[0].contactMiddleName)
+			             context.setVariable("contactLastName", json.rows[0].contactLastName)
+			             context.setVariable("contactEmail", json.rows[0].contactEmail)
+			             context.setVariable("contactPhoneNumber", json.rows[0].contactPhoneNumber)
+			             context.setVariable("contactFaxNumber", json.rows[0].contactFaxNumber)
+			             context.setVariable("contactAddressLine1", json.rows[0].contactAddressLine1)
+			             context.setVariable("contactAddressLine2", json.rows[0].contactAddressLine2)
+			             context.setVariable("contactAddressCity", json.rows[0].contactAddressCity)
+			             context.setVariable("contactAddressState", json.rows[0].contactAddressState)
+			             context.setVariable("contactCountry", json.rows[0].contactCountry)
+			             context.setVariable("contactZipCode", json.rows[0].contactZipCode)
+			             context.setVariable("lastReviewCompletionDate", json.rows[0].lastReviewCompletionDate)
+			             context.setVariable("nextScheduledReviewDate", json.rows[0].nextScheduledReviewDate)
+			             ]]> --> 
+			
+	

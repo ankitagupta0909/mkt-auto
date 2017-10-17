@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+	<testcase name="TaskMatchEntityTest">
+		<meta-info>
+			<author>Michael Smolyak</author>
+			<creationdate>2015-02-03</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Michael Smolyak</last-updated-by>
+			<last-updated-on>2015-02-03T00:00:00</last-updated-on>
+		</meta-info>
+
+		<variables>
+			<!-- KYC State validation -->
+<!-- 			<variable name="entityCount" value="1"/>
+			<variable name="entitySnapCount" value="1"/>
+			<variable name="caseCount" value="1"/>
+			<variable name="onboardStateName" value="None"/>
+			<variable name="profileStateName" value="None"/>
+			<variable name="caseTypeName" value="Full Review"/>
+		    <variable name="caseStateName" value="KYC - created"/>
+			<variable name="relationCount" value="4"/>
+			<variable name="subscriptionCount" value="2"/>
+			<variable name="subscriptionStatus" value="Subscribed"/>
+			<variable name="entityStatus" value="Active"/>
+			<variable name="annualReviewStatus" value="Review Not Started"/> -->
+			
+				<variable name="entityCount" value="1"/>
+			<variable name="entitySnapCount" value="1"/>
+			<variable name="caseCount" value="0"/>
+			<variable name="onboardStateName" value="None"/>
+			<variable name="profileStateName" value="None"/>
+			<variable name="relationCount" value="4"/>
+			<variable name="subscriptionCount" value="2"/>
+			<variable name="subscriptionStatus" value="Subscribed"/>
+			<variable name="entityStatus" value="Active"/>
+ 			<variable name="annualReviewStatus" value="Review Not Started"/>
+		</variables>
+		
+		<actions>
+
+            <!-- Extract entity id -->
+			<sql datasource="dataSource">
+				<statement>select entity_id 
+				           from v_company
+				           where legalname = '${legalName}'
+				</statement>
+				<extract column="ENTITY_ID" variable="${entityId}"/>
+			</sql>
+			
+			<!-- <sql datasource="dataSource">
+				<statement>select entity_id 
+				           from v_company
+				           where legalname = '${taskMcpmLegalName}'
+				</statement>
+				<extract column="ENTITY_ID" variable="${taskMcpmEntId}"/>
+			</sql> -->
+			
+			<sql datasource="dataSource">
+				<statement>select entity_id from entity_client_attr
+				   where value='${taskMcpmLegalName}' and rownum=1
+				</statement>
+				<extract column="ENTITY_ID" variable="${taskMcpmEntId}"/>
+			</sql>
+			
+
+            <!-- Set dependent variables -->			
+			<create-variables>
+				<variable name="matchingRequestUri" value="/admin-api/matches/entities/${entityId}"	/>
+
+				<variable name="matchEntityMessage" value="matchList=${taskMcpmEntId}"></variable>
+			</create-variables>
+			
+			<!-- Send acknowledge request -->
+			<send endpoint="adminBatchClient">
+				<message>
+					<data>${matchEntityMessage}</data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri"	value="${kycHost}${matchingRequestUri}" />
+				</header>
+			</send>
+			
+			<call-template name="validateKycState" />
+	        
+		</actions>
+	</testcase>
+
+</spring:beans>

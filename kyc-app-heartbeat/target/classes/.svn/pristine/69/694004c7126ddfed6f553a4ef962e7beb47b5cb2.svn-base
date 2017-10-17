@@ -1,0 +1,26 @@
+# Internal MCPM API
+kyc.api.mcpm.user.info.method=GET
+kyc.api.mcpm.user.info.uri=/users/{loginName}
+
+kyc.api.mcpm.user.add.method=POST
+kyc.api.mcpm.user.add.uri=/users
+
+# REF_DOC_TYPE Sets for Entity Overview
+kyc.mcpm.dashboard.documents.government=6,7,20
+kyc.mcpm.dashboard.documents.legal=2,43,44,8,22,4
+kyc.mcpm.dashboard.documents.structure=9,23,31,32
+kyc.mcpm.dashboard.documents.recommended=1,19,3,4
+kyc.mcpm.dashboard.documents.fund.recommended=21,8,37,38,39,41
+kyc.mcpm.dashboard.documents.fund.setupandstructure=21
+kyc.mcpm.dashboard.documents.fund.legalexistence=8,19,22,4,44,36
+kyc.mcpm.dashboard.documents.fund.governmentid=1,50,37,38,39,40,41
+kyc.mcpm.dashboard.documents.fund.keycontrollers=1,9,11,13,19,21,22
+kyc.mcpm.dashboard.documents.fund.beneficialowners=8,34,24,48,25,11
+
+# Swagger
+swagger.api.info.title=KYC-MCPM Dashboard API
+swagger.api.info.description=REST API for the KYC-MCPM Dashboard
+swagger.api.info.termsOfServiceUrl=
+swagger.api.info.contact=
+swagger.api.info.license=
+swagger.api.info.licenseUrl=

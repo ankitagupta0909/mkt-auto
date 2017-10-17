@@ -1,0 +1,4 @@
+kycdb.initial.pool.size=5
+kycdb.min.idle=5
+kycdb.max.idle=20
+kycdb.max.total=20

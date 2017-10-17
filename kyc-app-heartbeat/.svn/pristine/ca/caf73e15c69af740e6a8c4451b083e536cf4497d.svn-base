@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+	<testcase name="PegaCreateMeiTest">
+		<meta-info>
+			<author>Ankita Gupta</author>
+			<creationdate>2015-11-16</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Ankita Gupta</last-updated-by>
+			<last-updated-on>2015-11-16T00:00:00</last-updated-on>
+		</meta-info>
+
+		<variables>
+			<!-- KYC State validation -->
+			<variable name="entityCount" value="2"/>
+			<variable name="entitySnapCount" value="2"/>
+			<variable name="caseCount" value="0"/>
+			<variable name="onboardStateName" value="None"/>
+			<variable name="profileStateName" value="None"/>
+			<variable name="relationCount" value="4"/>
+			<variable name="subscriptionCount" value="0"/>
+			<variable name="subscriptionStatus" value="Unsubscribed"/>
+			<variable name="entityStatus" value="Inactive"/>
+			<variable name="annualReviewStatus" value=""/>
+		</variables>
+		
+		<actions>
+
+		     <load>
+            <properties file="file:src/citrus/resources/load.properties"/>
+            </load>
+             <!-- Extract case id -->
+			<sql datasource="dataSource">
+				<statement>select case_id
+				           from case c
+				           inner join v_company vc on c.entity_id = vc.entity_id
+				           where legalname = '${legalName}'
+				</statement>
+				<extract column="CASE_ID" variable="${caseId}"/>
+			</sql>
+
+            <!-- Set dependent variables -->			
+			<create-variables>
+				<variable name="companyRequest" value="/pega-api/cases/${caseId}/companies"></variable>
+				<variable name="individualRequest" value="/pega-api/cases/${caseId}/individuals"></variable>
+			
+				<variable name="createMeiMessage" value="legalName=${legalName}&amp;country=${incorporationCountry}&amp;documentId=${documentId}"></variable>
+				<variable name="searchCompanyMessage" value="legalName=${BFCompanylegalName}&amp;country=${incorporationCountry}"></variable>
+				<variable name="searchIndividualMessage" value="lastName=${BFIndividualLastName}&amp;firstName=${BFIndividualLastName}"></variable>
+			</create-variables>
+		   			
+		   	<send endpoint="pegaClientCreateMei">
+				<message>
+					<data>${createMeiMessage}</data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri"	value="${kycHost}${companyRequest}" />
+				</header>
+			</send>
+		
+    <!-- Verify correct reply -->
+    
+			<receive endpoint="pegaClientCreateMei">
+			    <message type="json" validator="groovyJsonMessageValidator">
+			        <validate>
+			            <script type="groovy">
+			                <![CDATA[
+            					context.setVariable("mei", json.mei)
+ 			                ]]>
+			            </script>
+			        </validate>
+			    </message>
+			</receive>
+             <echo>
+				<message>${citrus.test.name}: MEI ${mei}</message>
+			</echo>
+			<call-template name="validateKycState" />
+			
+		</actions>
+	</testcase>
+
+</spring:beans>

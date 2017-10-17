@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;CompareBJ.java&apos; to &apos;kyc-app-heartbeat/src/main/java/com.markit.kyc.citrus.action&apos;&#x0D;&#x0A;- Original project: &apos;kyc-app-heartbeat&apos;&#x0D;&#x0A;- Destination element: &apos;kyc-app-heartbeat/src/main/java/com.markit.kyc.citrus.action&apos;&#x0D;&#x0A;- Original element: &apos;com.markit.kyc.citrus.action.CompareBJ.java&apos;" description="Copy compilation unit" destination="/src\/main\/java&lt;com.markit.kyc.citrus.action" element1="/src\/main\/java&lt;com.markit.kyc.citrus.action{CompareBJ.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1488287877406" units="1" version="1.0"/>
+</session>

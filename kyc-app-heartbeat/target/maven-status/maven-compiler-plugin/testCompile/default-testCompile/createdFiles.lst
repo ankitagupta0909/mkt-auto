@@ -1,0 +1,4 @@
+com\markit\kyc\citrus\CleanupTest.class
+com\markit\kyc\citrus\SubscriberSubscribeTest.class
+com\markit\kyc\citrus\McpmOnboardingTest.class
+com\markit\kyc\citrus\BatchUploadTest.class

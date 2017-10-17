@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="10" failed="0" total="10" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="17" started-at="2015-08-05T17:34:16Z" finished-at="2015-08-05T17:34:16Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="17" started-at="2015-08-05T17:34:16Z" finished-at="2015-08-05T17:34:16Z">
+      <class name="com.markit.kyc.citrus.CleanupTest">
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.CleanupTest@45018215]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.CleanupTest.cleanupTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="SKIP" signature="cleanupTest()[pri:0, instance:com.markit.kyc.citrus.CleanupTest@45018215]" name="cleanupTest" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanupTest -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.CleanupTest@45018215]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.CleanupTest@45018215]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.CleanupTest@45018215]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+        <test-method status="SKIP" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.CleanupTest@45018215]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="SKIP" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.CleanupTest@45018215]" name="createTestRunners" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+      </class> <!-- com.markit.kyc.citrus.CleanupTest -->
+      <class name="com.markit.kyc.citrus.RaasSearchMeiTest">
+        <test-method status="SKIP" signature="raasSearchMeiTest()[pri:0, instance:com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3]" name="raasSearchMeiTest" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- raasSearchMeiTest -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.RaasSearchMeiTest.raasSearchMeiTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="SKIP" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="SKIP" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3]" name="createTestRunners" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.RaasSearchMeiTest@3d121db3]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.markit.kyc.citrus.RaasSearchMeiTest -->
+      <class name="com.markit.kyc.citrus.BatchUploadTest">
+        <test-method status="SKIP" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.BatchUploadTest@5bfa9431]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.BatchUploadTest@5bfa9431]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+        <test-method status="SKIP" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.BatchUploadTest@5bfa9431]" name="createTestRunners" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+        <test-method status="SKIP" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.BatchUploadTest@5bfa9431]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.BatchUploadTest@5bfa9431]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.BatchUploadTest.batchUploadTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="SKIP" signature="batchUploadTest()[pri:0, instance:com.markit.kyc.citrus.BatchUploadTest@5bfa9431]" name="batchUploadTest" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- batchUploadTest -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.BatchUploadTest@5bfa9431]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+      </class> <!-- com.markit.kyc.citrus.BatchUploadTest -->
+      <class name="com.markit.kyc.citrus.RaasCaseAcknowledgeTest">
+        <test-method status="SKIP" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+        <test-method status="SKIP" signature="raasCaseAcknowledgeTest()[pri:0, instance:com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004]" name="raasCaseAcknowledgeTest" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- raasCaseAcknowledgeTest -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.RaasCaseAcknowledgeTest.raasCaseAcknowledgeTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="SKIP" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="SKIP" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.RaasCaseAcknowledgeTest@30b7c004]" name="createTestRunners" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+      </class> <!-- com.markit.kyc.citrus.RaasCaseAcknowledgeTest -->
+      <class name="com.markit.kyc.citrus.RaasCreateMeiTest">
+        <test-method status="SKIP" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b]" name="createTestRunners" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+        <test-method status="SKIP" signature="raasCreateMeiTest()[pri:0, instance:com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b]" name="raasCreateMeiTest" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- raasCreateMeiTest -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.RaasCreateMeiTest.raasCreateMeiTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="SKIP" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.RaasCreateMeiTest@4c1d9d4b]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.markit.kyc.citrus.RaasCreateMeiTest -->
+      <class name="com.markit.kyc.citrus.RaasCreateIndividualIdTest">
+        <test-method status="SKIP" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="SKIP" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6]" name="createTestRunners" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+        <test-method status="SKIP" signature="raasCreateIndividualIdTest()[pri:0, instance:com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6]" name="raasCreateIndividualIdTest" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- raasCreateIndividualIdTest -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6]" name="springTestContextAfterTestClass" is-config="true" duration-ms="1" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+        <test-method status="SKIP" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.RaasCreateIndividualIdTest@233fe9b6]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.RaasCreateIndividualIdTest.raasCreateIndividualIdTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+      </class> <!-- com.markit.kyc.citrus.RaasCreateIndividualIdTest -->
+      <class name="com.markit.kyc.citrus.McpmOnboardingTest">
+        <test-method status="SKIP" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.McpmOnboardingTest@3901d134]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="SKIP" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.McpmOnboardingTest@3901d134]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="1" started-at="2015-08-05T13:34:16Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="SKIP" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.McpmOnboardingTest@3901d134]" name="createTestRunners" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+        <test-method status="SKIP" signature="mcpmOnboardingTest()[pri:0, instance:com.markit.kyc.citrus.McpmOnboardingTest@3901d134]" name="mcpmOnboardingTest" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mcpmOnboardingTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.McpmOnboardingTest@3901d134]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.McpmOnboardingTest.mcpmOnboardingTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.McpmOnboardingTest@3901d134]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.McpmOnboardingTest@3901d134]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.markit.kyc.citrus.McpmOnboardingTest -->
+      <class name="com.markit.kyc.citrus.RaasCompletedCaseTest">
+        <test-method status="SKIP" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="SKIP" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f]" name="createTestRunners" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+        <test-method status="SKIP" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="SKIP" signature="raasCompletedCaseTest()[pri:0, instance:com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f]" name="raasCompletedCaseTest" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- raasCompletedCaseTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.RaasCompletedCaseTest@3c72f59f]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.RaasCompletedCaseTest.raasCompletedCaseTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+      </class> <!-- com.markit.kyc.citrus.RaasCompletedCaseTest -->
+      <class name="com.markit.kyc.citrus.BatchMatchEntityTest">
+        <test-method status="FAIL" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:com.markit.kyc.citrus.BatchMatchEntityTest@1e730495]" name="beforeSuite" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:15Z" finished-at="2015-08-05T13:34:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4df5bcb4]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.IllegalStateException">
+            <message>
+              <![CDATA[Failed to load ApplicationContext]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextPrepareTestInstance(AbstractTestNGSpringContextTests.java:145)
+	at com.consol.citrus.testng.AbstractTestNGCitrusTest.beforeSuite(AbstractTestNGCitrusTest.java:182)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.springframework.beans.factory.BeanInitializationException: Could not load properties; nested exception is java.io.FileNotFoundException: class path resource [markit/kyc/app-heartbeat/security.properties] cannot be opened because it does not exist
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:151)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:265)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	... 28 more
+Caused by: java.io.FileNotFoundException: class path resource [markit/kyc/app-heartbeat/security.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.core.io.support.EncodedResource.getInputStream(EncodedResource.java:143)
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:98)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:175)
+	at org.springframework.core.io.support.PropertiesLoaderSupport.mergeProperties(PropertiesLoaderSupport.java:156)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:142)
+	... 38 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalStateException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="SKIP" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.BatchMatchEntityTest@1e730495]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="SKIP" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.BatchMatchEntityTest@1e730495]" name="createTestRunners" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.BatchMatchEntityTest@1e730495]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="SKIP" signature="batchMatchEntityTest()[pri:0, instance:com.markit.kyc.citrus.BatchMatchEntityTest@1e730495]" name="batchMatchEntityTest" duration-ms="1" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- batchMatchEntityTest -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.BatchMatchEntityTest@1e730495]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.BatchMatchEntityTest@1e730495]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="1" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.BatchMatchEntityTest.batchMatchEntityTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.BatchMatchEntityTest@1e730495]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+        <test-method status="FAIL" signature="afterSuite(org.testng.ITestContext)[pri:0, instance:com.markit.kyc.citrus.BatchMatchEntityTest@1e730495]" name="afterSuite" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4df5bcb4]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.consol.citrus.testng.AbstractTestNGCitrusTest.afterSuite(AbstractTestNGCitrusTest.java:348)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:322)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:115)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:204)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:107)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:112)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.markit.kyc.citrus.BatchMatchEntityTest -->
+      <class name="com.markit.kyc.citrus.SubscriberSubscribeTest">
+        <test-method status="SKIP" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextPrepareTestInstance -->
+        <test-method status="SKIP" signature="createTestRunners()[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c]" name="createTestRunners" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTestRunners -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestMethod -->
+        <test-method status="SKIP" signature="springTestContextBeforeTestClass()[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextBeforeTestClass -->
+        <test-method status="SKIP" signature="subscriberServiceTest()[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c]" name="subscriberServiceTest" duration-ms="1" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- subscriberServiceTest -->
+        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.markit.kyc.citrus.SubscriberSubscribeTest.subscriberServiceTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestMethod -->
+        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.markit.kyc.citrus.SubscriberSubscribeTest@38c5cc4c]" name="springTestContextAfterTestClass" is-config="true" duration-ms="0" started-at="2015-08-05T13:34:16Z" finished-at="2015-08-05T13:34:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- springTestContextAfterTestClass -->
+      </class> <!-- com.markit.kyc.citrus.SubscriberSubscribeTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

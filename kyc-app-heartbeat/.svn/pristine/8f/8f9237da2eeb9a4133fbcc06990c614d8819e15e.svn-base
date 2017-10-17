@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdbcDataSource exportedWithPermissions="true">
+  <folder>/Resources/Datasource</folder>
+  <name>KYC_DB</name>
+  <version>8</version>
+  <label>KYC_DB</label>
+  <creationDate>2014-11-04T16:09:02.000Z</creationDate>
+  <updateDate>2014-11-04T16:10:28.000Z</updateDate>
+  <driver>oracle.jdbc.OracleDriver</driver>
+  <connectionUrl>jdbc:oracle:thin:@nj4cobqascan01.markit.partners:1521:kycqa</connectionUrl>
+  <connectionUser>kyc_ro</connectionUser>
+  <connectionPassword>ENC<FD8B01299B02AD794B5068AFA88EBFE5></connectionPassword>
+</jdbcDataSource>

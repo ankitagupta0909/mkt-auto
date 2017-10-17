@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Heartbeat suite">
+  <listeners>
+<!--     <listener class-name="com.markit.kyc.citrus.KycSuiteReporter" />
+    <listener class-name="com.markit.kyc.citrus.KycTestReporter" /> -->
+       <listener class-name="com.markit.kyc.citrus.ExtentReporter" />
+  </listeners>
+ 
+<!--   <test verbose="2" name="Create Wolfsberg Questionnaire Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.TaskWolfsbergQuestTest"/>
+    </classes>
+  </test> -->
+  
+<!-- <test verbose="2" name="Search MEI test">
+    <classes>
+      <class name="com.markit.kyc.citrus.MeiSearchTest"/>
+    </classes>
+  </test> -->
+  
+<!--     <test verbose="2" name="KYC Entity Update Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.KYCEntityUpdateTest"/>
+    </classes>
+  </test>
+  
+      <test verbose="2" name="KYC Document Upload Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.KYCDocumentUploadTest"/>
+    </classes>
+  </test> -->
+  
+ <!--      <test verbose="2" name="MCPM Entity Update Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.MCPMEntityUpdateTest"/>
+    </classes>
+  </test>
+  
+      <test verbose="2" name="MCPM Document Upload Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.MCPMDocumentUploadTest"/>
+    </classes>
+  </test> -->
+
+<!--   <test verbose="2" name="MCPM user Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.MCPMGetUserDetailsTest"/>
+    </classes>
+  </test> -->
+
+  <test verbose="2" name="Batch Upload test">
+    <classes>
+      <class name="com.markit.kyc.citrus.BatchUploadTest"/>
+    </classes>
+  </test>
+  
+
+  
+  <test verbose="2" name="Match Entity Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.MatchEntityTest"/>
+    </classes>
+  </test>
+  
+  <test verbose="2" name="Pega Case Acknowledge Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaCaseAcknowledgeTest"/>
+    </classes>
+  </test>
+  
+  <test verbose="2" name="Pega Create Mei Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaCreateMeiTest"/>
+    </classes>
+  </test>
+  
+  <test verbose="2" name="Pega Docuemnt Upload Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaDocUploadTest"/>
+    </classes>
+  </test>
+  
+  
+  <test verbose="2" name="Pega Docuemnt Edit Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaDocEditTest"/>
+    </classes>
+  </test>
+  <test verbose="2" name="PegaCompletedCaseTest">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaCompletedCaseTest"/>
+    </classes>
+  </test>
+  
+  <test verbose="2" name="SubscriberSubscribeTest">
+    <classes>
+      <class name="com.markit.kyc.citrus.SubscriberSubscribeTest"/>
+    </classes>
+  </test>  
+  
+  
+  
+   
+   </suite>
+<!--   <test verbose="2" name="PegaCompletedCaseTest">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaCompletedCaseTest"/>
+    </classes>
+  </test> -->
+  
+
+
+   <!-- <test verbose="2" name="MCPMEntityUpdateTest">
+    <classes>
+      <class name="com.markit.kyc.citrus.MCPMEntityUpdateTest"/>
+    </classes>
+  </test>   -->
+ <!-- Default suite -->
+
+
+ <!--  <test verbose="2" name="Cleanup Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.CleanupTest"/>
+    </classes>
+  </test> -->
+
+    <!-- <test verbose="2" name="MCPM Onboarding Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.McpmOnboardingTest"/>
+    </classes>
+  </test> -->
+  
+      <!-- <test verbose="2" name="MCPMEntityUpdateTest">
+    <classes>
+      <class name="com.markit.kyc.citrus.MCPMEntityUpdateTest"/>
+    </classes>
+  </test>  -->

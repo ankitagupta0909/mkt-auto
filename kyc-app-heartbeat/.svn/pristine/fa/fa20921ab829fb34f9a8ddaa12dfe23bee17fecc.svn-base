@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:beans="http://www.springframework.org/schema/beans"
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+
+
+<!-- <bean id="plainTextMessageValidator" class="com.consol.citrus.validation.text.PlainTextMessageValidator"/> -->
+	<testcase name="MCPMCreateEntityTest">
+	<meta-info>
+			<author>Ankita Gupta</author>
+			<creationdate>2015-11-03</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Ankita Gupta</last-updated-by>
+			<last-updated-on>2015-11-03T00:00:00</last-updated-on>
+		</meta-info>
+
+		
+		<variables>
+			<!-- KYC State validation -->
+			<variable name="entityCount" value="1"/>
+			<variable name="entitySnapCount" value="1"/>
+			<variable name="caseCount" value="0"/>
+			<variable name="onboardStateName" value="None"/>
+			<variable name="profileStateName" value="none"/>
+			<variable name="relationCount" value="0"/>
+			<variable name="subscriptionCount" value="0"/>
+			<variable name="subscriptionStatus" value="Unsubscribed"/>
+			<variable name="entityStatus" value="Inactive"/>
+			<variable name="annualReviewStatus" value="Review Not Started"/>
+			<variable name="entityType" value="Investment Management Company"/>
+		</variables>
+		
+		<actions>
+            
+            <!-- Set dependent variables -->			
+			<create-variables>
+				<variable name="createEntity" value="/mcpm-api/entities/"></variable>
+			</create-variables>
+			
+			<load>
+            <properties file="file:src/citrus/resources/load.properties"/>
+            </load>
+        
+			<sql datasource="dataSource">
+				<statement>select * from CLIENT where name like '${KycComp}%'
+				</statement>
+				 <extract column="MCPM_CLIENT_ID" variable="${payloadClientId}"/>
+			</sql>
+		   			
+		   	<send endpoint="MCPMcreateEntity">
+				<message type="json">
+				<data>
+					{
+					  "payload":{
+			   		      "entity":[
+					         {
+					            "mcpmCompanyID":${payloadClientId},
+					            "companyLegalName":"${KycComp}",
+					            "mcpmTermsOfUseSigned":true,
+					            "mcpmEntityId":${mcpmEntityId},
+					            "legalName":"${taskMcpmLegalName}",
+					            "deleted":false,
+					            "country":"US",
+					            "mcpmEntityType":"${entityType}"
+					         }
+					      ]
+					   }
+					}
+				</data>
+				</message>
+				<header>
+					<element name="citrus_http_method" value="POST" />
+					<element name="citrus_endpoint_uri"	value="${kycHost}${createEntity}" />
+				</header>
+			</send>
+		
+		
+			<sleep seconds="60"/>
+            <!-- Extract entity id -->
+			<sql datasource="dataSource">
+				<statement>select * 
+				   			from v_entity_screener 
+							where ENTITY_NAME='${taskMcpmLegalName}' and rownum=1
+				</statement>
+				 <validate column="ENTITY_TYPE" value="${entityType}"/>
+				 <validate column="ENTITY_NAME" value="${taskMcpmLegalName}"/>
+			<!-- 	 <extract column="ENTITY_NAME" variable="${legalname}"/> -->
+			</sql>
+			
+<!-- 		
+			 <call-template name="validateKycState" />  -->
+			 	 <!-- <receive endpoint="MCPMcreateEntity">
+			    <message type="json" validator="groovyJsonMessageValidator">
+			        <validate>
+			            <script type="groovy">
+			               assert headers["citrus_http_status_code"].toString() == '200'
+                           assert headers["citrus_http_reason_phrase"] == 'OK'
+			            </script>
+			        </validate>
+			    </message>
+			  </receive>
+
+			<echo>
+				<message>${citrus.test.name}: CODE ${citrus_http_status_code}</message>
+			</echo> -->
+		</actions>
+	
+	</testcase>
+
+</spring:beans>

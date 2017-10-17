@@ -1,0 +1,8 @@
+package com.markit.kyc.citrus;
+
+public class Globals {
+	
+	static String testName=null;
+	static String testStatus=null;
+
+}

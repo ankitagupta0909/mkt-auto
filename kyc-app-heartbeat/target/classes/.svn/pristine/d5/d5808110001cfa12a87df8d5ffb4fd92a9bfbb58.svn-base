@@ -1,0 +1,12 @@
+uxs.userSoftwareComponentId=Ops-Portal
+
+uxs.requestPasswordResetUrl=https://admin.qa.kyc.com/request-password-reset
+uxs.passwordResetUrl=https://admin.qa.kyc.com/set-password?token=
+
+uxs.serviceSoftwareComponentId=kyc-admin
+
+uxs.serviceAccount1=markit/accounts/kyc-admin-1
+uxs.servicePassword1=M@rkit7889
+
+uxs.serviceAccount2=markit/accounts/kyc-admin-2
+uxs.servicePassword2=M@rkit33

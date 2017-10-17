@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+    
+    <testcase name="TaskBatchUploadFundTest">
+        <meta-info>
+            <author>Michael Smolyak</author>
+            <creationdate>2014-12-18</creationdate>
+            <status>DRAFT</status>
+            <last-updated-by>Michael Smolyak</last-updated-by>
+            <last-updated-on>2014-12-18T13:00:14</last-updated-on>
+        </meta-info>
+        
+        <description>Batch upload FUND test</description>
+        
+		<variables>
+			<variable name="uploadFilePath" value="${batchUploadEntityUrl}"></variable>
+			<variable name="uploadUrl"      value="${kycHost}/admin-api/batches/uploadEntities"></variable>
+			
+			<!-- KYC State validation -->
+			<variable name="entityCount" value="1"/>
+			<variable name="entitySnapCount" value="1"/>
+			<variable name="caseCount" value="0"/>
+			<variable name="onboardStateName" value="None"/>
+			<variable name="profileStateName" value="None"/>
+			<variable name="relationCount" value="4"/>
+			<variable name="subscriptionCount" value="2"/>
+			<variable name="subscriptionStatus" value="Subscribed"/>
+			<variable name="entityStatus" value="Active"/>
+ 			<variable name="annualReviewStatus" value="Review Not Started"/>
+		</variables>
+
+		<actions>
+		
+			<action reference="uploadAction"/>
+
+			<sql datasource="dataSource">
+				<statement>select count(*) as entity_count 
+				           from v_company
+				           where legalname = '${legalName}'
+				</statement>
+				<extract column="ENTITY_COUNT" variable="${entityCount}"/>
+			</sql>
+			
+			<conditional expression="${entityCount} = 0">
+				<fail message="Admin Batch upload failed"/>
+			</conditional>
+			
+            <!-- wait for 1 min until t_entity_screener updated -->
+			<!-- <sleep seconds="60"/> -->
+			
+			<call-template name="validateKycState" />
+	        	
+		</actions>
+    </testcase>
+</spring:beans>

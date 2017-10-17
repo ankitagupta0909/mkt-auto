@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Heartbeat suite]">
+  <listeners>
+    <listener class-name="com.markit.kyc.citrus.ExtentReporter"/>
+  </listeners>
+  <test name="KYC Entity Update Test(failed)">
+    <classes>
+      <class name="com.markit.kyc.citrus.KYCDocumentUploadTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="afterSuite"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.KYCDocumentUploadTest -->
+      <class name="com.markit.kyc.citrus.KYCEntityUpdateTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="mcpmEntityUpdateTest"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.KYCEntityUpdateTest -->
+    </classes>
+  </test> <!-- KYC Entity Update Test(failed) -->
+  <test name="KYC Document Upload Test(failed)">
+    <classes>
+      <class name="com.markit.kyc.citrus.KYCDocumentUploadTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="afterSuite"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="kycDocumentUpload"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.KYCDocumentUploadTest -->
+      <class name="com.markit.kyc.citrus.KYCEntityUpdateTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.KYCEntityUpdateTest -->
+    </classes>
+  </test> <!-- KYC Document Upload Test(failed) -->
+</suite> <!-- Failed suite [Heartbeat suite] -->

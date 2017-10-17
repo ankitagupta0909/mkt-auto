@@ -1,0 +1,8 @@
+uxs.userSoftwareComponentId=NOT_SET
+uxs.passwordResetUrl=NOT_SET
+uxs.termsOfUseProduct=NOT_SET
+
+uxs.serviceSoftwareComponentId=kyc-admin
+
+uxs.serviceAccount1=markit/accounts/kyc-admin-1
+uxs.servicePassword1=M@rkit7889

@@ -1,0 +1,3 @@
+//com.springsource.sts.config.flow.coordinates\:http\://www.springframework.org/schema/integration\:/kyc-app-heartbeat/src/citrus/resources/citrus-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<graph/>
+//com.springsource.sts.config.flow.coordinates\:http\://www.springframework.org/schema/integration\:/kyc-app-heartbeat/src/citrus/resources/kycStateValidation-context.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<graph/>
+eclipse.preferences.version=1

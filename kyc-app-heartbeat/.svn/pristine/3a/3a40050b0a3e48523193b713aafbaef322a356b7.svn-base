@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:citrus="http://www.citrusframework.org/schema/config"
+       xmlns:citrus-jms="http://www.citrusframework.org/schema/jms/config"
+       xmlns:citrus-ws="http://www.citrusframework.org/schema/ws/config"
+       xmlns:citrus-http="http://www.citrusframework.org/schema/http/config"
+       xmlns:citrus-testcase="http://www.citrusframework.org/schema/testcase"
+       xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:si="http://www.springframework.org/schema/integration"
+       xmlns:file="http://www.springframework.org/schema/integration/file"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.citrusframework.org/schema/config http://www.citrusframework.org/schema/config/citrus-config.xsd
+       http://www.citrusframework.org/schema/jms/config http://www.citrusframework.org/schema/jms/config/citrus-jms-config.xsd
+       http://www.citrusframework.org/schema/ws/config http://www.citrusframework.org/schema/ws/config/citrus-ws-config.xsd
+       http://www.citrusframework.org/schema/http/config http://www.citrusframework.org/schema/http/config/citrus-http-config.xsd
+       http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+       http://www.springframework.org/schema/integration
+       http://www.springframework.org/schema/integration/spring-integration.xsd
+       http://www.springframework.org/schema/integration/file
+       http://www.springframework.org/schema/integration/file/spring-integration-file.xsd">
+       
+	<citrus-testcase:template name="validateKycState">
+		<citrus-testcase:sql datasource="dataSource">
+			<citrus-testcase:statement>select count(*) as v_company_entity_count 
+			           from v_company
+			           where legalname = '${legalName}'
+			</citrus-testcase:statement>
+			<citrus-testcase:extract column="v_company_entity_count" variable="${vCompanyEntityCount}"/>
+		</citrus-testcase:sql>
+		<citrus-testcase:conditional expression="${vCompanyEntityCount} = 1">
+			<citrus-testcase:sql datasource="dataSource">
+				<citrus-testcase:statement>select entity_id 
+				           from v_company
+				           where legalname = '${legalName}'
+				</citrus-testcase:statement>
+				<citrus-testcase:extract column="ENTITY_ID" variable="${entityId}"/>
+			</citrus-testcase:sql>
+		</citrus-testcase:conditional>
+		<citrus-testcase:conditional expression="${vCompanyEntityCount} = 2">
+			<citrus-testcase:sql datasource="dataSource">
+				<citrus-testcase:statement>select entity_id 
+				           from v_company
+				           where legalname = '${legalName}'
+				             and mei is not null
+				</citrus-testcase:statement>
+				<citrus-testcase:extract column="ENTITY_ID" variable="${entityId}"/>
+			</citrus-testcase:sql>
+		</citrus-testcase:conditional>
+		
+		<citrus-testcase:echo>
+			<citrus-testcase:message>${citrus.test.name}: Entity_ID ${entityId}</citrus-testcase:message>
+		</citrus-testcase:echo>
+		
+		<citrus-testcase:sql datasource="dataSource">
+            <!-- entity record existed -->
+	        <citrus-testcase:statement>select count(*) as entity_count
+	        	from entity e
+				inner join entity_snap_attr esa ON esa.entity_snap_id = e.active_entity_snap_id
+				inner join attr a on esa.attr_id = a.attr_id
+				where esa.value = '${legalName}'
+				  and esa.attr_index  = -1
+				  and a.xml_attr_name = 'Company.legalName'
+			</citrus-testcase:statement>
+			
+	        <citrus-testcase:statement>select count(*) as entity_snap_count
+				       from entity_snap
+                       where entity_id in (
+                       	    select entity_id
+				        	from entity e
+							inner join entity_snap_attr esa ON esa.entity_snap_id = e.active_entity_snap_id
+							inner join attr a on esa.attr_id = a.attr_id
+							where esa.value = '${legalName}'
+							  and esa.attr_index  = -1
+							  and a.xml_attr_name = 'Company.legalName')
+			</citrus-testcase:statement>
+			
+			<!-- Get number of cases -->
+			<citrus-testcase:statement>select count(CASE_ID) as case_count
+				       from case
+	                   where entity_id = ${entityId}
+            </citrus-testcase:statement>
+               
+			<!-- check default relationships -->
+	        <citrus-testcase:statement>select count(*) as relation_count
+					   from entity_authorize_subscriber
+					   where entity_id = ${entityId}
+            </citrus-testcase:statement>
+            
+			<!-- check subsciptions -->
+	        <citrus-testcase:statement>select count(*) as subscription_count
+				           from entity_subscription es
+				           where entity_id = ${entityId}
+            </citrus-testcase:statement>
+						     
+			<!-- onboard state is none -->
+		    <citrus-testcase:statement>select reos.Name as onboard_state_name
+					   from v_entity ve
+					   inner join ref_entity_onboard_state reos on reos.entity_onboard_state_id = ve.ONBOARDING_STATE_ID
+					   where ve.entity_id = ${entityId}
+               </citrus-testcase:statement>
+               				           
+			<!-- profile state is none -->
+			<citrus-testcase:statement>select reos.Name as PROFILE_STATE_NAME
+			           from v_entity ve
+			           inner join ref_entity_profile_state reos on reos.entity_profile_state_id = ve.PROFILE_STATE_ID
+					   where ve.entity_id = ${entityId}
+               </citrus-testcase:statement>
+			           
+			<citrus-testcase:validate column="ENTITY_COUNT" value="${entityCount}"/>
+			<citrus-testcase:validate column="ENTITY_SNAP_COUNT" value="${entitySnapCount}"/>
+			<citrus-testcase:validate column="CASE_COUNT" value="${caseCount}"/>
+			<!-- <citrus-testcase:validate column="RELATION_COUNT" value="${relationCount}"/> -->
+			<citrus-testcase:validate column="SUBSCRIPTION_COUNT" value="${subscriptionCount}"/>
+			<citrus-testcase:validate column="ONBOARD_STATE_NAME" value="${onboardStateName}"/>
+			<citrus-testcase:validate column="PROFILE_STATE_NAME" value="${profileStateName}"/>
+			
+		</citrus-testcase:sql>
+		
+		<citrus-testcase:conditional expression="${vCompanyEntityCount} = 1">
+			<citrus-testcase:sql datasource="dataSource">
+				<!-- t_entity_screener state is inactive -->
+				<!-- t_entity_screener entity state account opening in progress -->
+				<citrus-testcase:statement>select subscr_status as subscription_status, entity_status, annual_review_status
+						   from v_entity_screener
+				           where entity_id = ${entityId}
+						     and subscriber_id = ${subscriberId1}
+	            </citrus-testcase:statement>
+	            
+				<citrus-testcase:validate column="ENTITY_STATUS" value="${entityStatus}"/>
+				<citrus-testcase:validate column="SUBSCRIPTION_STATUS" value="${subscriptionStatus}"/>
+				<citrus-testcase:validate column="ANNUAL_REVIEW_STATUS" value="${annualReviewStatus}"/>
+				
+			</citrus-testcase:sql>
+		</citrus-testcase:conditional>
+		
+		<citrus-testcase:conditional expression="${caseCount} = 1">
+			<citrus-testcase:sql datasource="dataSource">
+				 <!-- full review case -->
+			    <citrus-testcase:statement>select name as case_type_name
+						   from v_case vc
+						   inner join ref_case_type rct on rct.case_type_id = vc.case_type_id
+						   where entity_id = ${entityId}
+                </citrus-testcase:statement>
+                
+			    <!-- case is in state created -->
+				<citrus-testcase:statement>select NAME as CASE_STATE_NAME
+				           from v_case vc
+				           inner join ref_case_state rcs on rcs.case_state_id = vc.case_state_id
+						   where entity_id = ${entityId}
+                </citrus-testcase:statement>
+                
+		        <citrus-testcase:validate column="CASE_TYPE_NAME" value="${caseTypeName}" />
+		        <citrus-testcase:validate column="CASE_STATE_NAME" value="${caseStateName}"/>
+		        
+	        </citrus-testcase:sql>
+
+		</citrus-testcase:conditional>
+			
+	</citrus-testcase:template>
+</beans>

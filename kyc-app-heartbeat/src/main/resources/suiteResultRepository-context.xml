@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+        
+	<bean id="suiteResultRepository" class="com.markit.kyc.commons.repository.GenericRepositoryProxyFactory">
+    	<property name="repositoryInterface" value="com.markit.kyc.citrus.repository.SuiteResultRepository" />
+    </bean>
+
+	<bean id="suiteResultRowMapper" class="com.markit.kyc.citrus.repository.mapper.SuiteResultRowMapper" />
+
+	<bean id="suiteResultParameterMapper" class="com.markit.kyc.citrus.repository.mapper.SuiteResultParameterMapper">
+<!-- 		<property name="idGenerator" ref="uniqueIdGenerator"/> -->
+	</bean>    
+	
+	<bean id="SuiteResultRepository#create" class="java.lang.String">
+		<constructor-arg><value>
+INSERT INTO integration_test_suite
+(
+    integration_test_suite_id
+   ,name
+   ,start_dt
+   ,execution_time
+   ,status
+) VALUES (
+    :suiteId
+   ,:name
+   ,:startDt
+   ,:executionTime
+   ,:status
+)		
+		</value></constructor-arg>
+	</bean>
+
+	<bean id="SuiteResultRepository#update" class="java.lang.String">
+		<constructor-arg><value>
+update integration_test_suite
+set execution_time = :executionTime,
+    status = :status
+where integration_test_suite_id = :suiteId
+		</value></constructor-arg>
+	</bean>
+	
+	<bean id="SuiteResultRepository#read" class="java.lang.String">
+		<constructor-arg><value>
+
+SELECT 
+    integration_test_suite_id
+   ,name
+   ,start_dt
+   ,execution_time
+   ,status
+FROM 
+	integration_test_suite
+WHERE testId = :testId
+
+		</value></constructor-arg>
+	</bean>
+
+	<bean id="SuiteResultRepository#findByDate" class="java.lang.String">
+		<constructor-arg><value>
+SELECT 
+    integration_test_suite_id
+   ,name
+   ,start_dt
+   ,execution_time
+   ,status
+FROM 
+	integration_test_suite
+WHERE TO_DATE(startDt) = TO_DATE(:date)
+		</value></constructor-arg>
+	</bean></beans>

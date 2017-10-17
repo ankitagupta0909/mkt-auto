@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+
+	<property name="KYC_LOG_HOME" value="/var/log/kyc-notification" />
+    <property name="KYC_SERVICE_NAME" value="kyc-notification" />
+	
+	<include resource="markit/kyc/common/logback-console.xml"/>
+	<include resource="markit/kyc/common/logback-instrumentation.xml"/>
+	
+	<property name="LOG_FILE_PATTERN" value="%d %-5level [%8.8thread] [%logger{14}] %marker:%msg%n" />
+
+	<appender name="FILE_KYC_ONLY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${KYC_LOG_HOME}/${KYC_SERVICE_NAME}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>
+				${KYC_LOG_HOME}/${KYC_SERVICE_NAME}.log.%d{yyyyMMdd}
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${LOG_FILE_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE_ALL"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${KYC_LOG_HOME}/${KYC_SERVICE_NAME}_misc.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>
+				${KYC_LOG_HOME}/${KYC_SERVICE_NAME}_misc.log.%d{yyyyMMdd}
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${LOG_FILE_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE_SQL_ONLY"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${KYC_LOG_HOME}/${KYC_SERVICE_NAME}_sql.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>
+				${KYC_LOG_HOME}/${KYC_SERVICE_NAME}_sql.log.%d{yyyyMMdd}
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${LOG_FILE_PATTERN}</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="com.markit.kyc.commons.repository" level="INFO" additivity="false">
+		<appender-ref ref="FILE_SQL_ONLY" />
+	</logger>
+
+	<logger name="com.markit.kyc" level="INFO" additivity="false">
+		<appender-ref ref="FILE_KYC_ONLY" />
+	</logger>
+
+	<!-- Application Loggers -->
+	<logger name="com.markit" level="INFO" />
+
+	<!-- 3rdparty Loggers -->
+	<logger name="org.springframework" level="ERROR" />
+
+	<!-- Root Logger -->
+	<root level="INFO">
+		<appender-ref ref="FILE_ALL" />
+	</root>
+
+</included>

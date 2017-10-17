@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Cleanup Suite">
+  <listeners>
+    <listener class-name="com.markit.kyc.citrus.KycSuiteReporter" />
+    <listener class-name="com.markit.kyc.citrus.KycTestReporter" />
+  </listeners>
+  
+  <test verbose="2" name="Cleanup Test">
+    <classes>
+      <class name="com.markit.kyc.citrus.CleanupTest"/>
+    </classes>
+  </test>
+  
+</suite> <!-- Default suite -->

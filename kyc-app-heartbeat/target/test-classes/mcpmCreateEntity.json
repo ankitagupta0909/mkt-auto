@@ -1,0 +1,16 @@
+{
+					  "payload":{
+			   		      "entity":[
+					         {
+					            "mcpmCompanyID":id,
+					            "companyLegalName":"KycComp",
+					            "mcpmTermsOfUseSigned":true,
+					            "mcpmEntityId":entityId,
+					            "legalName":"AutoMcpmentityId",
+					            "deleted":false,
+					            "country":"US",
+					            "mcpmEntityType":"entityType"
+					         }
+					      ]
+					   }
+					}

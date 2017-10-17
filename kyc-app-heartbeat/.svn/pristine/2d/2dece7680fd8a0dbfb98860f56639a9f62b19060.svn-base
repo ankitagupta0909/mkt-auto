@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+	<testcase name="CreateCaseTest">
+		<meta-info>
+			<author>Ankita Gupta</author>
+			<creationdate>2016-05-04</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Ankita Gupta</last-updated-by>
+			<last-updated-on>2016-05-04T00:00:00</last-updated-on>
+		</meta-info>
+
+		<variables>
+
+			<variable name="entityCount" value="1"/>
+			<variable name="entitySnapCount" value="1"/>
+			<variable name="caseCount" value="1"/>
+			<variable name="onboardStateName" value="Ready"/>
+			<variable name="profileStateName" value="None"/>
+			<variable name="caseTypeName" value="Full Review"/>
+		    <variable name="caseStateName" value="KYC - created"/>
+			<variable name="relationCount" value="4"/>
+			<variable name="subscriptionCount" value="2"/>
+			<variable name="subscriptionStatus" value="Subscribed"/>
+			<variable name="entityStatus" value="Active"/>
+			<variable name="annualReviewStatus" value="Review Not Started"/>
+		</variables>
+		
+		<actions>
+
+            <!-- Extract entity id -->
+			<sql datasource="dataSource">
+				<statement>select count(entity_id) as ENTITY_COUNT 
+				           from v_company
+				           where legalname = '${legalName}'
+				</statement>
+				<validate column="ENTITY_COUNT" value="1"/>
+			</sql>
+			
+		   <sql datasource="dataSource">
+				<statement>select ENTITY_ID 
+				           from v_company
+				           where legalname = '${legalName}'
+				</statement>
+				<extract column="ENTITY_ID" variable="${entityId}"/>
+			</sql>
+		
+            <!-- Set dependent variables -->			
+			<create-variables>
+				<variable name="createCaseUri" value="${kycHost}/support-api/entities/${entityId}/cases"/>
+			</create-variables>
+			
+			<!-- Send acknowledge request -->
+			<send endpoint="caseCreateRequest">
+				<message>
+					<data/>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri"	value="${createCaseUri}" />
+				</header>
+			</send>
+			
+		<!-- 	<call-template name="validateKycState" /> -->
+	        
+		</actions>
+	</testcase>
+
+</spring:beans>

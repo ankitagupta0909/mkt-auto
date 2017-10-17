@@ -1,0 +1,121 @@
+package com.markit.kyc.citrus;
+
+import java.io.File;
+import java.util.*;
+
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.activation.*;
+
+public class EmailNotification {
+	
+
+	public static void main(String arg[]) throws AddressException, NoSuchProviderException
+//	public static void emailNotification(String subject,String status)
+	   {
+
+	      // Recipient's email ID needs to be mentioned.
+		String subject="KYC PEGA Integration Sanity Flow";
+ 	   	 String status="Passed";
+			
+	    // String to = "ankita.gupta@markit.com,garima.bedi@markit.com, rohit.kumarb@markit.com, monika.maurya@markit.com,aparna.sharma@markit.com,shafkat.mustafa@markit.com" ;
+	     String to = "MK-COBSQA@markit.com,aparna.sharma@markit.com" ;
+ 	  //shafkat.mustafa@markit.com,arpit.gogia@markit.com,shay.krauss@markit.com,vadim.shteynberg@markit.com
+	     // String to = "ankita.gupta@markit.com";
+	      String[] recipientList = to.split(",");
+	      InternetAddress[] recipientAddress = new InternetAddress[recipientList.length];
+	      int counter = 0;
+	      for (String recipient : recipientList) {
+	    	    try {
+					recipientAddress[counter] = new InternetAddress(recipient.trim());
+				} catch (AddressException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    	    counter++;
+	    	}
+	      // Sender's email ID needs to be mentioned
+	      String from = "MK-Automation@markit.com";
+	      // Assuming you are sending email from localhost
+	      String host = "ussmtp.markit.partners";
+	      //String host = "devsmtp.markit.partners";
+	      // Get system properties
+	     Properties properties = System.getProperties();
+	      
+
+	      // Setup mail server
+	     properties.setProperty("mail.smtp.host", host);
+	    properties.setProperty("java.net.preferIPv4Stack" , "true");
+	    properties.setProperty("mail.smtp.socketFactory.port" , "25");
+	    properties.setProperty("mail.smtp.starttls.enable","true");
+	    
+	      // Get the default Session object.
+	      Session session = Session.getDefaultInstance(properties);
+	      
+	     
+
+	      try{
+		         // Create a default MimeMessage object.
+		         MimeMessage message = new MimeMessage(session);
+		         // Set From: header field of the header.
+		         message.setFrom(new InternetAddress(from));
+		         // Set To: header field of the header.
+		         message.setRecipients(Message.RecipientType.TO,recipientAddress);
+
+		         // Set Subject: header field
+		         Date date= new Date();
+		         //String result=resultStatus(status);
+		         message.setSubject(status+"|"+subject + " TestNG Report" );
+
+		         // Create the message part 
+		         BodyPart messageBodyPart = new MimeBodyPart();
+
+		         // Fill the message
+		         messageBodyPart.setText("Please find the attached file for test result");
+
+		         // Create a multipar message
+		         Multipart multipart = new MimeMultipart();
+
+		         // Set text message part
+		         multipart.addBodyPart(messageBodyPart);
+
+		         // Part two is attachment
+		         messageBodyPart = new MimeBodyPart();
+		      
+		         String s=System.getProperty("user.dir")+"\\target\\surefire-reports\\Extent.html";
+		   	     String filepath=	s.replace("\\", "\\\\");
+		   	  
+		        // String filepath = new File("\\AutomationWorkspaceAPI\\kyc-app-heartbeat\\test-output\\Extent.html").getAbsolutePath();
+		         //String filepathtolog = new File("\\kyc-heartbeat_v5\\kyc-app-heartbeat\\logs.txt").getAbsolutePath();
+		         System.out.println(filepath);
+		        
+		         String filename = "emailable-report.html";
+		         //String filenamelog="log.txt";
+		         
+		         addAttachment(multipart,filepath,filename);
+		         //addAttachment(multipart,filepathtolog,filenamelog);
+		       
+		         // Send the complete message parts
+		         message.setContent(multipart );
+
+		       
+		         // Send message
+		        Transport.send(message);
+		         System.out.println("Sent message successfully....");
+		      }catch (MessagingException mex) {
+		         mex.printStackTrace();
+		      }
+		   }
+
+		
+		private static void addAttachment(Multipart multipart, String filepath,String filename) throws MessagingException
+		{
+		    DataSource source = new FileDataSource(filepath);
+		    BodyPart messageBodyPart = new MimeBodyPart();        
+		    messageBodyPart.setDataHandler(new DataHandler(source));
+		    messageBodyPart.setFileName(filename);
+		    multipart.addBodyPart(messageBodyPart);
+		}
+		
+	
+}

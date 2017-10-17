@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+
+	<property name="LOG_FILE_PATTERN" value="%d %-5level [%X{userid}-%X{sessionid}] [%8.8thread] [%logger{14}] %marker:%msg%n" />
+
+	<appender name="SERVER_LOG_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${KYC_LOG_HOME}/${KYC_SERVICE_NAME}_server.log</file>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily roll over -->
+			<fileNamePattern>${KYC_LOG_HOME}/${KYC_SERVICE_NAME}_server.log.%d{yyyyMMdd}.gz
+			</fileNamePattern>
+			<!-- keep 90 days' worth of history -->
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+
+		<!-- Support multiple-JVM writing to the same log file -->
+		<!-- <prudent>true</prudent> -->
+
+		<encoder>
+			<pattern>${LOG_FILE_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<property name="TRAFFIC_FILE_PATTERN" value="%d %msg%n" />
+
+	<appender name="TRAFFIC_LOG_FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${KYC_LOG_HOME}/${KYC_SERVICE_NAME}_traffic.log</file>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily roll over -->
+			<fileNamePattern>${KYC_LOG_HOME}/${KYC_SERVICE_NAME}_traffic.log.%d{yyyyMMdd}.gz
+			</fileNamePattern>
+			<!-- keep 90 days' worth of history -->
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+
+		<!-- Support multiple-JVM writing to the same log file -->
+		<!-- <prudent>true</prudent> -->
+
+		<encoder>
+			<pattern>${TRAFFIC_FILE_PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="TRAFFIC_LOG_DB" class="com.markit.kyc.commons.logging.db.DbAppender">
+		<recordClass>com.markit.kyc.webfilter.trafficlog.TrafficLog
+		</recordClass>
+		<repositoryClass>com.markit.kyc.webfilter.trafficlog.TrafficLogRepository
+		</repositoryClass>
+	</appender>
+
+	<appender name="ASYNC_TRAFFIC_LOG_DB" class="ch.qos.logback.classic.AsyncAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<queueSize>5000</queueSize>
+		<appender-ref ref="TRAFFIC_LOG_DB" />
+	</appender>
+
+	<logger name="com.markit.kyc.traffic" level="INFO" additivity="false">
+		<appender-ref ref="ASYNC_TRAFFIC_LOG_DB" />
+		<appender-ref ref="TRAFFIC_LOG_FILE" />
+	</logger>
+	
+	<logger name="com.markit.kyc.webfilter.trafficlog.TrafficLogRepository" level="WARN" additivity="false" />
+	<logger name="com.markit.kyc.webfilter.trafficlog.TrafficLogRepository.StJdbcTemplate" level="WARN" additivity="false" />
+
+</included>

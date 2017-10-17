@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>Results for Task suite</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h3><p align="center">Results for<br/><em>Task suite</em></p></h3>
+<table border='1' width='100%'>
+<tr valign='top'>
+<td>17 tests</td>
+<td><a target='mainFrame' href='classes.html'>17 classes</a></td>
+<td>17 methods:<br/>
+&nbsp;&nbsp;<a target='mainFrame' href='methods.html'>chronological</a><br/>
+&nbsp;&nbsp;<a target='mainFrame' href='methods-alphabetical.html'>alphabetical</a><br/>
+&nbsp;&nbsp;<a target='mainFrame' href='methods-not-run.html'>not run (0)</a></td>
+</tr>
+<tr>
+<td><a target='mainFrame' href='groups.html'>0 group</a></td>
+<td><a target='mainFrame' href='reporter-output.html'>reporter output</a></td>
+<td><a target='mainFrame' href='testng.xml.html'>testng.xml</a></td>
+</tr></table>
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Batch Upload Fund test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Batch Upload Fund test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Country and Industrial Assessment Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Country and Industrial Assessment Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Create Authorized Sign Task Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Create Authorized Sign Task Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Create Case Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Create Case Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Create Doc Request Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Create Doc Request Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Create Identity Detail Request Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Create Identity Detail Request Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Create Outreach Questionnaire Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Create Outreach Questionnaire Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Create Ownership Structure Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Create Ownership Structure Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Create Wolfsberg Questionnaire Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Create Wolfsberg Questionnaire Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Match Entity Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Match Entity Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Pega Case Acknowledge Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Pega Case Acknowledge Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Pega Create Mei Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Pega Create Mei Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Pega Docuemnt Edit Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Pega Docuemnt Edit Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Pega Docuemnt Upload Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Pega Docuemnt Upload Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>PegaCompletedCaseTest (1/0/0)</td><td valign='top' align='right'>
+  <a href='PegaCompletedCaseTest.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>SubscriberSubscribeTest (1/0/0)</td><td valign='top' align='right'>
+  <a href='SubscriberSubscribeTest.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+
+<table width='100%' class='test-passed'>
+<tr><td>
+<table style='width: 100%'><tr><td valign='top'>Withdraw Task Test (1/0/0)</td><td valign='top' align='right'>
+  <a href='Withdraw Task Test.html' target='mainFrame'>Results</a>
+</td></tr></table>
+</td></tr><p/>
+</table>
+</body></html>

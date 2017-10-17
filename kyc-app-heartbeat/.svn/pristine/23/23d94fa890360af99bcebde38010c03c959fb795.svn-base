@@ -1,0 +1,161 @@
+#legalName = KYC Monitoring Entity
+project=mcpm
+
+#legalName = API frame_46
+legalName = API fund_61
+#legalName =Automation_Pls dont use_27
+incorporationCountry = AQ
+lei = 549300VRIGCZEQOFFK83
+
+subscriberId=500 
+       
+subscriberId1 = 5974
+subscriberId2 = 99997
+documentId = 5413419038658769
+onboardingKey = 1099nn23
+        
+governmentIDType = 1
+governmentIDValue = 67309516564686500000
+        
+#internalId = AG_ID_46
+internalId = FD_ID_61
+
+# MCPM Onboarding Test
+mcpmcountry = USA
+#mcpmEntityId = 65000000020091
+entityType =  Investment Management Company 
+mcpmBookingJurisdiction = United States/United Kingdom
+
+mcpmSubscriberName1 = HSBC BANK PLC
+mcpmSubscriberName2 = KYCTESTPROD1
+
+#######################UAT variables that need to be changed before execution#####################
+#UAT variables for Batch upload(PEGA and TASK APIs)
+#legalName = API fund_08
+#internalId = FD_ID_08
+#mcpmSubscriberName1 = HSBC Group
+#UAT doc ID
+#documentId=358310211992566
+
+#UAT variables for Task APIs
+#KycComp=Thunderhead_BS1
+#taskMcpmLegalName=26 feb
+
+#####################################################################################################
+# Fuzzy Search Test
+BFCompanylegalName = KYC Search Entity
+BFIndividualFirstName = Kycsearch
+BFIndividualLastName = Individual
+
+# Subscriber Test
+serviceLevel = CORE
+subscriptionLevel = B
+jurisdictions = 201
+refreshCycle = 1
+reportCount = 6
+
+
+#Task creation Test
+taskMcpmLegalName=11MayAuto
+#KycComp=KYC Services
+#Thunderhead_BS1
+#MCPM_KYC dashboard Test 1
+KycComp=Thunderhead_SS1
+
+outreachQuesTaskId=4
+docReqTaskId=5
+amlTaskId=8
+wolfTaskId=9
+ownStruTaskId=11
+authSigTaskId=13
+idDetailTaskId=7
+withdrawTaskStateId=4
+countIndAsTaskId=15
+
+#Upload Document TEst
+documentType=Passport
+documentSource=Client
+documentSourceName=abcd
+documentOriginalName=Hydrangeas.jpg
+certifiedTrueCopy=Yes
+certifiedTrueCopyID=1
+internallyConfirmed=Yes
+internallyConfirmedID=1
+documentURL=url
+comments=comments
+
+#Edit doc metadata
+documentType1=Other
+documentSource1=Exchange
+documentSourceName1=abcd_edit
+documentOriginalName1=Hydrangeas.jpg_edit
+certifiedTrueCopy1=No
+certifiedTrueCopyID1=0
+internallyConfirmed1=No
+internallyConfirmedID1=0
+documentURL1=url_edit
+comments1=comments_edit
+
+
+
+
+
+
+
+
+#MCPM-KYC integration APIs----------NOT Applicable anymore
+
+#MCPM entity update API
+#mcpmCompanyId=65000000014545
+#mcpmCompName=Automation KYC heartbeat BS
+#mcpmEntityId=65000000554005
+#mcpmLegalName=23 of march 2016
+mcpmCompanyId=65000000014195
+#mcpmCompName=MCPM_KYC dashboard Test 1
+mcpmCompName=Thunderhead_SS1
+mcpmEntityId=65000000575172
+mcpmLegalName=10 may autooo
+mcpmCountry=US
+domicile_country_fullname=United States
+mcpmMEI=
+mcpmLEI=
+mcpmEntityType=Fund
+mcpmEntitySubType=Fund-of-Fund
+mcpmEntityStatus=Active
+mcpmClientIdentifier=CI
+mcpmUSTin=245400547
+mcpmUSGiin=ABCDEF.RJENC.PP.300
+mcpmForeignTin=3232
+mcpmRegisteredAddressLine1=ra1
+mcpmRegisteredAddressLine2=ra2
+mcpmRegisteredAddressCity=racity
+mcpmRegisteredAddressCountry=GB
+mcpmRegisteredAddressState=rastate
+mcpmRegisteredAddressZip=razip
+mcpmMailingAddressLine1=ma1
+mcpmMailingAddressLine2=ma2
+mcpmMailingAddressCity=macity
+mcpmMailingAddressCountry=GB
+mcpmMailingAddressState=mastate
+mcpmMailingAddressZip=mazip
+mcpmContactPhone=maphone
+blankValue=0
+
+#MCPM Document Upload
+#mcpmClientId=30000000015324
+#mcpmClientId=65000000014545
+mcpmfileContentType=text/plain
+mcpmFileName=abc.txt
+mcpmdocumentType=Passport
+#mcpmEntityName=Automation9entity
+#mcpmEntityName=26 feb 01
+
+#KYC Entity subtype
+#kycEntityId=564711839623212
+
+
+#UAT variables for MCPM KYC integration
+#mcpmCompanyId=30000000015324
+#mcpmCompName=Thunderhead_BS1
+#mcpmEntityId=30000000165504
+#mcpmLegalName=26 feb 01

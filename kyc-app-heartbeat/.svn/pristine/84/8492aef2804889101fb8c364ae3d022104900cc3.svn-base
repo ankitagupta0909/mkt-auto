@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.citrusframework.org/schema/testcase 
+                        http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+	<testcase name="PegaCompletedCaseTest">
+		<meta-info>
+			<author>Ankita Gupta</author>
+			<creationdate>2015-12-15</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Ankita Gupta</last-updated-by>
+			<last-updated-on>2015-12-16T00:00:00</last-updated-on>
+		</meta-info>
+
+        <description>Receive Case From Pega test</description>
+
+		<variables>
+			<!-- KYC State validation -->
+			<variable name="entityCount" value="2"/>
+			<variable name="entitySnapCount" value="3"/>
+			<variable name="caseCount" value="0"/>
+			<variable name="onboardStateName" value="Ready"/>
+			<variable name="profileStateName" value="Full"/>
+			<variable name="caseTypeName" value="Full Review"/>
+		    <variable name="caseStateName" value="KYC - processed"/>
+			<variable name="relationCount" value="4"/>
+			<variable name="subscriptionCount" value="2"/>
+			<variable name="subscriptionStatus" value="Subscribed"/>
+			<variable name="entityStatus" value="Active"/>
+			<variable name="annualReviewStatus" value="Completed"/>
+		</variables>
+		
+		<actions>
+		
+		             <load>
+            <properties file="file:src/citrus/resources/load.properties"/>
+            </load>
+
+            <!-- Extract entity id -->
+			<sql datasource="dataSource">
+				<statement>select entity_id 
+				           from v_company
+				           where legalname = '${legalName}'
+				             and mei is null
+				</statement>
+				<extract column="ENTITY_ID" variable="${entityId}"/>
+			</sql>
+
+            <!-- Extract case id -->
+			<sql datasource="dataSource">
+				<statement>select case_id
+				           from case
+                           where entity_id = ${entityId}
+				</statement>
+				<extract column="CASE_ID" variable="${caseId}"/>
+			</sql>
+
+            <!-- Extract mei -->
+			<sql datasource="dataSource">
+				<statement>select mei
+				           from v_company
+				           where legalname = '${legalName}'
+				           and mei is not null
+				</statement>
+
+				<extract column="MEI" variable="${mei}"/>
+			</sql>
+			
+            <!-- Set dependent variables -->			
+			<create-variables>
+				<variable name="completedProfileRequest" value="/pega-api/cases/${caseId}/profiles"></variable>
+				<variable name="now" value="citrus:currentDate('yyyy-MM-dd'T'hh:mm:ss')"/>
+				<variable name="entityTypeValue" value="5"/>
+			</create-variables>
+			   			
+		  <send endpoint="pegaClientCompletedCase">
+			<message type="json"> 
+			  <resource file="file:src/data/completedEntityPega.json" />
+			  <element path="$.case.caseId" value="${caseId}" />
+			  <element path="$..MEI" value="${mei}" />
+			  <element path="$..attributes[2].value" value="${entityTypeValue}" />
+			  <element path="$..attributes[4].value" value="${legalName}"/>
+          </message>
+		   <header>
+			   <element name="citrus_endpoint_uri"	value="${kycHost}${completedProfileRequest}" />
+			</header>
+ 			</send>	
+ 				
+			<sleep seconds="90"/>
+ 			
+ 			<call-template name="validateKycState" />
+			
+	        <sql datasource="dataSource">
+
+                <!-- old entity is deactivated with successor -->
+		        <statement>select e.ENTITY_ID, e.SUCCESSOR_ENTITY_ID
+		                   FROM entity e
+		                   INNER JOIN entity_snap_attr esa ON esa.ENTITY_SNAP_ID = e.ACTIVE_ENTITY_SNAP_ID
+		                   INNER JOIN attr a ON esa.attr_id = a.attr_id
+		                   WHERE a.XML_ATTR_NAME = 'Company.legalName'
+		                     AND esa.VALUE = '${legalName}'
+		                     AND e.ENTITY_CLASS  = 'Company'
+		                     AND e.inactivated_dt IS NOT NULL
+		                     AND esa.ATTR_INDEX = -1
+                </statement>
+                
+                <!-- subscription level -->
+		        <statement>select SUBSCRIPTION_LEVEL
+						   from ENTITY_SUBSCRIPTION
+						   where SUBSCRIBER_ID = ${subscriberId1}
+  							 and ENTITY_ID = ${entityId}
+                </statement>
+                
+				<!-- internal entity_ids were copied -->
+				<statement>select esa.VALUE as INTERNAL_ID
+				           from ENTITY_SUBSCRIBER_ATTR esa
+				           inner join attr a ON esa.attr_id = a.attr_id
+				           where esa.entity_id = ${entityId}
+				             and a.XML_ATTR_NAME = 'c.subscriber.internalId'
+                </statement>
+
+				<!-- reports are generated -->
+<!-- 			    <statement>select count(*) AS REPORT_COUNT
+						   from V_REPORT_FILE
+						   where ENTITY_ID = '${entityId}'
+						     and SUBSCRIBER_ID = '${subscriberId1}'
+                </statement> -->
+			    <statement>select count(*) AS REPORT_COUNT
+						   from V_REPORT_FILE
+						   where ENTITY_ID = '${entityId}'
+						     and SUBSCRIBER_ID = '500'
+                </statement>
+                										        
+		        <validate column="SUCCESSOR_ENTITY_ID" value="${entityId}"/>
+		        <validate column="SUBSCRIPTION_LEVEL" value="A"/>
+		        <validate column="INTERNAL_ID" value="${internalId}"/>
+		        <validate column="REPORT_COUNT" value="6"/>
+	        
+	        </sql>
+
+		</actions>
+	</testcase>
+
+</spring:beans>

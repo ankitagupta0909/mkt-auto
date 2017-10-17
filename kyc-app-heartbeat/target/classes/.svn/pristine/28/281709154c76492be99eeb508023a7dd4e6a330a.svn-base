@@ -1,0 +1,7 @@
+mcpm.task.document.file.path=/root/mcpm/tasks
+mcpm.task.template.wolfsberg.path=task/template/Wolfsberg.pdf
+mcpm.task.template.wolfsberg.blank.path=task/template/Wolfsberg_blank_page.pdf
+
+esign.image.firstHeader=classpath:report/images/firstHeaderAlbum.jpg
+esign.image.header=classpath:report/images/header.jpg
+esign.image.selectedRadio=classpath:esign/images/selected_radio.png

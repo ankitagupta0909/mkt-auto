@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Task suite]">
+  <listeners>
+    <listener class-name="com.markit.kyc.citrus.ExtentReporter"/>
+  </listeners>
+  <test name="Country and Industrial Assessment Test(failed)">
+    <classes>
+      <class name="com.markit.kyc.citrus.CreateCaseTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.CreateCaseTest -->
+      <class name="com.markit.kyc.citrus.TaskCandIAssessmentTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="afterSuite"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="taskCreateDocReqTest"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskCandIAssessmentTest -->
+      <class name="com.markit.kyc.citrus.TaskMatchEntityTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskMatchEntityTest -->
+      <class name="com.markit.kyc.citrus.TaskBatchUploadFundTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskBatchUploadFundTest -->
+    </classes>
+  </test> <!-- Country and Industrial Assessment Test(failed) -->
+</suite> <!-- Failed suite [Task suite] -->

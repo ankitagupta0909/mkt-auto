@@ -1,0 +1,32 @@
+<ApplicationDefinition>
+	<signOnURL>/mcs-login</signOnURL>
+	<signOffURL>/logout</signOffURL>
+	<keepAliveURL>/mcs</keepAliveURL>
+	<showSearch>false</showSearch>
+	<m_hideFooter>true</m_hideFooter>
+	
+	<NavigationGroupList>
+	
+		<NavigationGroup>
+			<label>Dashboard</label>
+			<module>Dashboard</module>
+			<value>Default</value>
+			<location>/</location>
+		</NavigationGroup>
+		
+		<NavigationGroup>
+			<label>Counterparty Manager</label>
+			<module>MCPM</module>
+			<value>Home</value>
+			<location>javascript:MUFETools_NavigateTo('MDE.MDE.Welcome');</location>
+		</NavigationGroup>
+		
+		<NavigationGroup>
+			<label>Support</label>
+			<module>Support</module>
+			<value>Default</value>
+			<location>/</location>
+		</NavigationGroup>
+		
+	</NavigationGroupList>
+</ApplicationDefinition>

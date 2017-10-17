@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:beans="http://www.springframework.org/schema/beans"
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+
+
+<!-- <bean id="plainTextMessageValidator" class="com.consol.citrus.validation.text.PlainTextMessageValidator"/> -->
+	<testcase name="MCPMGetUserDetailsTest">
+	<meta-info>
+			<author>Ankita Gupta</author>
+			<creationdate>2015-12-03</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Ankita Gupta</last-updated-by>
+			<last-updated-on>2015-12-03T00:00:00</last-updated-on>
+		</meta-info>
+
+	
+		<variables>
+		<variable name="emailId" value="kyc_heartbeat_test@markit.com"/>
+		<variable name="companyId" value="65000000014545"/>
+		<variable name="companyName" value="Automation KYC heartbeat BS"/>
+		<variable name="uRole" value="[bs.read, bs.write, operations, BS ISDA]"/>
+		</variables>
+		
+		<actions>
+            
+            <!-- Set dependent variables -->			
+			<create-variables>
+				<variable name="getUser" value="/v1/users/${emailId}"></variable>
+			</create-variables>
+		   			
+		   	<send endpoint="MCPMgetUserDetails">
+				<message>
+				<data>
+				</data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri"	value="${mcpmHost}${getUser}" />
+				</header>
+			</send>
+		
+			 <receive endpoint="MCPMgetUserDetails">
+			    <message type="json" validator="groovyJsonMessageValidator">
+			        <validate>
+			            <script type="groovy">
+			                <![CDATA[
+            					assert json.emailAddress=='${emailId}'
+            					assert json.companyName=='${companyName}'
+            					assert json.companyID==${companyId}
+            					assert json.userRole.toString()==context.getVariable("uRole")	
+                              ]]>
+			            </script>
+			            
+			             </validate>	
+   			    </message>
+			  </receive> 
+
+			  <sql datasource="dataSource">
+				<statement>select * from mc_users where email='${emailId}'
+				</statement>
+				<validate column="username" value="${emailId}"/>
+			 </sql>
+
+            <sql datasource="dataSource">
+				<statement>select distinct(r.name),u.username,u.uid 
+				           from mc_users u
+				           inner join mc_user_roles ur   on (u.uid=ur.uid and ur.deleted=0)
+                           inner join mc_roles r on (r.id=ur.rid and r.deleted=0)
+                           where u.uid=(select uid from mc_users where email='${emailId}') and u.deleted = 0
+				</statement>
+				<validate-script type="groovy">
+			        assert rows.size() == 4
+			        assert rows[0].name == 'BS ISDA'
+			        assert rows[1].name == 'bs.read'
+			        assert rows[2].name== 'bs.write'
+			        assert rows[3].name== 'operations'           
+                </validate-script>
+			</sql>
+
+		</actions>
+	
+	</testcase>
+
+</spring:beans>

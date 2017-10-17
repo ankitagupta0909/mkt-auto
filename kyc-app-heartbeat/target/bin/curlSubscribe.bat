@@ -1,0 +1,1 @@
+curl -k -u michael.smolyak:36D7B53414A16B37A070251C5AE844BD17F3A1F2C642E4EFE0@http://soap.userxs2-02-tst.marketxs.com -i -X POST -H "Content-Type:application/json" https://api.dev.kyc.com/subscriber-api/entities/170339578806242/subscriptions/ -d '{"serviceLevel":"A"}'

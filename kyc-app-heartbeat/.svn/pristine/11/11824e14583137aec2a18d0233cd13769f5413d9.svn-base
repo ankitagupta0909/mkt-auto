@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=
+	"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+	<testcase name="SubscriberSubscribeTest">
+		<meta-info>
+			<author>Michael Smolyak</author>
+			<creationdate>2014-11-26</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Michael Smolyak</last-updated-by>
+			<last-updated-on>2014-11-26T00:00:00</last-updated-on>
+		</meta-info>
+
+		<actions>
+		
+			<load>
+            <properties file="file:src/citrus/resources/load.properties"/>
+            </load>
+      	
+            <!-- Extract entity id -->
+			<sql datasource="dataSource">
+				<statement>select entity_id 
+				           from v_company
+				           where legalname = '${legalName}'
+				</statement>
+				<extract column="ENTITY_ID" variable="${entityId}"/>
+			</sql>
+			
+            <!-- Set dependent variables -->			
+			<create-variables>
+		   		<variable name="subscribeRequest" value="/subscriber-api/entities/${entityId}/subscriptions/" />
+		   		<variable name="message"
+					value="serviceLevel=${serviceLevel}&amp;jurisdictions=${jurisdictions}&amp;refreshCycle=${refreshCycle}" />
+		   	</create-variables>
+
+			<send endpoint="subscriberClientSubscribe">
+				<message>
+					<data>${message}</data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri"	value="${kycHost}${subscribeRequest}" />
+				</header>
+			</send>
+						
+			<sleep seconds="30"/>
+
+			<sql datasource="dataSource">
+				<statement>select * from (select *
+				           from ENTITY_SUBSCRIPTION
+		                   where ENTITY_ID = ${entityId}
+		                   order by created_Dt desc )
+		                   where rownum=1
+                </statement>
+                                    
+                <validate column="SUBSCRIPTION_LEVEL" value="${subscriptionLevel}"/>
+                 <validate column="SUBSCRIPTION_TERM" value="${refreshCycle}"/>
+                 </sql> 
+				
+			<sql datasource="dataSource">
+				<statement>select * from entity_subscription_bkjur 
+						   where entity_subscription_id=(select entity_subscription_id  from 
+						   (select entity_subscription_id from entity_subscription 
+					       where entity_id=${entityId} order by created_dt desc) where rownum=1)
+                </statement>
+                                    
+                <validate column="BKJUR_ID" value="${jurisdictions}"/>
+              </sql> 
+			
+				
+			<sql datasource="dataSource">
+			    <statement>select count(*) AS REPORT_COUNT
+						   from V_REPORT_FILE
+						   where ENTITY_ID = '${entityId}'
+						     and SUBSCRIBER_ID = '500'
+                </statement>
+            
+                <validate column="REPORT_COUNT" value="${reportCount}"/>
+			
+	        </sql>
+	        
+		</actions>
+	</testcase>
+
+</spring:beans>

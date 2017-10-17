@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:beans="http://www.springframework.org/schema/beans"
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+    
+    <testcase name="CleanupTest">
+        <meta-info>
+            <author>Michael Smolyak</author>
+            <creationdate>2014-12-18</creationdate>
+            <status>DRAFT</status>
+            <last-updated-by>Michael Smolyak</last-updated-by>
+            <last-updated-on>2014-12-18T13:00:14</last-updated-on>
+        </meta-info>
+        
+        <description>cleanup test</description>
+        
+		<actions>
+		
+			<sql datasource="dataSource">
+				<statement>select count(*) as NEW_ENTITY_COUNT
+							  from entity e
+							  inner join entity_snap_attr esa ON e.ACTIVE_ENTITY_SNAP_ID = esa.ENTITY_SNAP_ID
+							  inner join attr a ON esa.attr_id = a.attr_id
+							  where e.ENTITY_CLASS  = 'Company'
+							    and esa.ATTR_INDEX  = -1
+							    and a.XML_ATTR_NAME = 'Company.legalName'
+							    and esa.VALUE = '${legalName}'
+				</statement>
+				<extract column="NEW_ENTITY_COUNT" variable="${newEntityCount}"/>
+			</sql>
+			<echo>
+				<message>${citrus.test.name}:  newEntityCount ${newEntityCount}</message>
+			</echo>
+
+            <conditional expression="${newEntityCount} = 2">
+				<sql datasource="dataSource">
+					<statement>select e.ENTITY_ID
+					           from entity e
+					           inner join entity_snap_attr esa ON esa.ENTITY_SNAP_ID = e.ACTIVE_ENTITY_SNAP_ID
+							   inner join attr A ON esa.attr_id = a.attr_id
+							   where e.MEI is null
+								 and esa.ATTR_INDEX  = -1
+								 and a.XML_ATTR_NAME = 'Company.legalName'
+								 and esa.VALUE = '${legalName}'
+					</statement>
+					<extract column="ENTITY_ID" variable="${initialEntityId}"/>
+				</sql>
+			</conditional>
+            <conditional expression="${newEntityCount} = 1">
+				<sql datasource="dataSource">
+					<statement>select e.ENTITY_ID
+					           from entity e
+					           inner join entity_snap_attr esa ON esa.ENTITY_SNAP_ID = e.ACTIVE_ENTITY_SNAP_ID
+							   inner join attr A ON esa.attr_id = a.attr_id
+							   where esa.ATTR_INDEX  = -1
+								 and a.XML_ATTR_NAME = 'Company.legalName'
+								 and esa.VALUE = '${legalName}'
+					</statement>
+					<extract column="ENTITY_ID" variable="${initialEntityId}"/>
+				</sql>
+			</conditional>
+										
+            <!-- Remove completed profile entity -->
+            <conditional expression="${newEntityCount} = 2">
+			
+				<sql datasource="dataSource">
+					<statement>select e.ENTITY_ID
+					           from entity e
+					           inner join entity_snap_attr esa ON esa.ENTITY_SNAP_ID = e.ACTIVE_ENTITY_SNAP_ID
+							   inner join attr A ON esa.attr_id = a.attr_id
+							   where e.MEI is not null
+								 and esa.ATTR_INDEX = -1
+								 and a.XML_ATTR_NAME = 'Company.legalName'
+								 and esa.VALUE = '${legalName}'
+					</statement>
+					<extract column="ENTITY_ID" variable="${entityId}"/>
+				</sql>
+				
+				<echo>
+					<message>${citrus.test.name}:  completedCaseEntityId ${entityId}</message>
+				</echo>
+				
+				<sql datasource="dataSource">
+					<statement>select mei
+					           from entity
+					           where ENTITY_ID = ${entityId}
+					</statement>
+					<extract column="MEI" variable="${mei}"/>
+				</sql>
+				
+				<echo>
+					<message>CleanupTest MEI ${mei}</message>
+				</echo>
+	
+				<sql datasource="dataSource">
+			        <statement> update entity_onboard_state_log
+								set ENTITY_ONBOARD_STATE_ID = 1
+								where ENTITY_ID = ${entityId}
+					</statement>
+		        </sql>
+				<sql datasource="dataSource">
+			        <statement> update entity_profile_state_log
+								set ENTITY_PROFILE_STATE_ID = 1
+								where ENTITY_ID = ${entityId}
+					</statement>
+		        </sql>
+					        
+				<sql datasource="dataSource">
+			        <statement> update entity
+								set SUCCESSOR_ENTITY_ID = null
+								where ENTITY_ID = ${initialEntityId}
+					</statement>
+		        </sql>
+		        
+		        <!-- Remove report files -->
+		        <action reference="removeEntityReportsAction"/>
+		        
+		        <action reference="removeEntityAction"/>
+			</conditional>
+
+            <!-- Remove initial entity -->
+            <conditional expression="${newEntityCount} gt= 1">
+            
+		        <sql datasource="dataSource">
+			        <statement> update entity_onboard_state_log
+								set ENTITY_ONBOARD_STATE_ID = 1
+								where ENTITY_ID = ${initialEntityId}
+					</statement>
+		        </sql>
+				<sql datasource="dataSource">
+			        <statement> update entity_profile_state_log
+								set ENTITY_PROFILE_STATE_ID = 1
+								where ENTITY_ID = ${initialEntityId}
+					</statement>
+		        </sql>
+		        
+				<create-variables>
+					<variable name="mei" value="EMPTY_TEST" />
+				</create-variables>
+				
+				<sql datasource="dataSource">
+			        <statement> update entity
+								set MEI = '${mei}'
+								where ENTITY_ID = ${initialEntityId}
+					</statement>
+		        </sql>
+		        
+				<action reference="removeEntityAction"/>
+		        
+			</conditional>
+			
+	        <sql datasource="dataSource">
+
+                <!-- both entities are not in DB -->
+                <statement>select count(*) as ENTITY_COUNT
+				           from entity e
+				           inner join entity_snap_attr esa ON esa.ENTITY_SNAP_ID = e.ACTIVE_ENTITY_SNAP_ID
+						   inner join attr A ON esa.attr_id = a.attr_id
+						   where esa.ATTR_INDEX    = -1
+							 and a.XML_ATTR_NAME = 'Company.legalName'
+							 and esa.VALUE = '${legalName}'
+				</statement>
+                
+		        <validate column="ENTITY_COUNT" value="0"/>
+	        </sql>
+	        
+		</actions>
+    </testcase>
+</spring:beans>

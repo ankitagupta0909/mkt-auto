@@ -1,0 +1,6 @@
+mtu.agency.agreement.folder = /root/mtu/agency/agreement
+mtu.agency.agreement.file = MTU Buy Side Terms of Use.pdf
+mtu.esign.terms.folder = /root/mtu/esign/terms
+mtu.esign.terms.file = E-Sign Terms and Conditions.pdf
+uxs.mtu.agency.agreement.product.name=MTU-QA
+uxs.mtu.agency.agreement.fullpath=${mtu.agency.agreement.folder}/${mtu.agency.agreement.file}

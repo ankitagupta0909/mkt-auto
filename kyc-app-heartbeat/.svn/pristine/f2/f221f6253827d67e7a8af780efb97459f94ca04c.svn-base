@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:beans="http://www.springframework.org/schema/beans"
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+
+
+
+<!-- <bean id="plainTextMessageValidator" class="com.consol.citrus.validation.text.PlainTextMessageValidator"/> -->
+	<testcase name="MCPMDocumentUploadTest">
+	<meta-info>
+			<author>Monika Maurya</author>
+			<creationdate>2015-12-09</creationdate>
+			<status>FINAL</status>
+			<last-updated-by>Monika Maurya</last-updated-by>
+			<last-updated-on>2015-12-09T00:00:00</last-updated-on>
+		</meta-info>
+
+		
+	<actions>
+		
+		<create-variables>
+		<variable name="entityId" value="${mcpmEntityId}"></variable>	
+		<variable name="companyId" value="${mcpmCompanyId}"></variable>
+		<variable name="fileContent" value="src/data/blobresult.txt"></variable>
+		<variable name="documentType" value="${mcpmdocumentType}"></variable>
+		<variable name="fileName" value="${mcpmFileName}"></variable>
+		<variable name="fileContentType" value="${mcpmfileContentType}"></variable>
+		<variable name="uploadUrl" value="${mcpmHost}/v1/companies/${companyId}/entities/${entityId}/documents"></variable>
+		<variable name="entityName" value="${mcpmLegalName}"></variable>	
+		</create-variables>	
+		
+		<action reference="mcpmUploadDoc"/>
+      			  
+			  <sql datasource="dataSource">
+				<statement>select top 1 m.docid,m.entityid,t.name,m.internal_entity  from mc_unidoc_to_myentities m 
+                           inner join mc_document_types t on (m.doc_type=t.doc_type) 
+                           where m.entityid=${entityId} order by m.last_modified desc	
+					
+				</statement>
+				<validate column="name" value="${documentType}"/>
+				<validate column="internal_entity" value="${entityName}"/>
+				<validate column="entityid" value="${entityId}"/>
+				<validate column="docid" value="${mcpmDocId}"/>	
+				
+			</sql> 
+          		
+		</actions>
+	
+	</testcase>
+
+</spring:beans>

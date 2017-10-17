@@ -1,0 +1,4 @@
+db.driverClass=oracle.jdbc.driver.OracleDriver
+db.url=jdbc:oracle:thin:@//kycut.markit.partners:1521/kycut.markit.partners
+db.user=kyc
+db.password=Kyc!rule$

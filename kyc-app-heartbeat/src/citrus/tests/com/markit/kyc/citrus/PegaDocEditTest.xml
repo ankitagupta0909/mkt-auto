@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+    
+    <testcase name="PegaDocEditTest">
+        <meta-info>
+            <author>Ankita Gupta</author>
+            <creationdate>2015-11-23</creationdate>
+            <status>FINAL</status>
+            <last-updated-by>Ankita Gupta</last-updated-by>
+            <last-updated-on>2015-11-24T13:00:14</last-updated-on>
+        </meta-info>
+        
+        <description>Pega Document Edit test</description>
+
+		<actions>
+		
+				     <load>
+            <properties file="file:src/citrus/resources/load.properties"/>
+            </load>
+		
+          <!-- Extract case id -->
+			<sql datasource="dataSource">
+				<statement>select case_id
+				           from case c
+				           inner join v_company vc on c.entity_id = vc.entity_id
+				           where legalname = '${legalName}'
+					</statement>
+				<extract column="CASE_ID" variable="${caseId}"/>
+			</sql>
+			
+		     <sql datasource="dataSource">
+				<statement>select * from case_doc where case_id='${caseId}'
+				<!--select * from case_doc where case_id='${caseId}'  -->
+				</statement>
+				<extract column="DOC_ID" variable="${docId}"/>
+			</sql>
+
+			<create-variables>
+			<variable name="uploadUrl"      value="${kycHost}/pega-api/cases/${caseId}/documents"></variable>
+			<variable name="documentCaptureDate" value="citrus:currentDate('yyyy-MM-dd')"></variable>
+			<variable name="expirationDate" value="citrus:currentDate('yyyy-MM-dd')"></variable>
+			<variable name="editDocMessage" value="caseId=${caseId}&amp;documentType=${documentType1}&amp;documentSource=${documentSource1}&amp;
+			documentSourceName=${documentSourceName1}&amp;documentOriginalName=${documentOriginalName1}&amp;certifiedTrueCopy=${certifiedTrueCopy1}&amp;
+			internallyConfirmed=${internallyConfirmed1}&amp;documentCaptureDate=${documentCaptureDate}&amp;documentURL=${documentURL1}&amp;
+			expirationDate=${expirationDate}&amp;comments=${comments1}&amp;documentId=${docId}">
+			</variable>
+			</create-variables>
+							 
+		   <send endpoint="pegaEditDocument">
+				<message>
+					<data>${editDocMessage}</data>
+				</message>
+				<header>
+					<element name="citrus_endpoint_uri"	value="${uploadUrl}" />
+				</header>
+			 </send>
+             <receive endpoint="pegaEditDocument">
+			    <message type="json" validator="groovyJsonMessageValidator">
+			        <validate>
+			            <script type="groovy">
+			                <![CDATA[
+            					context.setVariable("documentId", json.documentId)
+ 			                ]]>
+			            </script>
+			        </validate>
+			    </message>
+			</receive>
+			
+			<echo>
+				<message>${citrus.test.name}: newdocID ${documentId}</message>
+			</echo>
+			
+			<sql datasource="dataSource">
+				<statement>select * from doc where doc_id=${docId}
+				</statement>
+				<extract column="SUCCESSOR_DOC_ID" variable="${docId_edit}"/>
+			</sql>
+
+	        <sql datasource="dataSource">
+				<statement>select * from ref_doc_source where name='${documentSource1}'
+				</statement>
+				<extract column="DOC_SOURCE_ID" variable="${uploadDocSourceID1}"/>
+			</sql>
+
+		    <sql datasource="dataSource">
+				<statement>select * from ref_doc_type where name='${documentType1}'
+				</statement>
+				<extract column="DOC_TYPE_ID" variable="${uploadDocTypeID1}"/>
+			</sql>	
+			
+			<sql datasource="dataSource">
+				<statement>select * from doc where doc_id='${docId_edit}'
+				<!-- 479296518048489 -->
+				</statement>
+				<validate column="DOC_TYPE_ID" value="${uploadDocTypeID1}"/>
+				<validate column="DOC_SOURCE_ID" value="${uploadDocSourceID1}"/>
+				<validate column="ORIGINAL_NAME" value="${documentOriginalName}"/>
+				<validate column="SOURCE_NAME" value="${documentSourceName1}"/>
+				<validate column="INTERNALLY_CONFIRMED" value="${internallyConfirmedID1}"/>
+				<validate column="CERTIFIED_TRUE_COPY" value="${certifiedTrueCopyID1}"/>
+				<validate column="URL" value="${documentURL1}"/>
+				<validate column="COMMENTS" value="${comments1}"/>
+			</sql>
+		
+		<sql datasource="dataSource">
+		<statement>select to_char((select Capture_DT from  doc where doc_id='${docId_edit}') ,'yyyy-mm-dd') CD from dual
+			            <!-- 479296518048489 -->
+		</statement>
+        <validate column="CD" value="${documentCaptureDate}"/>
+         </sql>
+         
+         <sql datasource="dataSource">
+		<statement>select to_char((select Expiration_DT from  doc where doc_id='${docId_edit}') ,'yyyy-mm-dd') ED from dual
+		</statement>
+        <validate column="ED" value="${expirationDate}"/>
+         </sql>     
+		
+            <!-- wait for 1 min until t_entity_screener updated -->
+			<!-- <sleep seconds="60"/> -->
+
+	        	
+		</actions>
+    </testcase>
+</spring:beans>

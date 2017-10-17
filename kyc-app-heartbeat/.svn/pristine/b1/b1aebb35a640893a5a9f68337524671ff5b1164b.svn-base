@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Task suite]">
+  <listeners>
+    <listener class-name="com.markit.kyc.citrus.ExtentReporter"/>
+  </listeners>
+  <test name="Pega Case Acknowledge Test(failed)">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaDocEditTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.PegaDocEditTest -->
+      <class name="com.markit.kyc.citrus.TaskCandIAssessmentTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskCandIAssessmentTest -->
+      <class name="com.markit.kyc.citrus.TaskIdDetailReqTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskIdDetailReqTest -->
+      <class name="com.markit.kyc.citrus.PegaCaseAcknowledgeTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="pegaCaseAcknowledgeTest"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.PegaCaseAcknowledgeTest -->
+      <class name="com.markit.kyc.citrus.CreateCaseTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.CreateCaseTest -->
+      <class name="com.markit.kyc.citrus.TaskWolfsbergQuestTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskWolfsbergQuestTest -->
+      <class name="com.markit.kyc.citrus.TaskOwnershipStrucTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskOwnershipStrucTest -->
+      <class name="com.markit.kyc.citrus.TaskBatchUploadFundTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskBatchUploadFundTest -->
+      <class name="com.markit.kyc.citrus.PegaCreateMeiTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.PegaCreateMeiTest -->
+      <class name="com.markit.kyc.citrus.SubscriberSubscribeTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="afterSuite"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.SubscriberSubscribeTest -->
+      <class name="com.markit.kyc.citrus.PegaDocUploadTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.PegaDocUploadTest -->
+      <class name="com.markit.kyc.citrus.TaskWithdrawTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskWithdrawTest -->
+      <class name="com.markit.kyc.citrus.TaskCreateDocReqTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskCreateDocReqTest -->
+      <class name="com.markit.kyc.citrus.TaskMatchEntityTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskMatchEntityTest -->
+      <class name="com.markit.kyc.citrus.PegaCompletedCaseTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.PegaCompletedCaseTest -->
+      <class name="com.markit.kyc.citrus.TaskAuthorisedSignTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskAuthorisedSignTest -->
+      <class name="com.markit.kyc.citrus.TaskOutreachQuesTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskOutreachQuesTest -->
+      <class name="com.markit.kyc.citrus.MCPMCreateEntityTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.MCPMCreateEntityTest -->
+    </classes>
+  </test> <!-- Pega Case Acknowledge Test(failed) -->
+  <test name="PegaCompletedCaseTest(failed)">
+    <classes>
+      <class name="com.markit.kyc.citrus.PegaDocEditTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.PegaDocEditTest -->
+      <class name="com.markit.kyc.citrus.TaskCandIAssessmentTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskCandIAssessmentTest -->
+      <class name="com.markit.kyc.citrus.TaskIdDetailReqTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskIdDetailReqTest -->
+      <class name="com.markit.kyc.citrus.PegaCaseAcknowledgeTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.PegaCaseAcknowledgeTest -->
+      <class name="com.markit.kyc.citrus.CreateCaseTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.CreateCaseTest -->
+      <class name="com.markit.kyc.citrus.TaskWolfsbergQuestTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskWolfsbergQuestTest -->
+      <class name="com.markit.kyc.citrus.TaskOwnershipStrucTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskOwnershipStrucTest -->
+      <class name="com.markit.kyc.citrus.TaskBatchUploadFundTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskBatchUploadFundTest -->
+      <class name="com.markit.kyc.citrus.PegaCreateMeiTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.PegaCreateMeiTest -->
+      <class name="com.markit.kyc.citrus.SubscriberSubscribeTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="afterSuite"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.SubscriberSubscribeTest -->
+      <class name="com.markit.kyc.citrus.PegaDocUploadTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.PegaDocUploadTest -->
+      <class name="com.markit.kyc.citrus.TaskWithdrawTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskWithdrawTest -->
+      <class name="com.markit.kyc.citrus.TaskCreateDocReqTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskCreateDocReqTest -->
+      <class name="com.markit.kyc.citrus.PegaCompletedCaseTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+          <include name="pegaCompletedCaseTest"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.PegaCompletedCaseTest -->
+      <class name="com.markit.kyc.citrus.TaskMatchEntityTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskMatchEntityTest -->
+      <class name="com.markit.kyc.citrus.TaskAuthorisedSignTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskAuthorisedSignTest -->
+      <class name="com.markit.kyc.citrus.TaskOutreachQuesTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.TaskOutreachQuesTest -->
+      <class name="com.markit.kyc.citrus.MCPMCreateEntityTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="createTestRunners"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.markit.kyc.citrus.MCPMCreateEntityTest -->
+    </classes>
+  </test> <!-- PegaCompletedCaseTest(failed) -->
+</suite> <!-- Failed suite [Task suite] -->

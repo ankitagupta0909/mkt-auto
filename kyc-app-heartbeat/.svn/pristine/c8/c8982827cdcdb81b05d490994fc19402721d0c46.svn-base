@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spring:beans xmlns="http://www.citrusframework.org/schema/testcase" 
+              xmlns:jms="http://www.citrusframework.org/schema/jms/testcase"
+              xmlns:ws="http://www.citrusframework.org/schema/ws/testcase"
+              xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+                  http://www.citrusframework.org/schema/jms/testcase http://www.citrusframework.org/schema/jms/testcase/citrus-jms-testcase.xsd
+                  http://www.citrusframework.org/schema/ws/testcase http://www.citrusframework.org/schema/ws/testcase/citrus-ws-testcase.xsd
+                  http://www.citrusframework.org/schema/testcase http://www.citrusframework.org/schema/testcase/citrus-testcase.xsd">
+    
+    <testcase name="PegaDocUploadTest">
+        <meta-info>
+            <author>Ankita Gupta</author>
+            <creationdate>2015-11-19</creationdate>
+            <status>FINAL</status>
+            <last-updated-by>Ankita Gupta</last-updated-by>
+            <last-updated-on>2015-11-20T13:00:14</last-updated-on>
+        </meta-info>
+        
+        <description>Pega Document Upload test</description>
+
+		<actions>
+		
+          <!-- Extract case id -->
+			<sql datasource="dataSource">
+				<statement>select case_id
+				           from case c
+				           inner join v_company vc on c.entity_id = vc.entity_id
+				           where legalname = '${legalName}' and rownum=1
+				           <!-- 'Alcofi Inc.' and case_id=41661745836278 -->
+				</statement>
+				<extract column="CASE_ID" variable="${caseId}"/>
+			</sql>
+		
+			<create-variables>
+			<variable name="uploadFilePath" value="src/data/uploadEntities.csv"></variable>
+			<variable name="uploadUrl"      value="${kycHost}/pega-api/cases/${caseId}/documents"></variable>
+			<variable name="docUploadRequest" value="/pega-api/cases/${caseId}/documents"></variable>
+			<variable name="documentType" value="${documentType}"></variable>
+			<variable name="documentSource" value="${documentSource}"></variable>
+			<variable name="documentSourceName" value="${documentSourceName}"></variable>
+			<variable name="documentOriginalName" value="${documentOriginalName}"></variable>
+			<variable name="certifiedTrueCopy" value="${certifiedTrueCopy}"></variable>
+			<variable name="internallyConfirmed" value="${internallyConfirmed}"></variable>
+			<variable name="documentCaptureDate" value="citrus:currentDate('yyyy-MM-dd')"></variable>
+			<variable name="documentURL" value="${documentURL}"></variable>
+			<variable name="expirationDate" value="citrus:currentDate('yyyy-MM-dd')"></variable>
+			<variable name="comments" value="${comments}"></variable>
+			</create-variables>
+						
+			<action reference="uploadDoc"/>
+		 
+
+			<sql datasource="dataSource">
+				<statement>select * from case_doc where case_id='${caseId}' and rownum=1
+				<!-- select * from case_doc where case_id =41661745836278 and rownum=1 -->
+				</statement>
+				<extract column="DOC_ID" variable="${docID}"/>
+				</sql>
+				
+		    <sql datasource="dataSource">
+				<statement>select * from ref_doc_source where name='${documentSource}'
+				</statement>
+				<extract column="DOC_SOURCE_ID" variable="${uploadDocSourceID}"/>
+			</sql>
+
+		    <sql datasource="dataSource">
+				<statement>select * from ref_doc_type where name='${documentType}'
+				</statement>
+				<extract column="DOC_TYPE_ID" variable="${uploadDocTypeID}"/>
+			</sql>			
+			
+			<sql datasource="dataSource">
+				<statement>select * from doc where doc_id='${docID}'
+				</statement>
+				<validate column="DOC_TYPE_ID" value="${uploadDocTypeID}"/>
+				<validate column="DOC_SOURCE_ID" value="${uploadDocSourceID}"/>
+				<validate column="ORIGINAL_NAME" value="${documentOriginalName}"/>
+				<validate column="SOURCE_NAME" value="${documentSourceName}"/>
+				<validate column="INTERNALLY_CONFIRMED" value="${internallyConfirmedID}"/>
+				<validate column="CERTIFIED_TRUE_COPY" value="${certifiedTrueCopyID}"/>
+				<validate column="URL" value="${documentURL}"/>
+				<validate column="COMMENTS" value="${comments}"/>
+				</sql>
+		<sql datasource="dataSource">
+		<statement>select to_char((select Capture_DT from  doc where doc_id='${docID}') ,'yyyy-mm-dd') CD from dual
+			            <!-- 479296518048489 -->
+		</statement>
+        <validate column="CD" value="${documentCaptureDate}"/>
+        <!-- TO_CHAR((SELECTCAPTURE_DTFROMDOCWHEREDOC_ID='${docID}'),'YYYY-MM-DD') -->
+         </sql>
+         
+         <sql datasource="dataSource">
+		<statement>select to_char((select Expiration_DT from  doc where doc_id='${docID}') ,'yyyy-mm-dd') ED from dual
+			            <!-- '${docID}' -->
+		</statement>
+        <validate column="ED" value="${expirationDate}"/>
+         </sql>     
+
+
+	        	
+		</actions>
+    </testcase>
+</spring:beans>

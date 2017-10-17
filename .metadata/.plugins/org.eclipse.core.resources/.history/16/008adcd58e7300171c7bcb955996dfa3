@@ -1,0 +1,29 @@
+uxs.userSoftwareComponentId=Ops-Portal
+#uxs.userSoftwareComponentId=KYV-user
+uxs.termsOfUseProduct=COBS
+
+uxs.passwordResetUrl=url
+
+#uxs.user = kyc_heartbeat_test@markit.com
+#uxs.password = Qwerty_2016
+
+#uxs.user = monika.maurya@markit.com
+#uxs.password = Welcome22#
+#uxs.user = vamshi.kher@markit.com
+#uxs.password = Welcome@100
+
+
+#uxs.user =ganesan.kaliyaperumal@ihsmarkit.com
+#uxs.password =Lkj@1234
+
+uxs.user = operationanalyst1@ihsmarkit.com
+uxs.password = Welcome99#
+
+#uxs.user = mayank.batra@ihsmarkit.com
+
+#uxs.password = Welcome100#
+#uxs.user=api@merc.com
+
+#uxs.password=Welcome@13
+
+uxs.useToken=true
